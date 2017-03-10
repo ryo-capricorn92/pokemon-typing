@@ -30,11 +30,11 @@ body {
   height: 150px;
   margin: 20px auto;
   padding: 20px;
-  opacity: 0.7;
-  background: green;
-  border: 2px solid darkgreen;
+  opacity: 0.8;
+  background: #eceb85;
+  border: 2px solid #a59543;
   border-radius: 20px;
-  color: #fff;
+  color: #000;
   font-size: 14px;
   font-family: monospace;
   line-height: 22px;
