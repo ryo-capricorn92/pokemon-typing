@@ -1,3 +1,4 @@
+/* global pokemonList, pokemonListOptions, types, moves */
 var cont = false;
 var slot = 0;
 var pokemonTyping = {};
@@ -123,7 +124,7 @@ function fight () {
 
 function useMove (move) {
   if (game.user.primary.moves.includes(useMove)) {
-    
+
   }
 }
 
