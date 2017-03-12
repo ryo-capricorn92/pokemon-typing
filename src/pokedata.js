@@ -6,12 +6,7 @@ var pokemonList = {
     attack: 45,
     defense: 45,
     speed: 38,
-    moves: [
-      "power whip",
-      "giga drain",
-      "sleep powder",
-      "leech seed"
-    ]
+    moves: pokemonMoves.poke['bulbasaur']
   },
   ivysaur: {
     name: "ivysaur",
@@ -20,12 +15,7 @@ var pokemonList = {
     attack: 52,
     defense: 52,
     speed: 46,
-    moves: [
-      "power whip",
-      "hidden power",
-      "sleep powder",
-      "sludge bomb"
-    ]
+    moves: pokemonMoves.poke['ivysaur']
   },
   venusaur: {
     name: "venusaur",
@@ -34,12 +24,7 @@ var pokemonList = {
     attack: 74,
     defense: 80,
     speed: 57,
-    moves: [
-      "hidden power",
-      "earthquake",
-      "synthesis",
-      "giga drain"
-    ]
+    moves: pokemonMoves.poke['venusaur']
   },
   charmander: {
     name: "charmander",
@@ -48,12 +33,7 @@ var pokemonList = {
     attack: 44,
     defense: 38,
     speed: 49,
-    moves: [
-      "overheat",
-      "dragon pulse",
-      "flamethrower",
-      "hidden power"
-    ]
+    moves: pokemonMoves.poke['charmander']
   },
   charmeleon: {
     name: "charmeleon",
@@ -62,12 +42,7 @@ var pokemonList = {
     attack: 53,
     defense: 47,
     speed: 57,
-    moves: [
-      "overheat",
-      "dragon pulse",
-      "flamethrower",
-      "hidden power"
-    ]
+    moves: pokemonMoves.poke['charmeleon']
   },
   charizard: {
     name: "charizard",
@@ -76,12 +51,7 @@ var pokemonList = {
     attack: 65,
     defense: 58,
     speed: 68,
-    moves: [
-      "air slash",
-      "roost",
-      "fire blast",
-      "earthquake"
-    ]
+    moves: pokemonMoves.poke['charizard']
   },
   squirtle: {
     name: "squirtle",
@@ -90,12 +60,7 @@ var pokemonList = {
     attack: 40,
     defense: 48,
     speed: 37,
-    moves: [
-      "scald",
-      "rapid spin",
-      "ice beam",
-      "aqua jet"
-    ]
+    moves: pokemonMoves.poke['squirtle']
   },
   wartortle: {
     name: "wartortle",
@@ -104,12 +69,7 @@ var pokemonList = {
     attack: 48,
     defense: 57,
     speed: 45,
-    moves: [
-      "hydro pump",
-      "rapid spin",
-      "aqua jet",
-      "toxic",
-    ]
+    moves: pokemonMoves.poke['wartortle']
   },
   blastoise: {
     name: "blastoise",
@@ -118,12 +78,7 @@ var pokemonList = {
     attack: 59,
     defense: 69,
     speed: 56,
-    moves: [
-      "toxic",
-      "rapid spin",
-      "aura sphere",
-      "scald"
-    ]
+    moves: pokemonMoves.poke['blastoise']
   },
   chikorita: {
     name: "chikorita",
@@ -132,12 +87,7 @@ var pokemonList = {
     attack: 40,
     defense: 49,
     speed: 38,
-    moves: [
-      "giga drain",
-      "leech seed",
-      "reflect",
-      "light screen"
-    ]
+    moves: pokemonMoves.poke['chikorita']
   },
   bayleef: {
     name: "bayleef",
@@ -146,12 +96,7 @@ var pokemonList = {
     attack: 47,
     defense: 57,
     speed: 46,
-    moves: [
-      "synthesis",
-      "giga drain",
-      "toxic",
-      "light screen"
-    ]
+    moves: pokemonMoves.poke['bayleef']
   },
   meganium: {
     name: "meganium",
@@ -160,12 +105,7 @@ var pokemonList = {
     attack: 58,
     defense: 68,
     speed: 57,
-    moves: [
-      "synthesis",
-      "toxic",
-      "giga drain",
-      "dragon tail"
-    ]
+    moves: pokemonMoves.poke['meganium']
   },
   cyndaquil: {
     name: "cyndaquil",
@@ -174,12 +114,7 @@ var pokemonList = {
     attack: 43,
     defense: 38,
     speed: 49,
-    moves: [
-      "flamethrower",
-      "extrasensory",
-      "hidden power",
-      "eruption"
-    ]
+    moves: pokemonMoves.poke['cyndaquil']
   },
   quilava: {
     name: "quilava",
@@ -188,12 +123,7 @@ var pokemonList = {
     attack: 52,
     defense: 47,
     speed: 57,
-    moves: [
-      "extrasensory",
-      "flamethrower",
-      "hidden power",
-      "eruption"
-    ]
+    moves: pokemonMoves.poke['quilava']
   },
   typhlosian: {
     name: "typhlosian",
@@ -202,12 +132,7 @@ var pokemonList = {
     attack: 66,
     defense: 58,
     speed: 68,
-    moves: [
-      "hidden power",
-      "eruption",
-      "focus blast",
-      "fire blast"
-    ]
+    moves: pokemonMoves.poke['typhlosian']
   },
   totodile: {
     name: "totodile",
@@ -216,12 +141,7 @@ var pokemonList = {
     attack: 43,
     defense: 43,
     speed: 37,
-    moves: [
-      "swords dance",
-      "dragon dance",
-      "waterfall",
-      "superpower"
-    ]
+    moves: pokemonMoves.poke['totodile']
   },
   croconaw: {
     name: "croconaw",
@@ -230,12 +150,7 @@ var pokemonList = {
     attack: 51,
     defense: 52,
     speed: 45,
-    moves: [
-      "aqua jet",
-      "ice punch",
-      "dragon dance",
-      "waterfall"
-    ]
+    moves: pokemonMoves.poke['croconaw']
   },
   feraligator: {
     name: "feraligator",
@@ -244,12 +159,7 @@ var pokemonList = {
     attack: 64,
     defense: 63,
     speed: 56,
-    moves: [
-      "swords dance",
-      "crunch",
-      "aqua jet",
-      "earthquake"
-    ]
+    moves: pokemonMoves.poke['feraligator']
   },
   treecko: {
     name: "treecko",
@@ -258,12 +168,7 @@ var pokemonList = {
     attack: 43,
     defense: 38,
     speed: 51,
-    moves: [
-      "leaf storm",
-      "hidden power",
-      "leech seed",
-      "endeavor"
-    ]
+    moves: pokemonMoves.poke['treecko']
   },
   grovyle: {
     name: "grovyle",
@@ -272,12 +177,7 @@ var pokemonList = {
     attack: 54,
     defense: 43,
     speed: 66,
-    moves: [
-      "hidden power",
-      "leaf storm",
-      "giga drain",
-      "endeavor"
-    ]
+    moves: pokemonMoves.poke['grovyle']
   },
   sceptile: {
     name: "sceptile",
@@ -286,12 +186,7 @@ var pokemonList = {
     attack: 65,
     defense: 54,
     speed: 79,
-    moves: [
-      "hidden power",
-      "focus blast",
-      "leaf storm",
-      "giga drain"
-    ]
+    moves: pokemonMoves.poke['sceptile']
   },
   torchic: {
     name: "torchic",
@@ -300,12 +195,7 @@ var pokemonList = {
     attack: 48,
     defense: 37,
     speed: 38,
-    moves: [
-      "hidden power",
-      "fire pledge",
-      "scratch",
-      "growl"
-    ]
+    moves: pokemonMoves.poke['torchic']
   },
   combusken: {
     name: "combusken",
@@ -314,12 +204,7 @@ var pokemonList = {
     attack: 60,
     defense: 46,
     speed: 44,
-    moves: [
-      "sky uppercut",
-      "shadow claw",
-      "flare blitz",
-      "hidden power"
-    ]
+    moves: pokemonMoves.poke['combusken']
   },
   blaziken: {
     name: "blaziken",
@@ -328,12 +213,7 @@ var pokemonList = {
     attack: 76,
     defense: 51,
     speed: 57,
-    moves: [
-      "high jump kick",
-      "flare blitz",
-      "swords dance",
-      "stone edge"
-    ]
+    moves: pokemonMoves.poke['blaziken']
   },
   mudkip: {
     name: "mudkip",
@@ -342,12 +222,7 @@ var pokemonList = {
     attack: 45,
     defense: 40,
     speed: 35,
-    moves: [
-      "hydro pump",
-      "sludge wave",
-      "earth power",
-      "ice beam"
-    ]
+    moves: pokemonMoves.poke['mudkip']
   },
   marshtomp: {
     name: "marshtomp",
@@ -356,12 +231,7 @@ var pokemonList = {
     attack: 53,
     defense: 51,
     speed: 40,
-    moves: [
-      "stealth rock",
-      "earthquake",
-      "superpower",
-      "ice punch"
-    ]
+    moves: pokemonMoves.poke['marshtomp']
   },
   swampert: {
     name: "swampert",
@@ -370,12 +240,7 @@ var pokemonList = {
     attack: 66,
     defense: 62,
     speed: 46,
-    moves: [
-      "earthquake",
-      "ice beam",
-      "scald",
-      "stealth rock"
-    ]
+    moves: pokemonMoves.poke['swampert']
   },
   turtwig: {
     name: "turtwig",
@@ -384,12 +249,7 @@ var pokemonList = {
     attack: 44,
     defense: 46,
     speed: 30,
-    moves: [
-      "stealth rock",
-      "toxic",
-      "seed bomb",
-      "leech seed"
-    ]
+    moves: pokemonMoves.poke['turtwig']
   },
   grotle: {
     name: "grotle",
@@ -398,12 +258,7 @@ var pokemonList = {
     attack: 53,
     defense: 54,
     speed: 33,
-    moves: [
-      "leech seed",
-      "toxic",
-      "seed bomb",
-      "reflect"
-    ]
+    moves: pokemonMoves.poke['grotle']
   },
   torterra: {
     name: "torterra",
@@ -412,12 +267,7 @@ var pokemonList = {
     attack: 64,
     defense: 65,
     speed: 44,
-    moves: [
-      "synthesis",
-      "stealth rock",
-      "earthquake",
-      "stone edge"
-    ]
+    moves: pokemonMoves.poke['torterra']
   },
   chimchar: {
     name: "chimchar",
@@ -426,12 +276,7 @@ var pokemonList = {
     attack: 45,
     defense: 37,
     speed: 47,
-    moves: [
-      "hidden power",
-      "fake out",
-      "overheat",
-      "stealth rock"
-    ]
+    moves: pokemonMoves.poke['chimchar']
   },
   monferno: {
     name: "monferno",
@@ -440,12 +285,7 @@ var pokemonList = {
     attack: 56,
     defense: 41,
     speed: 58,
-    moves: [
-      "hidden power",
-      "vacuum wave",
-      "u-turn",
-      "stealth rock"
-    ]
+    moves: pokemonMoves.poke['monferno']
   },
   infernape: {
     name: "infernape",
@@ -454,12 +294,7 @@ var pokemonList = {
     attack: 70,
     defense: 52,
     speed: 72,
-    moves: [
-      "mach punch",
-      "stealth rock",
-      "thunder punch",
-      "fire blast"
-    ]
+    moves: pokemonMoves.poke['infernape']
   },
   piplup: {
     name: "piplup",
@@ -468,12 +303,7 @@ var pokemonList = {
     attack: 44,
     defense: 43,
     speed: 35,
-    moves: [
-      "yawn",
-      "scald",
-      "stealth rock",
-      "hidden power"
-    ]
+    moves: pokemonMoves.poke['piplup']
   },
   prinplup: {
     name: "prinplup",
@@ -482,12 +312,7 @@ var pokemonList = {
     attack: 53,
     defense: 52,
     speed: 40,
-    moves: [
-      "scald",
-      "yawn",
-      "defog",
-      "stealth rock"
-    ]
+    moves: pokemonMoves.poke['prinplup']
   },
   empoleon: {
     name: "empoleon",
@@ -496,12 +321,7 @@ var pokemonList = {
     attack: 67,
     defense: 65,
     speed: 46,
-    moves: [
-      "hydro pummp",
-      "defog",
-      "stealth rock",
-      "ice beam"
-    ]
+    moves: pokemonMoves.poke['empoleon']
   },
   snivy: {
     name: "snivy",
@@ -510,12 +330,7 @@ var pokemonList = {
     attack: 38,
     defense: 44,
     speed: 48,
-    moves: [
-      "giga drain",
-      "hidden power",
-      "leech seed",
-      "leaf storm"
-    ]
+    moves: pokemonMoves.poke['snivy']
   },
   servine: {
     name: "servine",
@@ -524,12 +339,7 @@ var pokemonList = {
     attack: 46,
     defense: 55,
     speed: 59,
-    moves: [
-      "leaf storm",
-      "hidden power",
-      "giga drain",
-      "slam"
-    ]
+    moves: pokemonMoves.poke['servine']
   },
   serperior: {
     name: "serperior",
@@ -538,12 +348,7 @@ var pokemonList = {
     attack: 55,
     defense: 66,
     speed: 75,
-    moves: [
-      "leaf storm",
-      "giga drain",
-      "slam",
-      "hidden power"
-    ]
+    moves: pokemonMoves.poke['serperior']
   },
   tepig: {
     name: "tepig",
@@ -552,12 +357,7 @@ var pokemonList = {
     attack: 43,
     defense: 38,
     speed: 38,
-    moves: [
-      "wild charge",
-      "head smash",
-      "flare blitz",
-      "superpower"
-    ]
+    moves: pokemonMoves.poke['tepig']
   },
   pignite: {
     name: "pignite",
@@ -566,12 +366,7 @@ var pokemonList = {
     attack: 67,
     defense: 44,
     speed: 44,
-    moves: [
-      "wild charge",
-      "head smash",
-      "superpower",
-      "flame charge"
-    ]
+    moves: pokemonMoves.poke['pignite']
   },
   emboar: {
     name: "emboar",
@@ -580,12 +375,7 @@ var pokemonList = {
     attack: 74,
     defense: 49,
     speed: 49,
-    moves: [
-      "sucker punch",
-      "wild charge",
-      "superpower",
-      "flare blitz"
-    ]
+    moves: pokemonMoves.poke['emboar']
   },
   oshawott: {
     name: "oshawott",
@@ -594,12 +384,7 @@ var pokemonList = {
     attack: 46,
     defense: 38,
     speed: 38,
-    moves: [
-      "x-scissor",
-      "swords dance",
-      "waterfall",
-      "aqua jet"
-    ]
+    moves: pokemonMoves.poke['oshawott']
   },
   dewott: {
     name: "dewott",
@@ -608,12 +393,7 @@ var pokemonList = {
     attack: 57,
     defense: 46,
     speed: 46,
-    moves: [
-      "waterfall",
-      "swords dance",
-      "aqua jet",
-      "x-scissor"
-    ]
+    moves: pokemonMoves.poke['dewott']
   },
   samurott: {
     name: "samurott",
@@ -622,12 +402,7 @@ var pokemonList = {
     attack: 75,
     defense: 55,
     speed: 51,
-    moves: [
-      "megahorn",
-      "superpower",
-      "waterfall",
-      "swords dance"
-    ]
+    moves: pokemonMoves.poke['samurott']
   },
   chespin: {
     name: "chespin",
@@ -636,12 +411,7 @@ var pokemonList = {
     attack: 43,
     defense: 43,
     speed: 34,
-    moves: [
-      "curse",
-      "stone edge",
-      "synthesis",
-      "seed bomb"
-    ]
+    moves: pokemonMoves.poke['chespin']
   },
   quilladin: {
     name: "quilladin",
@@ -650,12 +420,7 @@ var pokemonList = {
     attack: 50,
     defense: 55,
     speed: 45,
-    moves: [
-      "seed bomb",
-      "gyro ball",
-      "synthesis",
-      "curse"
-    ]
+    moves: pokemonMoves.poke['quilladin']
   },
   chesnaught: {
     name: "chesnaught",
@@ -664,12 +429,7 @@ var pokemonList = {
     attack: 62,
     defense: 67,
     speed: 48,
-    moves: [
-      "synthesis",
-      "spiky shield",
-      "hammer arm",
-      "roar"
-    ]
+    moves: pokemonMoves.poke['chesnaught']
   },
   fennekin: {
     name: "fennekin",
@@ -678,12 +438,7 @@ var pokemonList = {
     attack: 42,
     defense: 40,
     speed: 46,
-    moves: [
-      "fire blast",
-      "will-o-wisp",
-      "hypnosis",
-      "grass knot"
-    ]
+    moves: pokemonMoves.poke['fennekin']
   },
   braixen: {
     name: "braixen",
@@ -692,12 +447,7 @@ var pokemonList = {
     attack: 54,
     defense: 48,
     speed: 53,
-    moves: [
-      "fireblast",
-      "psyshock",
-      "grass knot",
-      "will-o-wisp"
-    ]
+    moves: pokemonMoves.poke['braixen']
   },
   delphox: {
     name: "delphox",
@@ -706,12 +456,7 @@ var pokemonList = {
     attack: 63,
     defense: 60,
     speed: 70,
-    moves: [
-      "psychic",
-      "dazzling gleam",
-      "flamethrower",
-      "calm mind"
-    ]
+    moves: pokemonMoves.poke['delphox']
   },
   froakie: {
     name: "froakie",
@@ -720,12 +465,7 @@ var pokemonList = {
     attack: 45,
     defense: 36,
     speed: 52,
-    moves: [
-      "u-turn",
-      "waterfall",
-      "quick attack",
-      "power-up punch"
-    ]
+    moves: pokemonMoves.poke['froakie']
   },
   frogadier: {
     name: "frogadier",
@@ -734,12 +474,7 @@ var pokemonList = {
     attack: 53,
     defense: 42,
     speed: 67,
-    moves: [
-      "taunt",
-      "u-turn",
-      "hydro pump",
-      "ice beam"
-    ]
+    moves: pokemonMoves.poke['frogadier']
   },
   greninja: {
     name: "greninja",
@@ -748,12 +483,7 @@ var pokemonList = {
     attack: 68,
     defense: 51,
     speed: 80,
-    moves: [
-      "spikes",
-      "hidden power",
-      "surf",
-      "ice beam"
-    ]
+    moves: pokemonMoves.poke['greninja']
   },
   rowlet: {
     name: "rowlet",
@@ -762,12 +492,7 @@ var pokemonList = {
     attack: 42,
     defense: 42,
     speed: 36,
-    moves: [
-      "hidden power",
-      "curse",
-      "fury attack",
-      "nasty plot"
-    ]
+    moves: pokemonMoves.poke['rowlet']
   },
   dartrix: {
     name: "dartrix",
@@ -776,12 +501,7 @@ var pokemonList = {
     attack: 53,
     defense: 53,
     speed: 41,
-    moves: [
-      "steel wing",
-      "grass knot",
-      "round",
-      "nature power"
-    ]
+    moves: pokemonMoves.poke['dartrix']
   },
   decidueye: {
     name: "decidueye",
@@ -790,12 +510,7 @@ var pokemonList = {
     attack: 70,
     defense: 61,
     speed: 51,
-    moves: [
-      "leaf blade",
-      "swords dance",
-      "sucker punch",
-      "roost"
-    ]
+    moves: pokemonMoves.poke['decidueye']
   },
   litten: {
     name: "litten",
@@ -804,12 +519,7 @@ var pokemonList = {
     attack: 47,
     defense: 35,
     speed: 51,
-    moves: [
-      "bulk up",
-      "protect",
-      "lick",
-      "body slam"
-    ]
+    moves: pokemonMoves.poke['litten']
   },
   torracat: {
     name: "torracat",
@@ -818,12 +528,7 @@ var pokemonList = {
     attack: 58,
     defense: 40,
     speed: 62,
-    moves: [
-      "hidden power",
-      "nasty plot",
-      "bite",
-      "revenge"
-    ]
+    moves: pokemonMoves.poke['torracat']
   },
   incineroar: {
     name: "incineroar",
@@ -832,12 +537,7 @@ var pokemonList = {
     attack: 67,
     defense: 62,
     speed: 46,
-    moves: [
-      "darkest lariat",
-      "u-turn",
-      "flare blitz",
-      "fake out"
-    ]
+    moves: pokemonMoves.poke['incineroar']
   },
   popplio: {
     name: "popplio",
@@ -846,12 +546,7 @@ var pokemonList = {
     attack: 45,
     defense: 43,
     speed: 35,
-    moves: [
-      "hidden power",
-      "protect",
-      "confide",
-      "blizzard"
-    ]
+    moves: pokemonMoves.poke['popplio']
   },
   brionne: {
     name: "brionne",
@@ -860,12 +555,7 @@ var pokemonList = {
     attack: 57,
     defense: 54,
     speed: 40,
-    moves: [
-      "charm",
-      "scald",
-      "hidden power",
-      "bubble beam"
-    ]
+    moves: pokemonMoves.poke['brionne']
   },
   primarina: {
     name: "primarina",
@@ -874,12 +564,7 @@ var pokemonList = {
     attack: 62,
     defense: 65,
     speed: 46,
-    moves: [
-      "encore",
-      "moonblast",
-      "scald",
-      "light screen"
-    ]
+    moves: pokemonMoves.poke['primarina']
   },
   // NAME: {
   //   name: NAME,
