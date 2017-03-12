@@ -7,6 +7,16 @@ var currentContinue;
 var currentEnter = genericEnter;
 var textbox = document.getElementById('textbox');
 
+String.prototype.pretty = function () {
+  var strArr = this.split(' ');
+  for (var i = 0; i < strArr.length; i++) {
+    var arr = strArr[i].split('');
+    arr[0] = arr[0].toUpperCase();
+    strArr[i] = arr.join('');
+  }
+  return strArr.join(' ');
+}
+
 if (!localStorage.pokemonTyping) {
   newGame(1);
 } else {
@@ -82,7 +92,7 @@ function pickStarter (pokemon) {
     return keepGoing(newGame, [slot]);
   }
   if (pokemonList[pokemon]) {
-    textbox.innerHTML = 'So you\'d like to start with the ' + pokemonList[pokemon].type + ' type pokemon, ' + pokemonList[pokemon].prettyName + '?';
+    textbox.innerHTML = 'So you\'d like to start with the ' + pokemonList[pokemon].type + ' type pokemon, ' + pokemonList[pokemon].name.pretty() + '?';
     game.user.team = [pokemonList[pokemon]];
     game.user.primary = game.user.team[0];
   }
@@ -161,7 +171,6 @@ function load () {
 }
 
 function Pokemon (pokemon, userPokemon) {
-  this.prettyName = pokemon.prettyName;
   this.type = pokemon.type;
   this.hp = pokemon.hp;
   this.moves = [];

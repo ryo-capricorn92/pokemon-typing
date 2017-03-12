@@ -1,5 +1,6 @@
 var pokemonList = {
   bulbasaur: {
+    name: "bulbasaur",
     type: [ "grass", "poison" ],
     hp: 65,
     attack: 45,
@@ -12,6 +13,7 @@ var pokemonList = {
     ]
   },
   ivysaur: {
+    name: "ivysaur",
     type: [ "grass", "poison" ],
     hp: 72,
     attack: 52,
@@ -25,6 +27,7 @@ var pokemonList = {
     ]
   },
   venusaur: {
+    name: "venusaur",
     type: [ "grass", "poison" ],
     hp: 82,
     attack: 74,
@@ -38,6 +41,7 @@ var pokemonList = {
     ]
   },
   charmander: {
+    name: "charmander",
     type: [ "fire" ],
     hp: 62,
     attack: 44,
@@ -50,6 +54,7 @@ var pokemonList = {
     ]
   },
   charmeleon: {
+    name: "charmeleon",
     type: [ "fire" ],
     hp: 71,
     attack: 53,
@@ -63,6 +68,7 @@ var pokemonList = {
     ]
   },
   charizard: {
+    name: "charizard",
     type: [ "fire", "flying" ],
     hp: 81,
     attack: 65,
@@ -76,6 +82,7 @@ var pokemonList = {
     ]
   },
   squirtle: {
+    name: "squirtle",
     type: [ "water" ],
     hp: 64,
     attack: 40,
@@ -86,6 +93,7 @@ var pokemonList = {
     ]
   },
   wartortle: {
+    name: "wartortle",
     type: [ "water" ],
     hp: 72,
     attack: 48,
@@ -96,6 +104,7 @@ var pokemonList = {
     ]
   },
   blastoise: {
+    name: "blastoise",
     type: [ "water" ],
     hp: 82,
     attack: 59,
@@ -106,6 +115,7 @@ var pokemonList = {
     ]
   },
   chikorita: {
+    name: "chikorita",
     type: [ "grass" ],
     hp: 65,
     attack: 40,
@@ -116,6 +126,7 @@ var pokemonList = {
     ]
   },
   bayleef: {
+    name: "bayleef",
     type: [ "grass" ],
     hp: 72,
     attack: 47,
@@ -126,6 +137,7 @@ var pokemonList = {
     ]
   },
   meganium: {
+    name: "meganium",
     type: [ "grass" ],
     hp: 82,
     attack: 58,
@@ -136,6 +148,7 @@ var pokemonList = {
     ]
   },
   cyndaquil: {
+    name: "cyndaquil",
     type: [ "fire" ],
     hp: 62,
     attack: 43,
@@ -146,6 +159,7 @@ var pokemonList = {
     ]
   },
   quilava: {
+    name: "quilava",
     type: [ "fire" ],
     hp: 71,
     attack: 52,
@@ -156,6 +170,7 @@ var pokemonList = {
     ]
   },
   typhlosian: {
+    name: "typhlosian",
     type: [ "fire" ],
     hp: 81,
     attack: 66,
@@ -166,6 +181,7 @@ var pokemonList = {
     ]
   },
   totodile: {
+    name: "totodile",
     type: [ "water" ],
     hp: 67,
     attack: 43,
@@ -176,6 +192,7 @@ var pokemonList = {
     ]
   },
   croconaw: {
+    name: "croconaw",
     type: [ "water" ],
     hp: 75,
     attack: 51,
@@ -185,7 +202,8 @@ var pokemonList = {
       ""
     ]
   },
-  feraligatr: {
+  feraligator: {
+    name: "feraligator",
     type: [ "water" ],
     hp: 85,
     attack: 64,
@@ -196,6 +214,7 @@ var pokemonList = {
     ]
   },
   treecko: {
+    name: "treecko",
     type: [ "grass" ],
     hp: 62,
     attack: 43,
@@ -206,6 +225,7 @@ var pokemonList = {
     ]
   },
   grovyle: {
+    name: "grovyle",
     type: [ "grass" ],
     hp: 67,
     attack: 54,
@@ -216,6 +236,7 @@ var pokemonList = {
     ]
   },
   sceptile: {
+    name: "sceptile",
     type: [ "grass" ],
     hp: 77,
     attack: 65,
@@ -226,6 +247,7 @@ var pokemonList = {
     ]
   },
   torchic: {
+    name: "torchic",
     type: [ "fire" ],
     hp: 65,
     attack: 48,
@@ -236,6 +258,7 @@ var pokemonList = {
     ]
   },
   combusken: {
+    name: "combusken",
     type: [ "fire", "fighting" ],
     hp: 72,
     attack: 60,
@@ -246,6 +269,7 @@ var pokemonList = {
     ]
   },
   blaziken: {
+    name: "blaziken",
     type: [ "fire", "fighting" ],
     hp: 82,
     attack: 76,
@@ -256,6 +280,7 @@ var pokemonList = {
     ]
   },
   mudkip: {
+    name: "mudkip",
     type: [ "water" ],
     hp: 67,
     attack: 45,
@@ -266,6 +291,7 @@ var pokemonList = {
     ]
   },
   marshtomp: {
+    name: "marshtomp",
     type: [ "water", "ground" ],
     hp: 77,
     attack: 53,
@@ -276,6 +302,7 @@ var pokemonList = {
     ]
   },
   swampert: {
+    name: "swampert",
     type: [ "water", "ground" ],
     hp: 92,
     attack: 66,
@@ -286,6 +313,7 @@ var pokemonList = {
     ]
   },
   turtwig: {
+    name: "turtwig",
     type: [ "grass" ],
     hp: 70,
     attack: 44,
@@ -296,6 +324,7 @@ var pokemonList = {
     ]
   },
   grotle: {
+    name: "grotle",
     type: [ "grass" ],
     hp: 80,
     attack: 53,
@@ -306,6 +335,7 @@ var pokemonList = {
     ]
   },
   torterra: {
+    name: "torterra",
     type: [ "grass", "ground" ],
     hp: 90,
     attack: 64,
@@ -316,6 +346,7 @@ var pokemonList = {
     ]
   },
   chimchar: {
+    name: "chimchar",
     type: [ "fire" ],
     hp: 64,
     attack: 45,
@@ -326,6 +357,7 @@ var pokemonList = {
     ]
   },
   monferno: {
+    name: "monferno",
     type: [ "fire", "fighting" ],
     hp: 74,
     attack: 56,
@@ -336,6 +368,7 @@ var pokemonList = {
     ]
   },
   infernape: {
+    name: "infernape",
     type: [ "fire", "fighting" ],
     hp: 80,
     attack: 70,
@@ -346,6 +379,7 @@ var pokemonList = {
     ]
   },
   piplup: {
+    name: "piplup",
     type: [ "water" ],
     hp: 69,
     attack: 44,
@@ -356,6 +390,7 @@ var pokemonList = {
     ]
   },
   prinplup: {
+    name: "prinplup",
     type: [ "water" ],
     hp: 74,
     attack: 53,
@@ -366,6 +401,7 @@ var pokemonList = {
     ]
   },
   empoleon: {
+    name: "empoleon",
     type: [ "water", "steel" ],
     hp: 84,
     attack: 67,
@@ -376,6 +412,7 @@ var pokemonList = {
     ]
   },
   snivy: {
+    name: "snivy",
     type: [ "grass" ],
     hp: 65,
     attack: 38,
@@ -386,6 +423,7 @@ var pokemonList = {
     ]
   },
   servine: {
+    name: "servine",
     type: [ "grass" ],
     hp: 72,
     attack: 46,
@@ -396,6 +434,7 @@ var pokemonList = {
     ]
   },
   serperior: {
+    name: "serperior",
     type: [ "grass" ],
     hp: 80,
     attack: 55,
@@ -406,6 +445,7 @@ var pokemonList = {
     ]
   },
   tepig: {
+    name: "tepig",
     type: [ "fire" ],
     hp: 75,
     attack: 43,
@@ -416,6 +456,7 @@ var pokemonList = {
     ]
   },
   pignite: {
+    name: "pignite",
     type: [ "fire", "fighting" ],
     hp: 87,
     attack: 67,
@@ -426,6 +467,7 @@ var pokemonList = {
     ]
   },
   emboar: {
+    name: "emboar",
     type: [ "fire", "fighting" ],
     hp: 97,
     attack: 74,
@@ -436,6 +478,7 @@ var pokemonList = {
     ]
   },
   oshawott: {
+    name: "oshawott",
     type: [ "water" ],
     hp: 70,
     attack: 46,
@@ -446,6 +489,7 @@ var pokemonList = {
     ]
   },
   dewott: {
+    name: "dewott",
     type: [ "water" ],
     hp: 80,
     attack: 57,
@@ -456,6 +500,7 @@ var pokemonList = {
     ]
   },
   samurott: {
+    name: "samurott",
     type: [ "water" ],
     hp: 90,
     attack: 75,
@@ -466,6 +511,7 @@ var pokemonList = {
     ]
   },
   chespin: {
+    name: "chespin",
     type: [ "grass" ],
     hp: 70,
     attack: 43,
@@ -476,6 +522,7 @@ var pokemonList = {
     ]
   },
   quilladin: {
+    name: "quilladin",
     type: [ "grass" ],
     hp: 73,
     attack: 50,
@@ -486,6 +533,7 @@ var pokemonList = {
     ]
   },
   chesnaught: {
+    name: "chesnaught",
     type: [ "grass", "fighting" ],
     hp: 86,
     attack: 62,
@@ -496,6 +544,7 @@ var pokemonList = {
     ]
   },
   fennekin: {
+    name: "fennekin",
     type: [ "fire" ],
     hp: 62,
     attack: 42,
@@ -506,6 +555,7 @@ var pokemonList = {
     ]
   },
   braixen: {
+    name: "braixen",
     type: [ "fire" ],
     hp: 72,
     attack: 54,
@@ -516,6 +566,7 @@ var pokemonList = {
     ]
   },
   delphox: {
+    name: "delphox",
     type: [ "fire", "psychic" ],
     hp: 80,
     attack: 63,
@@ -526,6 +577,7 @@ var pokemonList = {
     ]
   },
   froakie: {
+    name: "froakie",
     type: [ "water" ],
     hp: 63,
     attack: 45,
@@ -536,6 +588,7 @@ var pokemonList = {
     ]
   },
   frogadier: {
+    name: "frogadier",
     type: [ "water" ],
     hp: 69,
     attack: 53,
@@ -546,6 +599,7 @@ var pokemonList = {
     ]
   },
   greninja: {
+    name: "greninja",
     type: [ "water", "dark" ],
     hp: 78,
     attack: 68,
@@ -556,6 +610,7 @@ var pokemonList = {
     ]
   },
   rowlet: {
+    name: "rowlet",
     type: [ "grass", "flying" ],
     hp: 76,
     attack: 42,
@@ -566,6 +621,7 @@ var pokemonList = {
     ]
   },
   dartrix: {
+    name: "dartrix",
     type: [ "grass", "flying" ],
     hp: 81,
     attack: 53,
@@ -576,6 +632,7 @@ var pokemonList = {
     ]
   },
   decidueye: {
+    name: "decidueye",
     type: [ "grass", "ghost" ],
     hp: 81,
     attack: 70,
@@ -586,6 +643,7 @@ var pokemonList = {
     ]
   },
   litten: {
+    name: "litten",
     type: [ "fire" ],
     hp: 65,
     attack: 47,
@@ -596,6 +654,7 @@ var pokemonList = {
     ]
   },
   torracat: {
+    name: "torracat",
     type: [ "fire" ],
     hp: 75,
     attack: 58,
@@ -606,6 +665,7 @@ var pokemonList = {
     ]
   },
   incineroar: {
+    name: "incineroar",
     type: [ "fire", "dark" ],
     hp: 90,
     attack: 67,
@@ -616,6 +676,7 @@ var pokemonList = {
     ]
   },
   popplio: {
+    name: "popplio",
     type: [ "water" ],
     hp: 67,
     attack: 45,
@@ -625,16 +686,39 @@ var pokemonList = {
       ""
     ]
   },
-  NAME: {
-    type: [ "TYPE" ],
-    hp: INT,
-    attack: INT,
-    defense: INT,
-    speed: INT,
+  brionne: {
+    name: "brionne",
+    type: [ "water" ],
+    hp: 72,
+    attack: 57,
+    defense: 54,
+    speed: 40,
     moves: [
       ""
     ]
   },
+  primarina: {
+    name: "primarina",
+    type: [ "water", "fairy" ],
+    hp: 82,
+    attack: 62,
+    defense: 65,
+    speed: 46,
+    moves: [
+      ""
+    ]
+  },
+  // NAME: {
+  //   name: NAME,
+  //   type: [ "TYPE" ],
+  //   hp: INT,
+  //   attack: INT,
+  //   defense: INT,
+  //   speed: INT,
+  //   moves: [
+  //     ""
+  //   ]
+  // },
 }
 
 var pokemonListOptions = [];
