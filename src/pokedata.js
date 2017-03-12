@@ -7,9 +7,10 @@ var pokemonList = {
     defense: 45,
     speed: 38,
     moves: [
-      "razor leaf",
-      "tail whip",
-      "tackle"
+      "power whip",
+      "giga drain",
+      "sleep powder",
+      "leech seed"
     ]
   },
   ivysaur: {
@@ -20,10 +21,10 @@ var pokemonList = {
     defense: 52,
     speed: 46,
     moves: [
-      "razor leaf",
-      "tail whip",
-      "take down",
-      "poisonpowder"
+      "power whip",
+      "hidden power",
+      "sleep powder",
+      "sludge bomb"
     ]
   },
   venusaur: {
@@ -34,10 +35,10 @@ var pokemonList = {
     defense: 80,
     speed: 57,
     moves: [
-      "solarbeam",
+      "hidden power",
+      "earthquake",
       "synthesis",
-      "take down",
-      "poisonpowder"
+      "giga drain"
     ]
   },
   charmander: {
@@ -48,9 +49,10 @@ var pokemonList = {
     defense: 38,
     speed: 49,
     moves: [
-      "scratch",
-      "growl",
-      "ember"
+      "overheat",
+      "dragon pulse",
+      "flamethrower",
+      "hidden power"
     ]
   },
   charmeleon: {
@@ -61,10 +63,10 @@ var pokemonList = {
     defense: 47,
     speed: 57,
     moves: [
-      "flame burst",
-      "growl",
-      "dragon rage",
-      "ember"
+      "overheat",
+      "dragon pulse",
+      "flamethrower",
+      "hidden power"
     ]
   },
   charizard: {
@@ -75,10 +77,10 @@ var pokemonList = {
     defense: 58,
     speed: 68,
     moves: [
-      "wing attack",
-      "growl",
-      "dragon rage",
-      "heat wave"
+      "air slash",
+      "roost",
+      "fire blast",
+      "earthquake"
     ]
   },
   squirtle: {
@@ -89,7 +91,10 @@ var pokemonList = {
     defense: 48,
     speed: 37,
     moves: [
-      ""
+      "scald",
+      "rapid spin",
+      "ice beam",
+      "aqua jet"
     ]
   },
   wartortle: {
@@ -100,7 +105,10 @@ var pokemonList = {
     defense: 57,
     speed: 45,
     moves: [
-      ""
+      "hydro pump",
+      "rapid spin",
+      "aqua jet",
+      "toxic",
     ]
   },
   blastoise: {
@@ -111,7 +119,10 @@ var pokemonList = {
     defense: 69,
     speed: 56,
     moves: [
-      ""
+      "toxic",
+      "rapid spin",
+      "aura sphere",
+      "scald"
     ]
   },
   chikorita: {
@@ -122,7 +133,10 @@ var pokemonList = {
     defense: 49,
     speed: 38,
     moves: [
-      ""
+      "giga drain",
+      "leech seed",
+      "reflect",
+      "light screen"
     ]
   },
   bayleef: {
@@ -133,7 +147,10 @@ var pokemonList = {
     defense: 57,
     speed: 46,
     moves: [
-      ""
+      "synthesis",
+      "giga drain",
+      "toxic",
+      "light screen"
     ]
   },
   meganium: {
@@ -144,7 +161,10 @@ var pokemonList = {
     defense: 68,
     speed: 57,
     moves: [
-      ""
+      "synthesis",
+      "toxic",
+      "giga drain",
+      "dragon tail"
     ]
   },
   cyndaquil: {
@@ -155,7 +175,10 @@ var pokemonList = {
     defense: 38,
     speed: 49,
     moves: [
-      ""
+      "flamethrower",
+      "extrasensory",
+      "hidden power",
+      "eruption"
     ]
   },
   quilava: {
@@ -166,7 +189,10 @@ var pokemonList = {
     defense: 47,
     speed: 57,
     moves: [
-      ""
+      "extrasensory",
+      "flamethrower",
+      "hidden power",
+      "eruption"
     ]
   },
   typhlosian: {
@@ -177,7 +203,10 @@ var pokemonList = {
     defense: 58,
     speed: 68,
     moves: [
-      ""
+      "hidden power",
+      "eruption",
+      "focus blast",
+      "fire blast"
     ]
   },
   totodile: {
@@ -188,7 +217,10 @@ var pokemonList = {
     defense: 43,
     speed: 37,
     moves: [
-      ""
+      "swords dance",
+      "dragon dance",
+      "waterfall",
+      "superpower"
     ]
   },
   croconaw: {
@@ -199,7 +231,10 @@ var pokemonList = {
     defense: 52,
     speed: 45,
     moves: [
-      ""
+      "aqua jet",
+      "ice punch",
+      "dragon dance",
+      "waterfall"
     ]
   },
   feraligator: {
@@ -210,7 +245,10 @@ var pokemonList = {
     defense: 63,
     speed: 56,
     moves: [
-      ""
+      "swords dance",
+      "crunch",
+      "aqua jet",
+      "earthquake"
     ]
   },
   treecko: {
@@ -221,7 +259,10 @@ var pokemonList = {
     defense: 38,
     speed: 51,
     moves: [
-      ""
+      "leaf storm",
+      "hidden power",
+      "leech seed",
+      "endeavor"
     ]
   },
   grovyle: {
@@ -232,7 +273,10 @@ var pokemonList = {
     defense: 43,
     speed: 66,
     moves: [
-      ""
+      "hidden power",
+      "leaf storm",
+      "giga drain",
+      "endeavor"
     ]
   },
   sceptile: {
@@ -243,7 +287,10 @@ var pokemonList = {
     defense: 54,
     speed: 79,
     moves: [
-      ""
+      "hidden power",
+      "focus blast",
+      "leaf storm",
+      "giga drain"
     ]
   },
   torchic: {
@@ -254,7 +301,10 @@ var pokemonList = {
     defense: 37,
     speed: 38,
     moves: [
-      ""
+      "hidden power",
+      "fire pledge",
+      "scratch",
+      "growl"
     ]
   },
   combusken: {
@@ -265,7 +315,10 @@ var pokemonList = {
     defense: 46,
     speed: 44,
     moves: [
-      ""
+      "sky uppercut",
+      "shadow claw",
+      "flare blitz",
+      "hidden power"
     ]
   },
   blaziken: {
@@ -276,7 +329,10 @@ var pokemonList = {
     defense: 51,
     speed: 57,
     moves: [
-      ""
+      "high jump kick",
+      "flare blitz",
+      "swords dance",
+      "stone edge"
     ]
   },
   mudkip: {
@@ -287,7 +343,10 @@ var pokemonList = {
     defense: 40,
     speed: 35,
     moves: [
-      ""
+      "hydro pump",
+      "sludge wave",
+      "earth power",
+      "ice beam"
     ]
   },
   marshtomp: {
@@ -298,7 +357,10 @@ var pokemonList = {
     defense: 51,
     speed: 40,
     moves: [
-      ""
+      "stealth rock",
+      "earthquake",
+      "superpower",
+      "ice punch"
     ]
   },
   swampert: {
@@ -309,7 +371,10 @@ var pokemonList = {
     defense: 62,
     speed: 46,
     moves: [
-      ""
+      "earthquake",
+      "ice beam",
+      "scald",
+      "stealth rock"
     ]
   },
   turtwig: {
@@ -320,7 +385,10 @@ var pokemonList = {
     defense: 46,
     speed: 30,
     moves: [
-      ""
+      "stealth rock",
+      "toxic",
+      "seed bomb",
+      "leech seed"
     ]
   },
   grotle: {
@@ -331,7 +399,10 @@ var pokemonList = {
     defense: 54,
     speed: 33,
     moves: [
-      ""
+      "leech seed",
+      "toxic",
+      "seed bomb",
+      "reflect"
     ]
   },
   torterra: {
@@ -342,7 +413,10 @@ var pokemonList = {
     defense: 65,
     speed: 44,
     moves: [
-      ""
+      "synthesis",
+      "stealth rock",
+      "earthquake",
+      "stone edge"
     ]
   },
   chimchar: {
@@ -353,7 +427,10 @@ var pokemonList = {
     defense: 37,
     speed: 47,
     moves: [
-      ""
+      "hidden power",
+      "fake out",
+      "overheat",
+      "stealth rock"
     ]
   },
   monferno: {
@@ -364,7 +441,10 @@ var pokemonList = {
     defense: 41,
     speed: 58,
     moves: [
-      ""
+      "hidden power",
+      "vacuum wave",
+      "u-turn",
+      "stealth rock"
     ]
   },
   infernape: {
@@ -375,7 +455,10 @@ var pokemonList = {
     defense: 52,
     speed: 72,
     moves: [
-      ""
+      "mach punch",
+      "stealth rock",
+      "thunder punch",
+      "fire blast"
     ]
   },
   piplup: {
@@ -386,7 +469,10 @@ var pokemonList = {
     defense: 43,
     speed: 35,
     moves: [
-      ""
+      "yawn",
+      "scald",
+      "stealth rock",
+      "hidden power"
     ]
   },
   prinplup: {
@@ -397,7 +483,10 @@ var pokemonList = {
     defense: 52,
     speed: 40,
     moves: [
-      ""
+      "scald",
+      "yawn",
+      "defog",
+      "stealth rock"
     ]
   },
   empoleon: {
@@ -408,7 +497,10 @@ var pokemonList = {
     defense: 65,
     speed: 46,
     moves: [
-      ""
+      "hydro pummp",
+      "defog",
+      "stealth rock",
+      "ice beam"
     ]
   },
   snivy: {
@@ -419,7 +511,10 @@ var pokemonList = {
     defense: 44,
     speed: 48,
     moves: [
-      ""
+      "giga drain",
+      "hidden power",
+      "leech seed",
+      "leaf storm"
     ]
   },
   servine: {
@@ -430,7 +525,10 @@ var pokemonList = {
     defense: 55,
     speed: 59,
     moves: [
-      ""
+      "leaf storm",
+      "hidden power",
+      "giga drain",
+      "slam"
     ]
   },
   serperior: {
@@ -441,7 +539,10 @@ var pokemonList = {
     defense: 66,
     speed: 75,
     moves: [
-      ""
+      "leaf storm",
+      "giga drain",
+      "slam",
+      "hidden power"
     ]
   },
   tepig: {
@@ -452,7 +553,10 @@ var pokemonList = {
     defense: 38,
     speed: 38,
     moves: [
-      ""
+      "wild charge",
+      "head smash",
+      "flare blitz",
+      "superpower"
     ]
   },
   pignite: {
@@ -463,7 +567,10 @@ var pokemonList = {
     defense: 44,
     speed: 44,
     moves: [
-      ""
+      "wild charge",
+      "head smash",
+      "superpower",
+      "flame charge"
     ]
   },
   emboar: {
@@ -474,7 +581,10 @@ var pokemonList = {
     defense: 49,
     speed: 49,
     moves: [
-      ""
+      "sucker punch",
+      "wild charge",
+      "superpower",
+      "flare blitz"
     ]
   },
   oshawott: {
@@ -485,7 +595,10 @@ var pokemonList = {
     defense: 38,
     speed: 38,
     moves: [
-      ""
+      "x-scissor",
+      "swords dance",
+      "waterfall",
+      "aqua jet"
     ]
   },
   dewott: {
@@ -496,7 +609,10 @@ var pokemonList = {
     defense: 46,
     speed: 46,
     moves: [
-      ""
+      "waterfall",
+      "swords dance",
+      "aqua jet",
+      "x-scissor"
     ]
   },
   samurott: {
@@ -507,7 +623,10 @@ var pokemonList = {
     defense: 55,
     speed: 51,
     moves: [
-      ""
+      "megahorn",
+      "superpower",
+      "waterfall",
+      "swords dance"
     ]
   },
   chespin: {
@@ -518,7 +637,10 @@ var pokemonList = {
     defense: 43,
     speed: 34,
     moves: [
-      ""
+      "curse",
+      "stone edge",
+      "synthesis",
+      "seed bomb"
     ]
   },
   quilladin: {
@@ -529,7 +651,10 @@ var pokemonList = {
     defense: 55,
     speed: 45,
     moves: [
-      ""
+      "seed bomb",
+      "gyro ball",
+      "synthesis",
+      "curse"
     ]
   },
   chesnaught: {
@@ -540,7 +665,10 @@ var pokemonList = {
     defense: 67,
     speed: 48,
     moves: [
-      ""
+      "synthesis",
+      "spiky shield",
+      "hammer arm",
+      "roar"
     ]
   },
   fennekin: {
@@ -551,7 +679,10 @@ var pokemonList = {
     defense: 40,
     speed: 46,
     moves: [
-      ""
+      "fire blast",
+      "will-o-wisp",
+      "hypnosis",
+      "grass knot"
     ]
   },
   braixen: {
@@ -562,7 +693,10 @@ var pokemonList = {
     defense: 48,
     speed: 53,
     moves: [
-      ""
+      "fireblast",
+      "psyshock",
+      "grass knot",
+      "will-o-wisp"
     ]
   },
   delphox: {
@@ -573,7 +707,10 @@ var pokemonList = {
     defense: 60,
     speed: 70,
     moves: [
-      ""
+      "psychic",
+      "dazzling gleam",
+      "flamethrower",
+      "calm mind"
     ]
   },
   froakie: {
@@ -584,7 +721,10 @@ var pokemonList = {
     defense: 36,
     speed: 52,
     moves: [
-      ""
+      "u-turn",
+      "waterfall",
+      "quick attack",
+      "power-up punch"
     ]
   },
   frogadier: {
@@ -595,7 +735,10 @@ var pokemonList = {
     defense: 42,
     speed: 67,
     moves: [
-      ""
+      "taunt",
+      "u-turn",
+      "hydro pump",
+      "ice beam"
     ]
   },
   greninja: {
@@ -606,7 +749,10 @@ var pokemonList = {
     defense: 51,
     speed: 80,
     moves: [
-      ""
+      "spikes",
+      "hidden power",
+      "surf",
+      "ice beam"
     ]
   },
   rowlet: {
@@ -617,7 +763,10 @@ var pokemonList = {
     defense: 42,
     speed: 36,
     moves: [
-      ""
+      "hidden power",
+      "curse",
+      "fury attack",
+      "nasty plot"
     ]
   },
   dartrix: {
@@ -628,7 +777,10 @@ var pokemonList = {
     defense: 53,
     speed: 41,
     moves: [
-      ""
+      "steel wing",
+      "grass knot",
+      "round",
+      "nature power"
     ]
   },
   decidueye: {
@@ -639,7 +791,10 @@ var pokemonList = {
     defense: 61,
     speed: 51,
     moves: [
-      ""
+      "leaf blade",
+      "swords dance",
+      "sucker punch",
+      "roost"
     ]
   },
   litten: {
@@ -650,7 +805,10 @@ var pokemonList = {
     defense: 35,
     speed: 51,
     moves: [
-      ""
+      "bulk up",
+      "protect",
+      "lick",
+      "body slam"
     ]
   },
   torracat: {
@@ -661,7 +819,10 @@ var pokemonList = {
     defense: 40,
     speed: 62,
     moves: [
-      ""
+      "hidden power",
+      "nasty plot",
+      "bite",
+      "revenge"
     ]
   },
   incineroar: {
@@ -672,7 +833,10 @@ var pokemonList = {
     defense: 62,
     speed: 46,
     moves: [
-      ""
+      "darkest lariat",
+      "u-turn",
+      "flare blitz",
+      "fake out"
     ]
   },
   popplio: {
@@ -683,7 +847,10 @@ var pokemonList = {
     defense: 43,
     speed: 35,
     moves: [
-      ""
+      "hidden power",
+      "protect",
+      "confide",
+      "blizzard"
     ]
   },
   brionne: {
@@ -694,7 +861,10 @@ var pokemonList = {
     defense: 54,
     speed: 40,
     moves: [
-      ""
+      "charm",
+      "scald",
+      "hidden power",
+      "bubble beam"
     ]
   },
   primarina: {
@@ -705,7 +875,10 @@ var pokemonList = {
     defense: 65,
     speed: 46,
     moves: [
-      ""
+      "encore",
+      "moonblast",
+      "scald",
+      "light screen"
     ]
   },
   // NAME: {
@@ -818,8 +991,4 @@ var pokemonTypes = {
     weaknesses: [ 'poison', 'steel' ],
     buffers: [ 'fighting', 'bug', 'dark' ]
   }
-}
-
-var pokemonMoves = {
-
 }

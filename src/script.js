@@ -130,7 +130,7 @@ function whatMove () {
   var moves = game.user.primary.moves;
   textbox.innerHTML = '<span id="moveMessage">Use a move!</span>';
   for (var i = 0; i < moves.length; i++) {
-    textbox.innerHTML += '<br />' + moves[i];
+    textbox.innerHTML += '<br />' + moves[i].pretty();
   }
 }
 
