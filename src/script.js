@@ -1,4 +1,4 @@
-/* global pokemonList, pokemonListOptions, types, moves */
+/* global pokemonList, pokemonListOptions, pokemonTypes, pokemonMoves */
 var cont = false;
 var slot = 0;
 var pokemonTyping = {};
@@ -112,20 +112,44 @@ function homeChoice (choice) {
 function fight () {
   var randomEnemy = pokemonListOptions[Math.floor(Math.random() * pokemonListOptions.length)];
   textbox.innerText = 'A random ' + randomEnemy + ' appears!';
-  setTimeout(function() {
-    var moves = game.user.primary.moves;
-    textbox.innerText = 'Use a move!';
-    for (var i = 0; i < moves.length; i++) {
-      textbox.innerHTML += '<br />' + moves[i];
-    }
-  }, 2000)
+  setTimeout(whatMove, 2000);
   currentEnter = useMove;
 }
 
-function useMove (move) {
-  if (game.user.primary.moves.includes(useMove)) {
-
+function whatMove () {
+  var moves = game.user.primary.moves;
+  textbox.innerHTML = '<span id="moveMessage">Use a move!</span>';
+  for (var i = 0; i < moves.length; i++) {
+    textbox.innerHTML += '<br />' + moves[i];
   }
+}
+
+function useMove (move, enemy) {
+  pokemonTyping.randomWord = wordBank.level1[Math.floor(Math.random() * wordBank.length)];
+  if (game.user.primary.moves.includes(move)) {
+    pokemonTyping.move = pokemonMoves[move];
+    document.getElementById('moveMessage').innerHTML = '<center>"' + pokemonTyping.randomWord + '"</center>';
+    currentEnter = confirmMove;
+  }
+}
+
+function confirmMove (word) {
+  if (pokemonTyping.randomWord === word) {
+    var buffer;
+    if (pokemonTypes[pokemonTyping.enemy.type].nulls.includes(pokemonTyping.move)) {
+      buffer = 0;
+    } else if (pokemonTypes[pokemonTyping.enemy.type].weaknesses.includes(pokemonTyping.move)) {
+      buffer = 2;
+    } else if (pokemonTypes[pokemonTyping.enemy.type].buffers.includes(pokemonTyping.move)) {
+      buffer = 0.5;
+    } else {
+      buffer = 1;
+    }
+    pokemonTyping.enemy.hp -= pokemonTyping.move.power * buffer;
+  } else {
+    null;
+  }
+  whatMove();
 }
 
 function pokemon () {
@@ -134,6 +158,22 @@ function pokemon () {
 
 function load () {
 
+}
+
+function Pokemon (pokemon, userPokemon) {
+  this.prettyName = pokemon.prettyName;
+  this.type = pokemon.type;
+  this.hp = pokemon.hp;
+  this.moves = [];
+  for (var i = 0; i < pokemon.moves.length; i++) {
+    this.moves.push(pokemon.moves[i]);
+  }
+  if (userPokemon) {
+    this.image = pokemon.hero;
+    this.experience = 0;
+  } else {
+    this.image = pokemon.enemy;
+  }
 }
 
 document.onkeyup = function (e) {
