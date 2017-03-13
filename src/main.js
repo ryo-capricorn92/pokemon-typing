@@ -100,9 +100,7 @@ function createMove (pokemon, chosenMoves, pokemonMoveList, level, needAttack) {
   var goodMove = false, currentMoveStr, currentMove;
   while (!goodMove) {
     currentMoveStr = pokemon.moves[Math.floor(Math.random() * pokemon.moves.length)];
-    console.log(currentMoveStr);
     currentMove = pokemonMoves.move[currentMoveStr];
-    console.log(currentMove);
     // if the move's power is below the level limit
     // and the move hasn't already been chosen
     // and this move is not an attack when we need an attack
