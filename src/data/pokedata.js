@@ -573,9 +573,7 @@ var pokemonList = {
   //   attack: INT,
   //   defense: INT,
   //   speed: INT,
-  //   moves: [
-  //     ""
-  //   ]
+  //   moves: pokemonMoves.poke['NAME']
   // },
 }
 
