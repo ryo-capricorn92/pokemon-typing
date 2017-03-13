@@ -49,7 +49,7 @@ function pickStarter (pokemon) {
   }
   if (pokemonList[pokemon]) {
     textbox.innerHTML = 'So you\'d like to start with the ' + pokemonList[pokemon].type + ' type pokemon, ' + pokemonList[pokemon].name.pretty() + '?';
-    game.user.team = [pokemonList[pokemon]];
+    game.user.team = [new Pokemon(pokemonList[pokemon], 1, true)];
     game.user.primary = game.user.team[0];
   }
 }

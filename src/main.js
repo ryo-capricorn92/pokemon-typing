@@ -71,19 +71,51 @@ function load () {
 
 }
 
-function Pokemon (pokemon, userPokemon) {
+function Pokemon (pokemon, level, userPokemon) {
+  level = level > 40 ? level : 40;
+  var attackExists = false, goodMove, currentMoveStr, currentMove;
+  var chosenMoves = [];
+  this.name = pokemon.name;
   this.type = pokemon.type;
   this.hp = pokemon.hp;
+  this.attack = pokemon.attack;
+  this.defense = pokemon.defense;
+  this.speed = pokemon.speed;
   this.moves = [];
-  for (var i = 0; i < pokemon.moves.length; i++) {
-    this.moves.push(pokemon.moves[i]);
+  for (var i = 0; i < 2; i++) {
+    if (createMove(pokemon, chosenMoves, this.moves, level)) {
+      attackExists = true;
+    }
+
+    // make sure at least one move is an attack.
+    if (attackExists) {
+      createMove(pokemon, chosenMoves, this.moves, level)
+    } else {
+      createMove(pokemon, chosenMoves, this.moves, level, true);
+    }
   }
-  if (userPokemon) {
-    this.image = pokemon.hero;
-    this.experience = 0;
-  } else {
-    this.image = pokemon.enemy;
+}
+
+function createMove (pokemon, chosenMoves, pokemonMoveList, level, needAttack) {
+  var goodMove = false, currentMoveStr, currentMove;
+  while (!goodMove) {
+    currentMoveStr = pokemon.moves[Math.floor(Math.random() * pokemon.moves.length)];
+    console.log(currentMoveStr);
+    currentMove = pokemonMoves.move[currentMoveStr];
+    console.log(currentMove);
+    // if the move's power is below the level limit
+    // and the move hasn't already been chosen
+    // and this move is not an attack when we need an attack
+    if (currentMove.power <= level &&
+      !chosenMoves.includes(currentMoveStr) &&
+      !(needAttack && !currentMove.power)) {
+        goodMove = true;
+      }
+    if (needAttack && !currentMove.power) {}
   }
+  chosenMoves.push(currentMoveStr);
+  pokemonMoveList.push(currentMove);
+  if (currentMove.power) { return true; }
 }
 
 document.onkeydown = function (e) {
