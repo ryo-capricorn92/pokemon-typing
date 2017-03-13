@@ -2,6 +2,7 @@ var pokemonList = {
   bulbasaur: {
     name: "bulbasaur",
     type: [ "grass", "poison" ],
+    stage: 0,
     hp: 65,
     attack: 45,
     defense: 45,
@@ -11,6 +12,7 @@ var pokemonList = {
   ivysaur: {
     name: "ivysaur",
     type: [ "grass", "poison" ],
+    stage: 1,
     hp: 72,
     attack: 52,
     defense: 52,
@@ -20,6 +22,7 @@ var pokemonList = {
   venusaur: {
     name: "venusaur",
     type: [ "grass", "poison" ],
+    stage: 3,
     hp: 82,
     attack: 74,
     defense: 80,
@@ -29,6 +32,7 @@ var pokemonList = {
   charmander: {
     name: "charmander",
     type: [ "fire" ],
+    stage: 0,
     hp: 62,
     attack: 44,
     defense: 38,
@@ -38,6 +42,7 @@ var pokemonList = {
   charmeleon: {
     name: "charmeleon",
     type: [ "fire" ],
+    stage: 1,
     hp: 71,
     attack: 53,
     defense: 47,
@@ -47,6 +52,7 @@ var pokemonList = {
   charizard: {
     name: "charizard",
     type: [ "fire", "flying" ],
+    stage: 3,
     hp: 81,
     attack: 65,
     defense: 58,
@@ -56,6 +62,7 @@ var pokemonList = {
   squirtle: {
     name: "squirtle",
     type: [ "water" ],
+    stage: 0,
     hp: 64,
     attack: 40,
     defense: 48,
@@ -65,6 +72,7 @@ var pokemonList = {
   wartortle: {
     name: "wartortle",
     type: [ "water" ],
+    stage: 1,
     hp: 72,
     attack: 48,
     defense: 57,
@@ -74,6 +82,7 @@ var pokemonList = {
   blastoise: {
     name: "blastoise",
     type: [ "water" ],
+    stage: 3,
     hp: 82,
     attack: 59,
     defense: 69,
@@ -83,6 +92,7 @@ var pokemonList = {
   chikorita: {
     name: "chikorita",
     type: [ "grass" ],
+    stage: 0,
     hp: 65,
     attack: 40,
     defense: 49,
@@ -92,6 +102,7 @@ var pokemonList = {
   bayleef: {
     name: "bayleef",
     type: [ "grass" ],
+    stage: 1,
     hp: 72,
     attack: 47,
     defense: 57,
@@ -101,6 +112,7 @@ var pokemonList = {
   meganium: {
     name: "meganium",
     type: [ "grass" ],
+    stage: 3,
     hp: 82,
     attack: 58,
     defense: 68,
@@ -110,6 +122,7 @@ var pokemonList = {
   cyndaquil: {
     name: "cyndaquil",
     type: [ "fire" ],
+    stage: 0,
     hp: 62,
     attack: 43,
     defense: 38,
@@ -119,6 +132,7 @@ var pokemonList = {
   quilava: {
     name: "quilava",
     type: [ "fire" ],
+    stage: 1,
     hp: 71,
     attack: 52,
     defense: 47,
@@ -128,6 +142,7 @@ var pokemonList = {
   typhlosian: {
     name: "typhlosian",
     type: [ "fire" ],
+    stage: 3,
     hp: 81,
     attack: 66,
     defense: 58,
@@ -137,6 +152,7 @@ var pokemonList = {
   totodile: {
     name: "totodile",
     type: [ "water" ],
+    stage: 0,
     hp: 67,
     attack: 43,
     defense: 43,
@@ -146,6 +162,7 @@ var pokemonList = {
   croconaw: {
     name: "croconaw",
     type: [ "water" ],
+    stage: 1,
     hp: 75,
     attack: 51,
     defense: 52,
@@ -155,6 +172,7 @@ var pokemonList = {
   feraligator: {
     name: "feraligator",
     type: [ "water" ],
+    stage: 3,
     hp: 85,
     attack: 64,
     defense: 63,
@@ -164,6 +182,7 @@ var pokemonList = {
   treecko: {
     name: "treecko",
     type: [ "grass" ],
+    stage: 0,
     hp: 62,
     attack: 43,
     defense: 38,
@@ -173,6 +192,7 @@ var pokemonList = {
   grovyle: {
     name: "grovyle",
     type: [ "grass" ],
+    stage: 1,
     hp: 67,
     attack: 54,
     defense: 43,
@@ -182,6 +202,7 @@ var pokemonList = {
   sceptile: {
     name: "sceptile",
     type: [ "grass" ],
+    stage: 3,
     hp: 77,
     attack: 65,
     defense: 54,
@@ -191,6 +212,7 @@ var pokemonList = {
   torchic: {
     name: "torchic",
     type: [ "fire" ],
+    stage: 0,
     hp: 65,
     attack: 48,
     defense: 37,
@@ -200,6 +222,7 @@ var pokemonList = {
   combusken: {
     name: "combusken",
     type: [ "fire", "fighting" ],
+    stage: 1,
     hp: 72,
     attack: 60,
     defense: 46,
@@ -209,6 +232,7 @@ var pokemonList = {
   blaziken: {
     name: "blaziken",
     type: [ "fire", "fighting" ],
+    stage: 3,
     hp: 82,
     attack: 76,
     defense: 51,
@@ -218,6 +242,7 @@ var pokemonList = {
   mudkip: {
     name: "mudkip",
     type: [ "water" ],
+    stage: 0,
     hp: 67,
     attack: 45,
     defense: 40,
@@ -227,6 +252,7 @@ var pokemonList = {
   marshtomp: {
     name: "marshtomp",
     type: [ "water", "ground" ],
+    stage: 1,
     hp: 77,
     attack: 53,
     defense: 51,
@@ -236,6 +262,7 @@ var pokemonList = {
   swampert: {
     name: "swampert",
     type: [ "water", "ground" ],
+    stage: 3,
     hp: 92,
     attack: 66,
     defense: 62,
@@ -245,6 +272,7 @@ var pokemonList = {
   turtwig: {
     name: "turtwig",
     type: [ "grass" ],
+    stage: 0,
     hp: 70,
     attack: 44,
     defense: 46,
@@ -254,6 +282,7 @@ var pokemonList = {
   grotle: {
     name: "grotle",
     type: [ "grass" ],
+    stage: 1,
     hp: 80,
     attack: 53,
     defense: 54,
@@ -263,6 +292,7 @@ var pokemonList = {
   torterra: {
     name: "torterra",
     type: [ "grass", "ground" ],
+    stage: 3,
     hp: 90,
     attack: 64,
     defense: 65,
@@ -272,6 +302,7 @@ var pokemonList = {
   chimchar: {
     name: "chimchar",
     type: [ "fire" ],
+    stage: 0,
     hp: 64,
     attack: 45,
     defense: 37,
@@ -281,6 +312,7 @@ var pokemonList = {
   monferno: {
     name: "monferno",
     type: [ "fire", "fighting" ],
+    stage: 1,
     hp: 74,
     attack: 56,
     defense: 41,
@@ -290,6 +322,7 @@ var pokemonList = {
   infernape: {
     name: "infernape",
     type: [ "fire", "fighting" ],
+    stage: 3,
     hp: 80,
     attack: 70,
     defense: 52,
@@ -299,6 +332,7 @@ var pokemonList = {
   piplup: {
     name: "piplup",
     type: [ "water" ],
+    stage: 0,
     hp: 69,
     attack: 44,
     defense: 43,
@@ -308,6 +342,7 @@ var pokemonList = {
   prinplup: {
     name: "prinplup",
     type: [ "water" ],
+    stage: 1,
     hp: 74,
     attack: 53,
     defense: 52,
@@ -317,6 +352,7 @@ var pokemonList = {
   empoleon: {
     name: "empoleon",
     type: [ "water", "steel" ],
+    stage: 3,
     hp: 84,
     attack: 67,
     defense: 65,
@@ -326,6 +362,7 @@ var pokemonList = {
   snivy: {
     name: "snivy",
     type: [ "grass" ],
+    stage: 0,
     hp: 65,
     attack: 38,
     defense: 44,
@@ -335,6 +372,7 @@ var pokemonList = {
   servine: {
     name: "servine",
     type: [ "grass" ],
+    stage: 1,
     hp: 72,
     attack: 46,
     defense: 55,
@@ -344,6 +382,7 @@ var pokemonList = {
   serperior: {
     name: "serperior",
     type: [ "grass" ],
+    stage: 3,
     hp: 80,
     attack: 55,
     defense: 66,
@@ -353,6 +392,7 @@ var pokemonList = {
   tepig: {
     name: "tepig",
     type: [ "fire" ],
+    stage: 0,
     hp: 75,
     attack: 43,
     defense: 38,
@@ -362,6 +402,7 @@ var pokemonList = {
   pignite: {
     name: "pignite",
     type: [ "fire", "fighting" ],
+    stage: 1,
     hp: 87,
     attack: 67,
     defense: 44,
@@ -371,6 +412,7 @@ var pokemonList = {
   emboar: {
     name: "emboar",
     type: [ "fire", "fighting" ],
+    stage: 3,
     hp: 97,
     attack: 74,
     defense: 49,
@@ -380,6 +422,7 @@ var pokemonList = {
   oshawott: {
     name: "oshawott",
     type: [ "water" ],
+    stage: 0,
     hp: 70,
     attack: 46,
     defense: 38,
@@ -389,6 +432,7 @@ var pokemonList = {
   dewott: {
     name: "dewott",
     type: [ "water" ],
+    stage: 1,
     hp: 80,
     attack: 57,
     defense: 46,
@@ -398,6 +442,7 @@ var pokemonList = {
   samurott: {
     name: "samurott",
     type: [ "water" ],
+    stage: 3,
     hp: 90,
     attack: 75,
     defense: 55,
@@ -407,6 +452,7 @@ var pokemonList = {
   chespin: {
     name: "chespin",
     type: [ "grass" ],
+    stage: 0,
     hp: 70,
     attack: 43,
     defense: 43,
@@ -416,6 +462,7 @@ var pokemonList = {
   quilladin: {
     name: "quilladin",
     type: [ "grass" ],
+    stage: 1,
     hp: 73,
     attack: 50,
     defense: 55,
@@ -425,6 +472,7 @@ var pokemonList = {
   chesnaught: {
     name: "chesnaught",
     type: [ "grass", "fighting" ],
+    stage: 3,
     hp: 86,
     attack: 62,
     defense: 67,
@@ -434,6 +482,7 @@ var pokemonList = {
   fennekin: {
     name: "fennekin",
     type: [ "fire" ],
+    stage: 0,
     hp: 62,
     attack: 42,
     defense: 40,
@@ -443,6 +492,7 @@ var pokemonList = {
   braixen: {
     name: "braixen",
     type: [ "fire" ],
+    stage: 1,
     hp: 72,
     attack: 54,
     defense: 48,
@@ -452,6 +502,7 @@ var pokemonList = {
   delphox: {
     name: "delphox",
     type: [ "fire", "psychic" ],
+    stage: 3,
     hp: 80,
     attack: 63,
     defense: 60,
@@ -461,6 +512,7 @@ var pokemonList = {
   froakie: {
     name: "froakie",
     type: [ "water" ],
+    stage: 0,
     hp: 63,
     attack: 45,
     defense: 36,
@@ -470,6 +522,7 @@ var pokemonList = {
   frogadier: {
     name: "frogadier",
     type: [ "water" ],
+    stage: 1,
     hp: 69,
     attack: 53,
     defense: 42,
@@ -479,6 +532,7 @@ var pokemonList = {
   greninja: {
     name: "greninja",
     type: [ "water", "dark" ],
+    stage: 3,
     hp: 78,
     attack: 68,
     defense: 51,
@@ -488,6 +542,7 @@ var pokemonList = {
   rowlet: {
     name: "rowlet",
     type: [ "grass", "flying" ],
+    stage: 0,
     hp: 76,
     attack: 42,
     defense: 42,
@@ -497,6 +552,7 @@ var pokemonList = {
   dartrix: {
     name: "dartrix",
     type: [ "grass", "flying" ],
+    stage: 1,
     hp: 81,
     attack: 53,
     defense: 53,
@@ -506,6 +562,7 @@ var pokemonList = {
   decidueye: {
     name: "decidueye",
     type: [ "grass", "ghost" ],
+    stage: 3,
     hp: 81,
     attack: 70,
     defense: 61,
@@ -515,6 +572,7 @@ var pokemonList = {
   litten: {
     name: "litten",
     type: [ "fire" ],
+    stage: 0,
     hp: 65,
     attack: 47,
     defense: 35,
@@ -524,6 +582,7 @@ var pokemonList = {
   torracat: {
     name: "torracat",
     type: [ "fire" ],
+    stage: 1,
     hp: 75,
     attack: 58,
     defense: 40,
@@ -533,6 +592,7 @@ var pokemonList = {
   incineroar: {
     name: "incineroar",
     type: [ "fire", "dark" ],
+    stage: 3,
     hp: 90,
     attack: 67,
     defense: 62,
@@ -542,6 +602,7 @@ var pokemonList = {
   popplio: {
     name: "popplio",
     type: [ "water" ],
+    stage: 0,
     hp: 67,
     attack: 45,
     defense: 43,
@@ -551,6 +612,7 @@ var pokemonList = {
   brionne: {
     name: "brionne",
     type: [ "water" ],
+    stage: 1,
     hp: 72,
     attack: 57,
     defense: 54,
@@ -560,6 +622,7 @@ var pokemonList = {
   primarina: {
     name: "primarina",
     type: [ "water", "fairy" ],
+    stage: 3,
     hp: 82,
     attack: 62,
     defense: 65,
