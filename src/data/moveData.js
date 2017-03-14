@@ -153,4 +153,5 @@ pokemonMoves.move["mega kick"] = new Move ("mega kick", 120, 0, "normal", null);
 pokemonMoves.move["signal beam"] = new Move ("signal beam", 75, 0, "bug", null);
 pokemonMoves.move["smack down"] = new Move ("smack down", 50, 0, "rock", null);
 pokemonMoves.move["yawn"] = new Move ("yawn", 0, 0, "normal", null);
+pokemonMoves.move["tail whip"] = new Move ("tail whip", 0, 0, "normal", null);
 // pokemonMoves.move["NAME"] = new Move ("NAME", POWER, 0, "TYPE", null);

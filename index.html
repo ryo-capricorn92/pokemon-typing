@@ -15,14 +15,27 @@
 
       <div id="wrapper">
         <div id="window" class="background">
-          <div id="enemy">
-            <img src="assets/images/bulbasaur.png" alt="bulbasaur" />
-          </div>
-          <div id="hero">
-            <img src="assets/images/charmander.png" alt="charmander">
-          </div>
-
+          <img id="enemy" src="assets/images/bulbasaur.png" alt="bulbasaur" />
+          <img id="hero" src="assets/images/charmander.png" alt="charmander">
         </div>
+
+        <div id="healthbars" class="invisible">
+          <div class="hero">
+            <div id="heroName">Charmander</div>
+            <div class="hp">
+              <div id="heroHP"></div>
+              <div class="hpBorder"></div>
+            </div>
+          </div>
+          <div class="enemy">
+            <div id="enemyName">Bulbasaur</div>
+            <div class="hp">
+              <div id="enemyHP"></div>
+              <div class="hpBorder"></div>
+            </div>
+          </div>
+        </div>
+
         <div id="textbox">
           Press any key to get started . . .
         </div>

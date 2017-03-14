@@ -10,6 +10,6 @@ var pokemonMoves = {
     squirtle: [ "aqua ring", "attract", "bite", "blizzard", "bubble", "defense curl", "dig", "dive", "hail", "headbutt", "hidden power", "icy wind", "mirror coat", "mist", "mud-slap", "rapid spin", "rollout", "strength", "surf", "swagger", "tackle", "tail whip", "water gun", "zen headbutt", "withdraw" ],
     wartortle: [ "aqua jet", "aqua tail", "bite", "blizzard", "body slam", "dive", "double team", "headbutt", "hydro pump", "ice beam", "iron tail", "mirror coat", "rapid spin", "rollout", "seismic toss", "skull bash", "surf", "toxic", "waterfall", "water pulse", "whirlpool", "zen headbutt", "swagger", "strength", "rock tomb" ],
     blastoise: [ "aqua tail", "avalanche", "body slam", "bulldoze", "dark pulse", "dig", "dragon tail", "earthquake", "giga impact", "hydro cannon", "hyper beam", "ice beam", "mega kick", "rapid spin", "rollout", "seismic toss", "signal beam", "skull bash", "smack down", "surf", "swagger", "toxic", "water pulse", "zen headbutt", "yawn" ],
-    POKE: [ "MOVE1", "MOVE2", "MOVE3", "MOVE4", "MOVE5", "MOVE6", "MOVE7", "MOVE8", "MOVE9", "MOVE10", "MOVE11", "MOVE12", "MOVE13", "MOVE14", "MOVE15", "MOVE16", "MOVE17", "MOVE18", "MOVE19", "MOVE20", "MOVE21", "MOVE22", "MOVE23", "MOVE24", "MOVE25" ],
+    // POKE: [ "MOVE1", "MOVE2", "MOVE3", "MOVE4", "MOVE5", "MOVE6", "MOVE7", "MOVE8", "MOVE9", "MOVE10", "MOVE11", "MOVE12", "MOVE13", "MOVE14", "MOVE15", "MOVE16", "MOVE17", "MOVE18", "MOVE19", "MOVE20", "MOVE21", "MOVE22", "MOVE23", "MOVE24", "MOVE25" ],
   }
 }

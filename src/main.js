@@ -1,8 +1,8 @@
 /* global pokemonList, pokemonListOptions, pokemonTypes, pokemonMoves */
 var cont = false;
 var slot = 0;
-var pokemonTyping = {};
-var game;
+var main = {};
+var game = localStorage.getItem('pokemon-typing');
 var currentContinue;
 var currentEnter = genericEnter;
 var textbox = document.getElementById('textbox');
@@ -17,20 +17,19 @@ String.prototype.pretty = function () {
   return strArr.join(' ');
 }
 
-if (!localStorage.pokemonTyping) {
+if (!game) {
   newGame(1);
 } else {
-  pokemonTyping = JSON.parse(localStorage.getItem('pokemonTyping'));
-  game = pokemonTyping["gameSlot" + slot];
+  main = game['gameSlot' + slot];
   homescreen();
 }
 
 function save () {
-  localStorage.setItem("pokemonTyping", JSON.stringify(pokemonTyping));
+  localStorage.setItem('pokemon-typing', JSON.stringify(game));
 }
 
 function goOn () {
-  cont = false;
+  currentEnter();
 }
 
 function keepGoing (func, args) {
@@ -43,6 +42,7 @@ function genericEnter () {
 }
 
 function homescreen () {
+  document.getElementById('healthbars').classList.toggle('invisible', true);
   textbox.innerHTML = 'What would you like to do?<br /><br />Fight!<br />Check Pokemon<br />Save<br />Load';
   currentEnter = homeChoice;
 }
@@ -77,11 +77,14 @@ function Pokemon (pokemon, level, userPokemon) {
   var chosenMoves = [];
   this.name = pokemon.name;
   this.type = pokemon.type;
+  this.stage = pokemon.stage;
   this.hp = pokemon.hp;
+  this.bhp = pokemon.hp;
   this.attack = pokemon.attack;
   this.defense = pokemon.defense;
   this.speed = pokemon.speed;
   this.moves = [];
+  if (!pokemon.moves) { return }
   for (var i = 0; i < 2; i++) {
     if (createMove(pokemon, chosenMoves, this.moves, level)) {
       attackExists = true;
@@ -101,6 +104,10 @@ function createMove (pokemon, chosenMoves, pokemonMoveList, level, needAttack) {
   while (!goodMove) {
     currentMoveStr = pokemon.moves[Math.floor(Math.random() * pokemon.moves.length)];
     currentMove = pokemonMoves.move[currentMoveStr];
+    if (!currentMove) {
+      console.log(currentMoveStr);
+      continue;
+    }
     // if the move's power is below the level limit
     // and the move hasn't already been chosen
     // and this move is not an attack when we need an attack
@@ -133,4 +140,34 @@ document.onkeydown = function (e) {
     currentEnter(userInput.innerText);
     userInput.innerText = '';
   }
+}
+
+
+
+
+
+/* TEST FUNCTIONS */
+function testData () {
+  console.log('POKEMON WITHOUT MOVELISTS');
+  console.log('----------------------');
+  for (var pokemon in pokemonList) {
+    if (!pokemonList[pokemon].moves) {
+      console.log(pokemon.pretty());
+    }
+  }
+  console.log('');
+  console.log('MOVES WITHOUT DEFINITION');
+  console.log('----------------------');
+  var missingMovesList = [];
+  for (var pokemon in pokemonMoves.poke) {
+    pokemon = pokemonMoves.poke[pokemon];
+    for (var i = 0; i < pokemon.length; i++) {
+      if (!pokemonMoves.move[pokemon[i]] && !missingMovesList.includes(pokemon[i])) {
+        missingMovesList.push(pokemon[i]);
+      }
+    }
+  }
+  missingMovesList.forEach(function (move) {
+    console.log(move);
+  })
 }
