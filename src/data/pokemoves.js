@@ -17,5 +17,6 @@ var pokemonMoves = {
     quilava: [ "body slam", "brick break", "crush claw", "cut", "defense curl", "dig", "double kick", "ember", "eruption", "fire blast", "flamethrower", "focus punch", "fury cutter", "headbutt", "incinerate", "inferno", "lava plume", "overheat", "quick attack", "rock smash", "swift", "sunny day", "strength", "rollout", "thrash" ],
     // typhlosian: [ "blast burn", "body slam", "burn up", "crush claw", "defense curl", "double team", "eruption", "fire blast", "flame burst", "giga impact", "heat wave", "hyper beam", "MOVE13", "MOVE14", "MOVE15", "MOVE16", "MOVE17", "MOVE18", "MOVE19", "MOVE20", "MOVE21", "MOVE22", "MOVE23", "MOVE24", "MOVE25" ],
     // POKE: [ "MOVE1", "MOVE2", "MOVE3", "MOVE4", "MOVE5", "MOVE6", "MOVE7", "MOVE8", "MOVE9", "MOVE10", "MOVE11", "MOVE12", "MOVE13", "MOVE14", "MOVE15", "MOVE16", "MOVE17", "MOVE18", "MOVE19", "MOVE20", "MOVE21", "MOVE22", "MOVE23", "MOVE24", "MOVE25" ],
+    // POKE: [ "MOVE1", "MOVE2", "MOVE3", "MOVE4", "MOVE5", "MOVE6", "MOVE7", "MOVE8", "MOVE9", "MOVE10", "MOVE11", "MOVE12", "MOVE13", "MOVE14", "MOVE15", "MOVE16", "MOVE17", "MOVE18", "MOVE19", "MOVE20", "MOVE21", "MOVE22", "MOVE23", "MOVE24", "MOVE25" ],
   }
 }
