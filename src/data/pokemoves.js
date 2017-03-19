@@ -1,22 +1,213 @@
 var pokemonMoves = {
   move: {},
   poke: {
-    bulbasaur: [ "body slam", "charm", "cut", "defense curl", "giga drain", "grass knot", "growl", "growth", "headbutt", "hidden power", "leaf storm", "mud-slap", "poison powder", "razor leaf", "rock smash", "seed bomb", "sleep powder", "rest", "sleep talk", "sludge bomb", "solar beam", "vine whip", "venoshock", "toxic", "string shot" ],
-    ivysaur: [ "body slam", "bullet seed", "defense curl", "double team", "flash", "fury cutter", "giga drain", "grass knot", "growth", "headbutt", "hidden power", "leaf storm", "magical leaf", "mud-slap", "petal dance", "poison powder", "razor leaf", "rest", "rock smash", "skull bash", "sleep powder", "sludge", "solar beam", "venoshock", "toxic" ],
-    venusaur: [ "body slam", "bulldoze", "earthquake", "fury cutter", "giga drain", "giga impact", "grass knot", "growth", "hidden power", "hyper beam", "leaf storm", "mud-slap", "petal blizzard", "razor leaf", "rock smash", "seed bomb", "skull bash", "sleep powder", "solar beam", "synthesis", "take down", "toxic", "venoshock", "work up", "swords dance" ],
-    charmander: [ "attract", "bite", "blast burn", "brick break", "crunch", "cut", "defense curl", "dig", "double team", "dragon pulse", "ember", "fire fang", "fire punch", "fire spin", "flamethrower", "headbutt", "hidden power", "iron tail", "metal claw", "mud-slap", "quick attack", "rock slide", "scratch", "slash", "smokescreen" ],
-    charmeleon: [ "attract", "belly drum", "bite", "body slam", "crunch", "dig", "double team", "dragon claw", "dragon rage", "fire blast", "fire fang", "flame burst", "flamethrower", "headbutt", "heat wave", "iron tail", "mega punch", "rage", "rock tomb", "seismic toss", "will-o-wisp", "thunder punch", "swift", "strength", "smokescreen" ],
-    charizard: [ "air slash", "belly drum", "body slam", "brutal swing", "crunch", "defense curl", "dig", "dragon tail", "dynamic punch", "earthquake", "fire blast", "flamethrower", "giga impact", "heat wave", "hyper beam", "mega punch", "rage", "rock tomb", "seismic toss", "solar beam", "steel wing", "thunder punch", "wing attack", "twister", "toxic" ],
-    squirtle: [ "aqua ring", "attract", "bite", "blizzard", "bubble", "defense curl", "dig", "dive", "hail", "headbutt", "hidden power", "icy wind", "mirror coat", "mist", "mud-slap", "rapid spin", "rollout", "strength", "surf", "swagger", "tackle", "tail whip", "water gun", "zen headbutt", "withdraw" ],
-    wartortle: [ "aqua jet", "aqua tail", "bite", "blizzard", "body slam", "dive", "double team", "headbutt", "hydro pump", "ice beam", "iron tail", "mirror coat", "rapid spin", "rollout", "seismic toss", "skull bash", "surf", "toxic", "waterfall", "water pulse", "whirlpool", "zen headbutt", "swagger", "strength", "rock tomb" ],
-    blastoise: [ "aqua tail", "avalanche", "body slam", "bulldoze", "dark pulse", "dig", "dragon tail", "earthquake", "giga impact", "hydro cannon", "hyper beam", "ice beam", "mega kick", "rapid spin", "rollout", "seismic toss", "signal beam", "skull bash", "smack down", "surf", "swagger", "toxic", "water pulse", "zen headbutt", "yawn" ],
-    chikorita: [ "attract", "cut", "flash", "fury cutter", "grass whistle", "growl", "headbutt", "hidden power", "leech seed", "light screen", "poison powder", "razor leaf", "reflect", "seed bomb", "sunny day", "sweet scent", "synthesis", "tackle", "toxic", "vine whip", "worry seed", "swagger", "snore", "rest", "iron tail" ],
-    bayleef: [ "attract", "body slam", "bullet seed", "cut", "double edge", "double team", "frenzy plant", "fury cutter", "grass knot", "growl", "headbutt", "hidden power", "leaf storm", "leech seed", "light screen", "poison powder", "razor leaf", "rock smash", "seed bomb", "solar beam", "strength", "swagger", "synthesis", "toxic", "vine whip" ],
-    meganium: [ "body slam", "bulldoze", "bullet seed", "double team", "dragon tail", "earthquake", "frenzy plant", "giga drain", "giga impact", "grass knot", "heal pulse", "hidden power", "hyper beam", "leaf storm", "magical leaf", "petal blizzard", "protect", "rock smash", "solar beam", "strength", "synthesis", "toxic", "swords dance", "sweet scent", "sunny day" ],
-    cyndaquil: [ "attract", "crush claw", "cut", "defense curl", "dig", "double kick", "ember", "extrasensory", "fire pledge", "flame charge", "flamethrower", "flamce wheel", "frustration", "headbutt", "incinerate", "lava plume", "mud-slap", "quick attack", "rollout", "smokescreen", "sunny day", "swagger", "tackle", "swift", "wild charge" ],
-    quilava: [ "body slam", "brick break", "crush claw", "cut", "defense curl", "dig", "double kick", "ember", "eruption", "fire blast", "flamethrower", "focus punch", "fury cutter", "headbutt", "incinerate", "inferno", "lava plume", "overheat", "quick attack", "rock smash", "swift", "sunny day", "strength", "rollout", "thrash" ],
-    // typhlosian: [ "blast burn", "body slam", "burn up", "crush claw", "defense curl", "double team", "eruption", "fire blast", "flame burst", "giga impact", "heat wave", "hyper beam", "MOVE13", "MOVE14", "MOVE15", "MOVE16", "MOVE17", "MOVE18", "MOVE19", "MOVE20", "MOVE21", "MOVE22", "MOVE23", "MOVE24", "MOVE25" ],
-    // POKE: [ "MOVE1", "MOVE2", "MOVE3", "MOVE4", "MOVE5", "MOVE6", "MOVE7", "MOVE8", "MOVE9", "MOVE10", "MOVE11", "MOVE12", "MOVE13", "MOVE14", "MOVE15", "MOVE16", "MOVE17", "MOVE18", "MOVE19", "MOVE20", "MOVE21", "MOVE22", "MOVE23", "MOVE24", "MOVE25" ],
-    // POKE: [ "MOVE1", "MOVE2", "MOVE3", "MOVE4", "MOVE5", "MOVE6", "MOVE7", "MOVE8", "MOVE9", "MOVE10", "MOVE11", "MOVE12", "MOVE13", "MOVE14", "MOVE15", "MOVE16", "MOVE17", "MOVE18", "MOVE19", "MOVE20", "MOVE21", "MOVE22", "MOVE23", "MOVE24", "MOVE25" ],
+    bulbasaur: {
+      natural: {
+        move0: "tackle",
+        move3: "growl",
+        move7: "leech seed",
+        move9: "vine whip",
+        move13: [ "poison powder", "sleep powder" ],
+        move15: "take down",
+        move19: "razor leaf",
+        move21: "sweet scent",
+        move25: "growth",
+        move27: "double-edge",
+        move31: "worry seed",
+        move33: "synthesis",
+        move37: "seed bomb"
+      },
+      learn: {}
+    },
+    ivysaur: {
+      natural: {
+        move0: [ "tackle", "growl", "leech seed" ],
+        move9: "vine whip",
+        move13: [ "poison powder", "sleep powder" ],
+        move15: "take down",
+        move20: "razor leaf",
+        move23: "sweet scent",
+        move28: "growth",
+        move31: "double-edge",
+        move36: "worry seed",
+        move39: "synthesis",
+        move44: "solar beam"
+      },
+      learn: {}
+    },
+    venusaur: {
+      natural: {
+        move0: [ "tackle", "growl", "leech seed", "vine whip" ],
+        move13: [ "poison powder", "sleep powder" ],
+        move15: "take down",
+        move20: "razor leaf",
+        move23: "sweet scent",
+        move28: "growth",
+        move31: "double-edge",
+        move32: "petal dance",
+        move39: "worry seed",
+        move45: "synthesis",
+        move50: "petal blizzard",
+        move53: "solar beam"
+      },
+      learn: {}
+    },
+    charmander: {
+      natural: {
+        move0: [ "scratch", "growl" ],
+        move7: "ember",
+        move10: "smokescreen",
+        move16: "dragon rage",
+        move19: "scary face",
+        move25: "fire fang",
+        move28: "flame burst",
+        move34: "slash",
+        move37: "flamethrower",
+        move43: "flame spin",
+        move46: "inferno"
+      },
+      learn: {}
+    },
+    charmeleon: {
+      natural: {
+        move0: [ "scratch", "growl", "ember" ],
+        move10: "smokescreen",
+        move17: "dragon rage",
+        move21: "scary face",
+        move28: "fire fang",
+        move32: "flame burst",
+        move39: "slash",
+        move43: "flamethrower",
+        move50: "fire spin",
+        move54: "inferno"
+      },
+      learn: {}
+    },
+    charizard: {
+      natural: {
+        move0: [ "flare blitz", "heat wave", "dragon claw", "shadow claw", "air slash", "scratch", "growl", "ember", "smokescreen" ],
+        move17: "dragon rage",
+        move21: "scary face",
+        move28: "fire fang",
+        move32: "flame burst",
+        move36: "wing attack",
+        move41: "slash",
+        move47: "flamethrower",
+        move56: "fire spin",
+        move62: "inferno",
+        move71: "heat wave",
+        move77: "flare blitz"
+      },
+      learn: {}
+    },
+    squirtle: {
+      natural: {
+        move0: "tackle",
+        move4: "tail whip",
+        move7: "water gun",
+        move10: "withdraw",
+        move13: "bubble",
+        move16: "bite",
+        move19: "rapid spin",
+        move22: "protect",
+        move25: "water pulse",
+        move28: "aqua tail",
+        move31: "skull bash",
+        move34: "iron defense",
+        move37: "rain dance",
+        move40: "hydro pump"
+      },
+      learn: {}
+    },
+    wartortle: {
+      natural: {
+        move0: [ "tackle", "tail whip", "water gun" ],
+        move10: "withdraw",
+        move13: "bubble",
+        move16: "bite",
+        move20: "rapid spin",
+        move24: "protect",
+        move28: "water pulse",
+        move32: "aqua tail",
+        move36: "skull bash",
+        move40: "iron defense",
+        move44: "rain dance",
+        move48: "hydro pump"
+      },
+      learn: {}
+    },
+    blastoise: {
+      natural: {
+        move0: [ "flash cannon", "tackle", "tail whip", "water gun", "withdraw" ],
+        move13: "bubble",
+        move16: "bite",
+        move20: "rapid spin",
+        move24: "protect",
+        move28: "water pulse",
+        move32: "aqua tail",
+        move39: "skull bash",
+        move46: "iron defense",
+        move53: "rain dance",
+        move60: "hydro pump"
+      },
+      learn: {}
+    },
+    chikorita: {
+      natural: {
+        move0: [ "tackle", "growl" ],
+        move6: "razor leaf",
+        move9: "poison powder",
+        move12: "synthesis",
+        move17: "reflect",
+        move20: "magical leaf",
+        move23: "natural gift",
+        move28: "sweet scent",
+        move31: "light screen",
+        move34: "body slam",
+        move39: "safeguard",
+        move42: "aromatherapy",
+        move45: "solar beam"
+      },
+      learn: {}
+    },
+    bayleef: {
+      natural: {
+        move0: [ "tackle", "growl", "razor leaf", "poison powder" ],
+        move12: "synthesis",
+        move18: "reflect",
+        move22: "magical leaf",
+        move26: "natural gift",
+        move32: "sweet scent",
+        move36: "light screen",
+        move40: "body slam",
+        move46: "safeguard",
+        move50: "aromatherapy"
+      },
+      learn: {}
+    },
+    meganium: {
+      natural: {
+        move0: [ "tackle", "growl", "razor leaf", "poison powder" ],
+        move12: "synthesis",
+        move18: "reflect",
+        move22: "magical leaf",
+        move26: "natural gift",
+        move32: "petal dance",
+        move34: "sweet scent",
+        move40: "light screen",
+        move46: "body slam",
+        move54: "safeguard",
+        move60: "aromatherapy",
+        move66: "solar beam",
+        move70: "petal blizzard"
+      },
+      learn: {}
+    },
+    cyndaquil: {
+      natural: {
+
+      },
+      learn: {}
+    }
   }
 }

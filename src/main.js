@@ -75,15 +75,19 @@ function Pokemon (pokemon, level, userPokemon) {
   level = level > 40 ? level : 40;
   var attackExists = false, goodMove, currentMoveStr, currentMove;
   var chosenMoves = [];
+
   this.name = pokemon.name;
   this.type = pokemon.type;
-  this.stage = pokemon.stage;
+  this.stats = {
+    hp: pokemon.hp,
+    attack: pokemon.attack,
+    defense: pokemon.defense,
+    speed: pokemon.speed
+  }
   this.hp = pokemon.hp;
-  this.bhp = pokemon.hp;
-  this.attack = pokemon.attack;
-  this.defense = pokemon.defense;
-  this.speed = pokemon.speed;
+  this.evolution = pokemon.evolution;
   this.moves = [];
+
   if (!pokemon.moves) { return }
   for (var i = 0; i < 2; i++) {
     if (createMove(pokemon, chosenMoves, this.moves, level)) {
@@ -116,7 +120,6 @@ function createMove (pokemon, chosenMoves, pokemonMoveList, level, needAttack) {
       !(needAttack && !currentMove.power)) {
         goodMove = true;
       }
-    if (needAttack && !currentMove.power) {}
   }
   chosenMoves.push(currentMoveStr);
   pokemonMoveList.push(currentMove);
