@@ -164,6 +164,7 @@ function testData () {
   var missingMovesList = [];
   for (var pokemon in pokemonMoves.poke) {
     pokemon = pokemonMoves.poke[pokemon];
+    pokemon = Object.keys(pokemon);
     for (var i = 0; i < pokemon.length; i++) {
       if (!pokemonMoves.move[pokemon[i]] && !missingMovesList.includes(pokemon[i])) {
         missingMovesList.push(pokemon[i]);

@@ -12,7 +12,7 @@ var pokemonList = {
       next: "bulbasaur",
       method: "level",
       level: 16
-    }
+    },
     moves: pokemonMoves.poke['bulbasaur']
   },
   ivysaur: {
@@ -28,7 +28,7 @@ var pokemonList = {
       next: "venusaur",
       method: "level",
       level: 32
-    }
+    },
     moves: pokemonMoves.poke['ivysaur']
   },
   venusaur: {
@@ -43,7 +43,7 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['venusaur']
   },
   charmander: {
@@ -59,7 +59,7 @@ var pokemonList = {
       next: "charmeleon",
       method: "level",
       level: 16
-    }
+    },
     moves: pokemonMoves.poke['charmander']
   },
   charmeleon: {
@@ -75,7 +75,7 @@ var pokemonList = {
       next: "charizard",
       method: "level",
       level: 36
-    }
+    },
     moves: pokemonMoves.poke['charmeleon']
   },
   charizard: {
@@ -89,7 +89,7 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['charizard']
   },
   squirtle: {
@@ -105,7 +105,7 @@ var pokemonList = {
       next: "wartortle",
       method: "level",
       level: 16
-    }
+    },
     moves: pokemonMoves.poke['squirtle']
   },
   wartortle: {
@@ -121,7 +121,7 @@ var pokemonList = {
       next: "blastoise",
       method: "level",
       level: 36
-    }
+    },
     moves: pokemonMoves.poke['wartortle']
   },
   blastoise: {
@@ -135,7 +135,7 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['blastoise']
   },
   chikorita: {
@@ -151,7 +151,7 @@ var pokemonList = {
       next: "bayleef",
       method: "level",
       level: 16
-    }
+    },
     moves: pokemonMoves.poke['chikorita']
   },
   bayleef: {
@@ -167,7 +167,7 @@ var pokemonList = {
       next: "meganium",
       method: "level",
       level: 36
-    }
+    },
     moves: pokemonMoves.poke['bayleef']
   },
   meganium: {
@@ -181,7 +181,7 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['meganium']
   },
   cyndaquil: {
@@ -197,7 +197,7 @@ var pokemonList = {
       next: "quilava",
       method: "level",
       level: 14
-    }
+    },
     moves: pokemonMoves.poke['cyndaquil']
   },
   quilava: {
@@ -213,7 +213,7 @@ var pokemonList = {
       next: "typhlosian",
       method: "level",
       level: 36
-    }
+    },
     moves: pokemonMoves.poke['quilava']
   },
   typhlosian: {
@@ -227,7 +227,7 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['typhlosian']
   },
   totodile: {
@@ -243,7 +243,7 @@ var pokemonList = {
       next: "croconaw",
       method: "level",
       level: 18
-    }
+    },
     moves: pokemonMoves.poke['totodile']
   },
   croconaw: {
@@ -259,7 +259,7 @@ var pokemonList = {
       next: "feraligator",
       method: "level",
       level: 30
-    }
+    },
     moves: pokemonMoves.poke['croconaw']
   },
   feraligator: {
@@ -273,7 +273,7 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['feraligator']
   },
   treecko: {
@@ -289,7 +289,7 @@ var pokemonList = {
       next: "grovyle",
       method: "level",
       level: 16
-    }
+    },
     moves: pokemonMoves.poke['treecko']
   },
   grovyle: {
@@ -302,10 +302,10 @@ var pokemonList = {
     speed: 66,
     evolution: {
       stage: 1,
-      next: "sceptile".
+      next: "sceptile",
       method: "level",
       level: 36
-    }
+    },
     moves: pokemonMoves.poke['grovyle']
   },
   sceptile: {
@@ -319,7 +319,7 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['sceptile']
   },
   torchic: {
@@ -335,7 +335,7 @@ var pokemonList = {
       next: "combusken",
       method: "level",
       level: 16
-    }
+    },
     moves: pokemonMoves.poke['torchic']
   },
   combusken: {
@@ -351,7 +351,7 @@ var pokemonList = {
       next: "blaziken",
       method: "level",
       level: 36
-    }
+    },
     moves: pokemonMoves.poke['combusken']
   },
   blaziken: {
@@ -365,7 +365,7 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['blaziken']
   },
   mudkip: {
@@ -381,7 +381,7 @@ var pokemonList = {
       next: "marshtomp",
       method: "level",
       level: 16
-    }
+    },
     moves: pokemonMoves.poke['mudkip']
   },
   marshtomp: {
@@ -397,7 +397,7 @@ var pokemonList = {
       next: "swampert",
       method: "level",
       level: 36
-    }
+    },
     moves: pokemonMoves.poke['marshtomp']
   },
   swampert: {
@@ -411,7 +411,7 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['swampert']
   },
   turtwig: {
@@ -427,7 +427,7 @@ var pokemonList = {
       next: "grotle",
       method: "level",
       level: 18
-    }
+    },
     moves: pokemonMoves.poke['turtwig']
   },
   grotle: {
@@ -443,7 +443,7 @@ var pokemonList = {
       next: "torterra",
       method: "level",
       level: 32
-    }
+    },
     moves: pokemonMoves.poke['grotle']
   },
   torterra: {
@@ -457,11 +457,11 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['torterra']
   },
   chimchar: {
-    index: 390
+    index: 390,
     name: "chimchar",
     type: [ "fire" ],
     hp: 64,
@@ -473,7 +473,7 @@ var pokemonList = {
       next: "monferno",
       method: "level",
       level: 14
-    }
+    },
     moves: pokemonMoves.poke['chimchar']
   },
   monferno: {
@@ -489,7 +489,7 @@ var pokemonList = {
       next: "infernape",
       method: "level",
       level: 36
-    }
+    },
     moves: pokemonMoves.poke['monferno']
   },
   infernape: {
@@ -503,7 +503,7 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['infernape']
   },
   piplup: {
@@ -519,7 +519,7 @@ var pokemonList = {
       next: "prinplup",
       method: "level",
       level: 16
-    }
+    },
     moves: pokemonMoves.poke['piplup']
   },
   prinplup: {
@@ -535,7 +535,7 @@ var pokemonList = {
       next: "empoleon",
       method: "level",
       level: 36
-    }
+    },
     moves: pokemonMoves.poke['prinplup']
   },
   empoleon: {
@@ -549,7 +549,7 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['empoleon']
   },
   snivy: {
@@ -565,7 +565,7 @@ var pokemonList = {
       next: "servine",
       method: "level",
       level: 17
-    }
+    },
     moves: pokemonMoves.poke['snivy']
   },
   servine: {
@@ -581,7 +581,7 @@ var pokemonList = {
       next: "serperior",
       method: "level",
       level: 36
-    }
+    },
     moves: pokemonMoves.poke['servine']
   },
   serperior: {
@@ -595,7 +595,7 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['serperior']
   },
   tepig: {
@@ -611,7 +611,7 @@ var pokemonList = {
       next: "pignite",
       method: "level",
       level: 17
-    }
+    },
     moves: pokemonMoves.poke['tepig']
   },
   pignite: {
@@ -627,7 +627,7 @@ var pokemonList = {
       next: "emboar",
       method: "level",
       level: 36
-    }
+    },
     moves: pokemonMoves.poke['pignite']
   },
   emboar: {
@@ -641,7 +641,7 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['emboar']
   },
   oshawott: {
@@ -657,7 +657,7 @@ var pokemonList = {
       next: "dewott",
       method: "level",
       level: 17
-    }
+    },
     moves: pokemonMoves.poke['oshawott']
   },
   dewott: {
@@ -673,7 +673,7 @@ var pokemonList = {
       next: "samurott",
       method: "level",
       level: 36
-    }
+    },
     moves: pokemonMoves.poke['dewott']
   },
   samurott: {
@@ -687,7 +687,7 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['samurott']
   },
   chespin: {
@@ -703,7 +703,7 @@ var pokemonList = {
       next: "quilladin",
       method: "level",
       level: 16
-    }
+    },
     moves: pokemonMoves.poke['chespin']
   },
   quilladin: {
@@ -719,7 +719,7 @@ var pokemonList = {
       next: "chesnaught",
       method: "level",
       level: 36
-    }
+    },
     moves: pokemonMoves.poke['quilladin']
   },
   chesnaught: {
@@ -733,7 +733,7 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['chesnaught']
   },
   fennekin: {
@@ -749,7 +749,7 @@ var pokemonList = {
       next: "braixen",
       method: "level",
       level: 16
-    }
+    },
     moves: pokemonMoves.poke['fennekin']
   },
   braixen: {
@@ -765,7 +765,7 @@ var pokemonList = {
       next: "delphox",
       method: "level",
       level: 36
-    }
+    },
     moves: pokemonMoves.poke['braixen']
   },
   delphox: {
@@ -779,7 +779,7 @@ var pokemonList = {
     evolution: {
       stage: 1,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['delphox']
   },
   froakie: {
@@ -795,7 +795,7 @@ var pokemonList = {
       next: "frogadier",
       method: "level",
       level: 16
-    }
+    },
     moves: pokemonMoves.poke['froakie']
   },
   frogadier: {
@@ -811,7 +811,7 @@ var pokemonList = {
       next: "greninja",
       method: "level",
       level: 36
-    }
+    },
     moves: pokemonMoves.poke['frogadier']
   },
   greninja: {
@@ -825,7 +825,7 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['greninja']
   },
   rowlet: {
@@ -841,7 +841,7 @@ var pokemonList = {
       next: "dartrix",
       method: "level",
       level: 17
-    }
+    },
     moves: pokemonMoves.poke['rowlet']
   },
   dartrix: {
@@ -857,7 +857,7 @@ var pokemonList = {
       next: "decidueye",
       method: "level",
       level: 34
-    }
+    },
     moves: pokemonMoves.poke['dartrix']
   },
   decidueye: {
@@ -871,7 +871,7 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['decidueye']
   },
   litten: {
@@ -887,7 +887,7 @@ var pokemonList = {
       next: "torracat",
       method: "level",
       level: 17
-    }
+    },
     moves: pokemonMoves.poke['litten']
   },
   torracat: {
@@ -903,7 +903,7 @@ var pokemonList = {
       next: "incineroar",
       method: "level",
       level: 34
-    }
+    },
     moves: pokemonMoves.poke['torracat']
   },
   incineroar: {
@@ -917,7 +917,7 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['incineroar']
   },
   popplio: {
@@ -933,7 +933,7 @@ var pokemonList = {
       next: "brionne",
       method: "level",
       level: 17
-    }
+    },
     moves: pokemonMoves.poke['popplio']
   },
   brionne: {
@@ -949,7 +949,7 @@ var pokemonList = {
       next: "primarina",
       method: "level",
       level: 34
-    }
+    },
     moves: pokemonMoves.poke['brionne']
   },
   primarina: {
@@ -963,7 +963,7 @@ var pokemonList = {
     evolution: {
       stage: 2,
       next: null
-    }
+    },
     moves: pokemonMoves.poke['primarina']
   },
   // NAME: {
