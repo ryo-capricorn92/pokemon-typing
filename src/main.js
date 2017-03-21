@@ -151,27 +151,86 @@ document.onkeydown = function (e) {
 
 /* TEST FUNCTIONS */
 function testData () {
+  var completePokemon = 0;
+  var totalPokemon = 0;
+  var completeCompleteMoves = 0;
+  var completeMoves = 0;
+  var totalMoves = 0;
+  var missingMovesList = [];
+  var unusedMovesList = [];
+  var messageMovesList = [];
+
   console.log('POKEMON WITHOUT MOVELISTS');
   console.log('----------------------');
+  // check to make sure each pokemon has a defined movelist
   for (var pokemon in pokemonList) {
     if (!pokemonList[pokemon].moves) {
       console.log(pokemon.pretty());
     }
   }
-  console.log('');
-  console.log('MOVES WITHOUT DEFINITION');
-  console.log('----------------------');
-  var missingMovesList = [];
+  // TODO: check to see if each pokemon has a sprite added
   for (var pokemon in pokemonMoves.poke) {
-    pokemon = pokemonMoves.poke[pokemon];
-    pokemon = Object.keys(pokemon);
-    for (var i = 0; i < pokemon.length; i++) {
-      if (!pokemonMoves.move[pokemon[i]] && !missingMovesList.includes(pokemon[i])) {
-        missingMovesList.push(pokemon[i]);
+    totalPokemon++;
+    var pokemon = pokemonMoves.poke[pokemon];
+    var naturalMoves = pokemon.natural;
+    var movesArray = Object.keys(naturalMoves);
+    // check to see if all moves given to pokemon have been defined
+    for (var i = 0; i < movesArray.length; i++) {
+      var move = naturalMoves[movesArray[i]];
+      if (typeof move === "string") {
+        if (!pokemonMoves.move[move] && !missingMovesList.includes(move)) {
+          totalMoves++;
+          missingMovesList.push(move);
+        }
+      } else if (typeof move === 'object') {
+        var moveList = move;
+        for (var j = 0; j < moveList.length; j++) {
+          move = moveList[j];
+          if (!pokemonMoves.move[move] && !missingMovesList.includes(move)) {
+            totalMoves++;
+            missingMovesList.push(move);
+          }
+        }
       }
     }
   }
+  for (var move in pokemonMoves.move) {
+    completeMoves++;
+    if (pokemonMoves.move[move].notUsed) {
+      totalMoves++;
+      unusedMovesList.push(move);
+    } else if (pokemonMoves.move[move].message) {
+      totalMoves++;
+      messageMovesList.push(move);
+    } else {
+      totalMoves++;
+      completeCompleteMoves++;
+    }
+  };
+  console.log('');
+  console.log('MOVES WITHOUT DEFINITION');
+  console.log('----------------------');
   missingMovesList.forEach(function (move) {
     console.log(move);
-  })
+  });
+
+  console.log('');
+  console.log('UNUSED MOVES');
+  console.log('----------------------');
+  unusedMovesList.forEach(function (move) {
+    console.log(move);
+  });
+
+  console.log('');
+  console.log('MOVES WITH MESSAGES');
+  console.log('----------------------');
+  messageMovesList.forEach(function (move) {
+    console.log(move + ': ' + pokemonMoves.move[move].message);
+  });
+
+  console.log('');
+  console.log('DATA PERCENTAGES');
+  console.log('----------------------');
+  console.log('POKEMON COMPLETION: ' + completePokemon + '/' + totalPokemon);
+  console.log('MOVE COMPLETION: ' + completeCompleteMoves + '/' + completeMoves + '/' + totalMoves);
 }

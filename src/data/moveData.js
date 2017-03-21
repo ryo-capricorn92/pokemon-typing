@@ -47,28 +47,29 @@
   //   }
   // }
 
-  {
-    damageSelf: INT,
-    heal: INT,
-    healStatus: BOOL,
-    wait: {
-      turns: INT,
-      attackOn: INT,
-      afflictionOn: INT
-    },
-    target: BOOL,
-    affliction: STRING,
-    stat: STRING,
-    chance: INT,
-    factor: INT,
-    special: {
-      damage: BOOL,
-      duration: INT,
-      heal: INT,
-      protect: INT,
-      statusProtect: BOOL,
-    }
-  }
+
+  // {
+  //   damageSelf: INT,
+  //   heal: INT,
+  //   healStatus: BOOL,
+  //   wait: {
+  //     turns: INT,
+  //     attackOn: INT,
+  //     afflictionOn: INT
+  //   },
+  //   target: BOOL,
+  //   affliction: STRING,
+  //   stat: STRING,
+  //   chance: INT,
+  //   factor: INT,
+  //   special: {
+  //     damage: BOOL,
+  //     duration: INT,
+  //     heal: INT,
+  //     protect: INT,
+  //     statusProtect: BOOL,
+  //   }
+  // }
 
 function Move (name, power, type, effect, message) {
   this.name = name;
@@ -254,5 +255,4 @@ pokemonMoves.move["pain split"] = { name: "pain split", notUsed: true };
 pokemonMoves.move["needle arm"] = new Move ("needle arm", 60, "grass", null, "still needs flinching chance");
 pokemonMoves.move["belly drum"] = { name: "belly drum", notUsed: true };
 pokemonMoves.move["spikey shield"] = { name: "spikey shield", notUsed: true };
-pokemonMoves.move["NAME"] = new Move ("NAME", POWER, "TYPE", null);
-pokemonMoves.move["NAME"] = new Move ("NAME", POWER, "TYPE", null);
+// pokemonMoves.move["NAME"] = new Move ("NAME", POWER, "TYPE", null);
