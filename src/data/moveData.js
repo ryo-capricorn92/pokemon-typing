@@ -4,9 +4,10 @@
   //   type: TYPE,
   //   effects: {
   //     factors: {
-  //       chance: null
+  //       chance: null,
+  //       points: 0
   //     },
-  //     special: {
+  //     affliction: {
   //       burn: false,
   //       freeze: false,
   //       flinch: false,
@@ -15,143 +16,243 @@
   //       poison: false
   //     },
   //     stats: {
+  //       target: false,
   //       lowerDefense: false,
-  //       upDefense: false,
-  //
+  //       upDefense: false
   //     }
   //   }
   // }
 
-function Move (name, power, level, type, effect) {
+  // effect object to pass in to Move constructor MAP:
+  // all properties are optional unless marked otherwise
+  // {
+  //   damageSelf: INT, // percent of damage to opponent to inflict on self
+  //   heal: INT, // percent of total base HP to heal on self, or if entered as string, percent of damage inflicted to heal
+  //   healStatus: BOOL, // heal status conditions (affliction)
+  //   wait: { // if attack causes any kind of wait
+  //     turns: INT, // how many turns the move will take up
+  //     attackOn: INT // on what turn does the attack take effect
+  //   },
+  //   target: BOOL, // false to affect hero, true to affect enemy
+  //   affliction: STRING, // a string with the type of affliction effect (ie burn)
+  //   stat: STRING, // which stat to be affected, and how (ie, lowerDefense, upSpeed)
+  //   chance: INT, // chance for affliction/etc to take affect
+  //   factor: INT, // stage to drop/raise stat by (between 1 and 6)
+  //   special: { // object to contain special affects
+  //     damage: BOOL, // does it inflict it's damage continuously (ie, wrap), or what percentage of oponent's base HP to inflict if INT
+  //     duration: INT, // how many turns does it last? (1000 for permanently)
+  //     heal: INT, // percent of damage inflicted to heal
+  //     protect: INT, // what percentage of the next attack will it protect
+  //     statusProtect: BOOL // protect from status conditions (affliction)
+  //   }
+  // }
+
+  {
+    damageSelf: INT,
+    heal: INT,
+    healStatus: BOOL,
+    wait: {
+      turns: INT,
+      attackOn: INT,
+      afflictionOn: INT
+    },
+    target: BOOL,
+    affliction: STRING,
+    stat: STRING,
+    chance: INT,
+    factor: INT,
+    special: {
+      damage: BOOL,
+      duration: INT,
+      heal: INT,
+      protect: INT,
+      statusProtect: BOOL,
+    }
+  }
+
+function Move (name, power, type, effect, message) {
   this.name = name;
   this.power = power;
-  this.level = level;
   this.type = type;
   if (effect) {
     this.effects = {};
-    if (effect.special) {
-      this.effects.special = {};
-      this.effects.special[effect.special] = true;
-      this.effects.factors = {};
-      this.effects.factors.chance = effect.chance;
+    this.effects.target = effect.target;
+    this.effects.chance = effect.chance;
+    if (effect.damageSelf) {
+      this.damageSelf = effect.damageSelf;
     }
-    if (effect.stats) {
+    if (effect.heal) {
+      this.heal = effect.heal;
+    }
+    if (effect.affliction) {
+      this.effects.affliction = {};
+      this.effects.affliction[effect.affliction] = true;
+    }
+    if (effect.stat) {
       this.effects.stats = {};
-      this.effects.stats[effect.stats] = effect.factor;
+      this.effects.stats[effect.stat] = effect.factor;
     }
+  }
+  if (message) {
+    this.message = message;
   }
 }
 
-pokemonMoves.move["body slam"] = new Move ("body slam", 85, 0, "normal", null);
-pokemonMoves.move["charm"] = new Move ("charm", 0, 0, "fairy", null);
-pokemonMoves.move["cut"] = new Move ("cut", 50, 0, "normal", null);
-pokemonMoves.move["defense curl"] = new Move ("defense curl", 0, 0, "normal", null);
-pokemonMoves.move["giga drain"] = new Move ("giga drain", 75, 0, "grass", null);
-pokemonMoves.move["grass knot"] = new Move ("grass knot", 70, 0, "grass", null);
-pokemonMoves.move["growl"] = new Move ("growl", 0, 0, "normal", null);
-pokemonMoves.move["growth"] = new Move ("growth", 0, 0, "grass", null);
-pokemonMoves.move["headbutt"] = new Move ("headbutt", 70, 0, "normal", null);
-pokemonMoves.move["hidden power"] = new Move ("hidden power", 60, 0, "normal", null);
-pokemonMoves.move["leaf storm"] = new Move ("leaf storm", 130, 0, "grass", null);
-pokemonMoves.move["mud-slap"] = new Move ("mud-slap", 20, 0, "ground", null);
-pokemonMoves.move["poison powder"] = new Move ("poison powder", 0, 0, "poison", null);
-pokemonMoves.move["razor leaf"] = new Move ("razor leaf", 55, 0, "grass", null);
-pokemonMoves.move["rock smash"] = new Move ("rock smash", 40, 0, "fighting", null);
-pokemonMoves.move["seed bomb"] = new Move ("seed bomb", 80, 0, "grass", null);
-pokemonMoves.move["sleep powder"] = new Move ("sleep powder", 0, 0, "normal", null);
-pokemonMoves.move["rest"] = new Move ("rest", 0, 0, "normal", null);
-pokemonMoves.move["sleep talk"] = new Move ("sleep talk", 0, 0, "normal", null);
-pokemonMoves.move["sludge bomb"] = new Move ("sludge bomb", 90, 0, "poison", null);
-pokemonMoves.move["solar beam"] = new Move ("solar beam", 120, 0, "grass", null);
-pokemonMoves.move["vine whip"] = new Move ("vine whip", 45, 0, "grass", null);
-pokemonMoves.move["venoshock"] = new Move ("venoshock", 65, 0, "poison", null);
-pokemonMoves.move["toxic"] = new Move ("toxic", 0, 0, "poison", null);
-pokemonMoves.move["string shot"] = new Move ("string shot", 0, 0, "bug", null);
-pokemonMoves.move["bullet seed"] = new Move ("bullet seed", 25, 0, "grass", null);
-pokemonMoves.move["double team"] = new Move ("double team", 0, 0, "normal", null);
-pokemonMoves.move["flash"] = new Move ("flash", 0, 0, "normal", null);
-pokemonMoves.move["fury cutter"] = new Move ("fury cutter", 40, 0, "bug", null);
-pokemonMoves.move["magical leaf"] = new Move ("magical leaf", 60, 0, "grass", null);
-pokemonMoves.move["petal dance"] = new Move ("petal dance", 120, 0, "grass", null);
-pokemonMoves.move["skull bash"] = new Move ("skull bash", 130, 0, "normal", null);
-pokemonMoves.move["sludge"] = new Move ("sludge", 65, 0, "poison", null);
-pokemonMoves.move["bulldoze"] = new Move ("bulldoze", 60, 0, "ground", null);
-pokemonMoves.move["earthquake"] = new Move ("earthquake", 100, 0, "ground", null);
-pokemonMoves.move["giga impact"] = new Move ("giga impact", 150, 0, "normal", null);
-pokemonMoves.move["hyper beam"] = new Move ("hyper beam", 150, 0, "normal", null);
-pokemonMoves.move["petal blizzard"] = new Move ("petal blizzard", 90, 0, "grass", null);
-pokemonMoves.move["synthesis"] = new Move ("synthesis", 0, 0, "grass", null);
-pokemonMoves.move["take down"] = new Move ("take down", 90, 0, "normal", null);
-pokemonMoves.move["work up"] = new Move ("work up", 0, 0, "normal", null);
-pokemonMoves.move["swords dance"] = new Move ("swords dance", 0, 0, "normal", null);
-pokemonMoves.move["attract"] = new Move ("attract", 0, 0, "normal", null);
-pokemonMoves.move["bite"] = new Move ("bite", 60, 0, "dark", null);
-pokemonMoves.move["blast burn"] = new Move ("blast burn", 150, 0, "fire", null);
-pokemonMoves.move["brick break"] = new Move ("brick break", 75, 0, "fighting", null);
-pokemonMoves.move["crunch"] = new Move ("crunch", 80, 0, "dark", null);
-pokemonMoves.move["dig"] = new Move ("dig", 80, 0, "ground", null);
-pokemonMoves.move["dragon pulse"] = new Move ("dragon pulse", 85, 0, "dragon", null);
-pokemonMoves.move["ember"] = new Move ("ember", 40, 0, "fire", null);
-pokemonMoves.move["fire fang"] = new Move ("fire fang", 65, 0, "fire", null);
-pokemonMoves.move["fire punch"] = new Move ("fire punch", 75, 0, "fire", null);
-pokemonMoves.move["fire spin"] = new Move ("fire spin", 35, 0, "fire", null);
-pokemonMoves.move["flamethrower"] = new Move ("flamethrower", 90, 0, "fire", null);
-pokemonMoves.move["iron tail"] = new Move ("iron tail", 100, 0, "steel", null);
-pokemonMoves.move["metal claw"] = new Move ("metal claw", 50, 0, "steel", null);
-pokemonMoves.move["quick attack"] = new Move ("quick attack", 40, 0, "normal", null);
-pokemonMoves.move["rock slide"] = new Move ("rock slide", 75, 0, "rock", null);
-pokemonMoves.move["scratch"] = new Move ("scratch", 40, 0, "normal", null);
-pokemonMoves.move["slash"] = new Move ("slash", 70, 0, "normal", null);
-pokemonMoves.move["smokescreen"] = new Move ("smokescreen", 0, 0, "normal", null);
-pokemonMoves.move["belly drum"] = new Move ("belly drum", 0, 0, "normal", null);
-pokemonMoves.move["dragon claw"] = new Move ("dragon claw", 80, 0, "dragon", null);
-pokemonMoves.move["dragon rage"] = new Move ("dragon rage", 0, 0, "dragon", null);
-pokemonMoves.move["fire blast"] = new Move ("fire blast", 110, 0, "fire", null);
-pokemonMoves.move["flame burst"] = new Move ("flame burst", 70, 0, "fire", null);
-pokemonMoves.move["heat wave"] = new Move ("heat wave", 95, 0, "fire", null);
-pokemonMoves.move["mega punch"] = new Move ("mega punch", 80, 0, "normal", null);
-pokemonMoves.move["rage"] = new Move ("rage", 20, 0, "normal", null);
-pokemonMoves.move["rock tomb"] = new Move ("rock tomb", 60, 0, "rock", null);
-pokemonMoves.move["seismic toss"] = new Move ("seismic toss", 0, 0, "fighting", null);
-pokemonMoves.move["will-o-wisp"] = new Move ("will-o-wisp", 0, 0, "fire", null);
-pokemonMoves.move["thunder punch"] = new Move ("thunder punch", 75, 0, "electric", null);
-pokemonMoves.move["swift"] = new Move ("swift", 60, 0, "normal", null);
-pokemonMoves.move["strength"] = new Move ("strength", 80, 0, "normal", null);
-pokemonMoves.move["air slash"] = new Move ("air slash", 75, 0, "flying", null);
-pokemonMoves.move["brutal swing"] = new Move ("brutal swing", 60, 0, "dark", null);
-pokemonMoves.move["dragon tail"] = new Move ("dragon tail", 60, 0, "dragon", null);
-pokemonMoves.move["dynamic punch"] = new Move ("dynamic punch", 100, 0, "fighting", null);
-pokemonMoves.move["steel wing"] = new Move ("steel wing", 70, 0, "steel", null);
-pokemonMoves.move["wing attack"] = new Move ("wing attack", 60, 0, "flying", null);
-pokemonMoves.move["twister"] = new Move ("twister", 40, 0, "dragon", null);
-pokemonMoves.move["aqua ring"] = new Move ("aqua ring", 20, 0, "water", null);
-pokemonMoves.move["blizzard"] = new Move ("blizzard", 110, 0, "ice", null);
-pokemonMoves.move["bubble"] = new Move ("bubble", 40, 0, "water", null);
-pokemonMoves.move["dive"] = new Move ("dive", 80, 0, "water", null);
-pokemonMoves.move["hail"] = new Move ("hail", 0, 0, "ice", null);
-pokemonMoves.move["icy wind"] = new Move ("icy wind", 55, 0, "ice", null);
-pokemonMoves.move["mirror coat"] = new Move ("mirror coat", 0, 0, "psychic", null);
-pokemonMoves.move["mist"] = new Move ("mist", 0, 0, "ice", null);
-pokemonMoves.move["rapid spin"] = new Move ("rapid spin", 20, 0, "normal", null);
-pokemonMoves.move["rollout"] = new Move ("rollout", 30, 0, "rock", null);
-pokemonMoves.move["surf"] = new Move ("surf", 90, 0, "water", null);
-pokemonMoves.move["swagger"] = new Move ("swagger", 0, 0, "normal", null);
-pokemonMoves.move["tackle"] = new Move ("tackle", 40, 0, "normal", null);
-pokemonMoves.move["water gun"] = new Move ("water gun", 40, 0, "water", null);
-pokemonMoves.move["zen headbutt"] = new Move ("zen headbutt", 80, 0, "psychic", null);
-pokemonMoves.move["withdraw"] = new Move ("withdraw", 0, 0, "water", null);
-pokemonMoves.move["aqua tail"] = new Move ("aqua tail", 90, 0, "water", null);
-pokemonMoves.move["hydro pump"] = new Move ("hydro pump", 90, 0, "water", null);
-pokemonMoves.move["ice beam"] = new Move ("ice beam", 90, 0, "ice", null);
-pokemonMoves.move["waterfall"] = new Move ("waterfall", 80, 0, "water", null);
-pokemonMoves.move["water pulse"] = new Move ("water pulse", 60, 0, "water", null);
-pokemonMoves.move["whirlpool"] = new Move ("whirlpool", 35, 0, "water", null);
-pokemonMoves.move["avalanche"] = new Move ("avalanche", 60, 0, "ice", null);
-pokemonMoves.move["dark pulse"] = new Move ("dark pulse", 80, 0, "dark", null);
-pokemonMoves.move["hydro cannon"] = new Move ("hydro cannon", 150, 0, "water", null);
-pokemonMoves.move["mega kick"] = new Move ("mega kick", 120, 0, "normal", null);
-pokemonMoves.move["signal beam"] = new Move ("signal beam", 75, 0, "bug", null);
-pokemonMoves.move["smack down"] = new Move ("smack down", 50, 0, "rock", null);
-pokemonMoves.move["yawn"] = new Move ("yawn", 0, 0, "normal", null);
-pokemonMoves.move["tail whip"] = new Move ("tail whip", 0, 0, "normal", null);
-// pokemonMoves.move["NAME"] = new Move ("NAME", POWER, 0, "TYPE", null);
+pokemonMoves.move["tackle"] = new Move ("tackle", 40, "normal", null);
+pokemonMoves.move["growl"] = new Move ("growl", 0, "normal", { target: true, stat: "lowerAttack", factor: 1 });
+pokemonMoves.move["leech seed"] = new Move ("leech seed", 0, "grass", { target: true, special: { damage: 0.125, heal: "1", duration: 1000 } });
+pokemonMoves.move["vine whip"] = new Move ("vine whip", 45, "grass", null);
+pokemonMoves.move["poison powder"] = new Move ("poison powder", 0, "poison", { target: true, affliction: "poison" });
+pokemonMoves.move["sleep powder"] = new Move ("sleep powder", 0, "grass", { target: true, affliction: "sleep" });
+pokemonMoves.move["take down"] = new Move ("take down", 90, "normal", { damageSelf: 0.25 });
+pokemonMoves.move["razor leaf"] = new Move ("razor leaf", 55, "grass", null);
+pokemonMoves.move["sweet scent"] = { name: "sweet scent", notUsed: true };
+pokemonMoves.move["growth"] = new Move ("growth", 0, "normal", { target: false, stat: "upAttack" });
+pokemonMoves.move["double-edge"] = new Move ("double-edge", 120, "normal", { damageSelf: 0.33 });
+pokemonMoves.move["worry seed"] = { name: "worry seed", notUsed: true };
+pokemonMoves.move["synthesis"] = new Move ("synthesis", 0, "grass", { heal: 0.25 });
+pokemonMoves.move["seed bomb"] = new Move ("seed bomb", 80, "grass", null);
+pokemonMoves.move["solar beam"] = new Move ("solar beam", 120, "grass", { wait: { turns: 2, attackOn: 2 } });
+pokemonMoves.move["petal dance"] = new Move ("petal dance", 120, "grass", { wait: { turns: 3, attackOn: 'all' } });
+pokemonMoves.move["petal blizzard"] = new Move ("petal blizzard", 90, "grass", null);
+pokemonMoves.move["scratch"] = new Move ("scratch", 40, "normal", null);
+pokemonMoves.move["ember"] = new Move ("ember", 40, "fire", null);
+pokemonMoves.move["smokescreen"] = { name: "smokescreen", notUsed: true };
+pokemonMoves.move["dragon rage"] = new Move ("dragon rage", { hp: 40 }, "TYPE", null);
+pokemonMoves.move["scary face"] = new Move ("scary face", 0, "normal", { target: true, stat: "lowerSpeed", factor: 2 });
+pokemonMoves.move["fire fang"] = new Move ("fire fang", 65, "fire", { target: true, affliction: "burn", chance: 0.1 });
+pokemonMoves.move["flame burst"] = new Move ("flame burst", 70, "fire", null);
+pokemonMoves.move["slash"] = new Move ("slash", 70, "normal", null);
+pokemonMoves.move["flamethrower"] = new Move ("flamethrower", 90, "fire", { target: true, affliction: "burn", chance: 0.1 });
+pokemonMoves.move["fire spin"] = new Move ("fire spin", 35, "fire", { target: true, special: { damage: true, duration: 5 } });
+pokemonMoves.move["inferno"] = new Move ("inferno", 100, "fire", { target: true, affliction: "burn", chance: 1 });
+pokemonMoves.move["flare blitz"] = new Move ("flare blitz", 120, "fire", { damageSelf: 0.33, target: true, affliction: "burn", chance: 0.1 });
+pokemonMoves.move["heat wave"] = new Move ("heat wave", 95, "fire", { target: true, affliction: "burn", chance: 0.1 });
+pokemonMoves.move["dragon claw"] = new Move ("dragon claw", 80, "dragon", null);
+pokemonMoves.move["shadow claw"] = new Move ("shadow claw", 70, "ghost", null);
+pokemonMoves.move["air slash"] = new Move ("air slash", 75, "flying", null);
+pokemonMoves.move["wing attack"] = new Move ("wing attack", 60, "flying", null);
+pokemonMoves.move["tail whip"] = new Move ("tail whip", 0, "normal", { target: true, stat: "lowerDefense", factor: 1 });
+pokemonMoves.move["water gun"] = new Move ("water gun", 40, "water", null);
+pokemonMoves.move["withdraw"] = new Move ("withdraw", 0, "water", { target: false, stat: "upDefense", factor: 1 });
+pokemonMoves.move["bubble"] = new Move ("bubble", 40, "water", { target: true, stat: "lowerSpeed", factor: 1, chance: 0.1 });
+pokemonMoves.move["bite"] = new Move ("bite", 60, "dark", null);
+pokemonMoves.move["rapid spin"] = new Move ("rapid spin", 20, "normal", null);
+pokemonMoves.move["protect"] = new Move ("protect", 0, "normal", { target: false, special: { protect: 1 } });
+pokemonMoves.move["water pulse"] = new Move ("water pulse", 60, "water", { target: true, affliction: "confusion", chance: 0.2 });
+pokemonMoves.move["aqua tail"] = new Move ("aqua tail", 90, "water", null);
+pokemonMoves.move["skull bash"] = new Move ("skull bash", 130, "normal", { target: false, stat: "upDefense", factor: 1, wait: { turns: 2, attackOn: 2 } });
+pokemonMoves.move["iron defense"] = new Move ("iron defense", 0, "steel", { target: false, stat: "upDefense", factor: 2 });
+pokemonMoves.move["rain dance"] = { name: "rain dance", notUsed: true }
+pokemonMoves.move["hydro pump"] = new Move ("hydro pump", 110, "water", null);
+pokemonMoves.move["flash cannon"] = new Move ("flash cannon", 80, "steel", { target: true, stat: "lowerDefense", factor: 1, chance: 0.1 });
+pokemonMoves.move["reflect"] = new Move ("reflect", 0, "psychic", { target: false, special: { protect: 0.5 } });
+pokemonMoves.move["magical leaf"] = new Move ("magical leaf", 60, "grass", null);
+pokemonMoves.move["natural gift"] = { name: "natural gift", notUsed: true };
+pokemonMoves.move["light screen"] = new Move ("reflect", 0, "psychic", { target: false, special: { protect: 0.5 } });
+pokemonMoves.move["body slam"] = new Move ("body slam", 85, "normal", { target: true, affliction: "paralyze", chance: 0.3 });
+pokemonMoves.move["safeguard"] = new Move ("safeguard", 0, "normal", { target: false, special: { statusProtect: true } });
+pokemonMoves.move["aromatherapy"] = new Move ("aromatherapy", 0, "grass", { healStatus: true });
+pokemonMoves.move["leer"] = new Move ("leer", 0, "normal", { target: true, stat: "lowerDefense", factor: 1 });
+pokemonMoves.move["quick attack"] = new Move ("quick attack", 40, "normal", null);
+pokemonMoves.move["flame wheel"] = new Move ("flame wheel", 60, "fire", { target: true, affliction: "burn", chance: 0.1 });
+pokemonMoves.move["defense curl"] = new Move ("defense curl", 0, "normal", { target: false, stat: "upDefense", factor: 1 });
+pokemonMoves.move["flame charge"] = new Move ("flame charge", 50, "fire", { target: false, stat: "upSpeed", factor: 1 });
+pokemonMoves.move["swift"] = new Move ("swift", 60, "normal", null);
+pokemonMoves.move["lava plume"] = new Move ("lava plume", 80, "fire", { target: true, affliction: "burn", chance: 0.3 });
+pokemonMoves.move["rollout"] = new Move ("rollout", 30, "normal", null, "still needs power multiplier");
+pokemonMoves.move["eruption"] = new Move ("eruption", 150, "fire", null, "still needs reduction multiplier on hp");
+pokemonMoves.move["gyro ball"] = new Move ("gyro ball", 80, "steel", null, "still needs multiplier on opponent speed");
+pokemonMoves.move["rage"] = new Move ("rage", 20, "normal", null, "still needs multiplier on enemy attack for hero attack");
+pokemonMoves.move["ice fang"] = new Move ("ice fang", 65, "ice", { target: true, affliction: "freeze", chance: 01 }, "still needs addition of flinch chances");
+pokemonMoves.move["flail"] = { name: "flail", notUsed: true };
+pokemonMoves.move["crunch"] = new Move ("crunch", 80, "dark", { target: true, stat: "lowerDefense", factor: 1, chance: 0.2 });
+pokemonMoves.move["chip away"] = new Move ("chip away", 70, "normal", null, "still needs ignorance of user's stat changes");
+pokemonMoves.move["screech"] = new Move ("screech", 0, "normal", { target: true, stat: "lowerDefense", factor: 2 });
+pokemonMoves.move["thrash"] = new Move ("thrash", 120, "normal", { target: true, wait: { turns: 3, attackOn: "all", afflictionOn: 3 } });
+pokemonMoves.move["superpower"] = new Move ("superpower", 120, "fighting", { target: false, stat: [ "lowerAttack", "lowerDefense" ], factor: 1 });
+pokemonMoves.move["agility"] = new Move ("agility", 0, "normal", { target: false, stat: "upSpeed", factor: 2 });
+pokemonMoves.move["pound"] = new Move ("pound", 40, "normal", null);
+pokemonMoves.move["absorb"] = new Move ("absorb", 20, "grass", { heal: "0.5" });
+pokemonMoves.move["pursuit"] = new Move ("pursuit", 40, "dark", null);
+pokemonMoves.move["mega drain"] = new Move ("mega drain", 40, "grass", { heal: "0.5" });
+pokemonMoves.move["slam"] = new Move ("slam", 80, "normal", null);
+pokemonMoves.move["detect"] = new Move ("detect", 0, "fighting", { target: false, special: { protect: 1 } }, "still needs chance of fail on continued use");
+pokemonMoves.move["giga drain"] = new Move ("giga drain", 75, "grass", { heal: "0.5" });
+pokemonMoves.move["energy ball"] = new Move ("energy ball", 90, "grass", { target: true, stat: "lowerDefense", factor: 1, chance: 0.1 });
+pokemonMoves.move["fury cutter"] = new Move ("fury cutter", 40, "bug", null, "still needs power increase on each turn");
+pokemonMoves.move["leaf blade"] = new Move ("leaf blade", 90, "grass", null);
+pokemonMoves.move["false swipe"] = new Move ("false swipe", 40, "normal", null, "still need to stop false swipe from knocking enemy out");
+pokemonMoves.move["leaf storm"] = new Move ("leaf storm", 130, "grass", { target: false, stat: "lowerAttack", factor: 2 });
+pokemonMoves.move["night slash"] = new Move ("night slash", 70, "dark", null);
+pokemonMoves.move["x-scissor"] = new Move ("x-scissor", 80, "bug", null);
+pokemonMoves.move["focus energy"] = { name: "focus energy", notUsed: true };
+pokemonMoves.move["peck"] = new Move ("peck", 35, "flying", null);
+pokemonMoves.move["sand-attack"] = { name: "sand-attack", notUsed: true };
+pokemonMoves.move["mirror move"] = { name: "mirror move", notUsed: true };
+pokemonMoves.move["double kick"] = new Move ("double kick", 30, "fighting", null, "still needs multiple hits per turn");
+pokemonMoves.move["bulk up"] = new Move ("bulk up", 0, "fighting", { target: false, stat: [ "upAttack", "upDefense" ], factor: 1 });
+pokemonMoves.move["sky uppercut"] = new Move ("sky uppercut", 85, "fighting", null, "still needs hit on fly");
+pokemonMoves.move["fire punch"] = new Move ("fire punch", 75, "fire", { target: true, affliction: "burn", chance: 0.1 });
+pokemonMoves.move["hi jump kick"] = new Move ("hi jump kick", 130, "fighting", null, "still needs hero damage on miss");
+pokemonMoves.move["blaze kick"] = new Move ("blaze kick", 85, "fire", { target: true, affliction: "burn", chance: 0.1 });
+pokemonMoves.move["brave bird"] = new Move ("brave bird", 120, "flying", { damageSelf: 0.33 });
+pokemonMoves.move["mud-slap"] = new Move ("mud-slap", 20, "ground", null, "does not affect accuracy, as accuracy is not in game");
+pokemonMoves.move["bide"] = { name: "bide", notUsed: true };
+pokemonMoves.move["foresight"] = { name: "foresight", notUsed: true };
+pokemonMoves.move["mud sport"] = { name: "mud sport" };
+pokemonMoves.move["whirlpool"] = new Move ("whirlpool", 35, "water", { target: true, special: { damage: 0.125, duration: 4 } });
+pokemonMoves.move["endeavor"] = { name: "endeavor", notUsed: true };
+pokemonMoves.move["mud shot"] = new Move ("mud shot", 55, "ground", { target: true, stat: "lowerSpeed", factor: 1 });
+pokemonMoves.move["mud bomb"] = new Move ("mud bomb", 65, "ground", null);
+pokemonMoves.move["muddy water"] = new Move ("muddy water", 90, "water", null);
+pokemonMoves.move["earthquake"] = new Move ("earthquake", 100, "ground", null, "still needs double power when oponent uses dig");
+pokemonMoves.move["hammer arm"] = new Move ("hammer arm", 100, "fighting", { target: false, stat: "lowerSpeed", factor: 1 });
+pokemonMoves.move["curse"] = new Move ("curse", 0, "ghost", { target: false, stat: [ "upAttack", "upDefense", "lowerSpeed" ], factor: 1 });
+pokemonMoves.move["wood hammer"] = new Move ("wood hammer", 120, "grass", { damageSelf: 0.33 });
+pokemonMoves.move["taunt"] = { name: "taunt", notUsed: true };
+pokemonMoves.move["fury swipes"] = new Move ("fury swipes", 18, "normal", null, "still needs multiple attacks in one turn");
+pokemonMoves.move["nasty plot"] = new Move ("nasty plot", 0, "dark", { target: false, stat: "upAttack", factor: 2 });
+pokemonMoves.move["torment"] = { name: "torment", notUsed: false };
+pokemonMoves.move["facade"] = new Move ("facade", 70, "normal", null, "still needs double power on affliction");
+pokemonMoves.move["acrobatics"] = new Move ("acrobatics", 55, "flying", null);
+pokemonMoves.move["slack off"] = new Move ("slack off", 0, "normal", { target: false, heal: 0.5 });
+pokemonMoves.move["mach punch"] = new Move ("mach punch", 40, "fighting", null);
+pokemonMoves.move["feint"] = { name: "feint", notUsed: true };
+pokemonMoves.move["close combat"] = new Move ("close combat", 120, "fighting", { target: false, stat: "lowerDefense", factor: 1 });
+pokemonMoves.move["punishment"] = { name: "punishment", notUsed: true };
+pokemonMoves.move["calm mind"] = new Move ("calm mind", 0, "psychic", { target: false, stat: [ "upAttack", "upDefense" ], factor: 1 });
+pokemonMoves.move["water sport"] = { name: "water sport", notUsed: true };
+pokemonMoves.move["bubblebeam"] = new Move ("bubblebeam", 65, "water", { target: true, stat: "lowerSpeed", factor: 1, chance: 0.1 });
+pokemonMoves.move["fury attack"] = new Move ("fury attack", 15, "normal", null, "still needs multiple attacks per turn");
+pokemonMoves.move["brine"] = new Move ("brine", 65, "water", null, "still needs double power if hp is below 50%");
+pokemonMoves.move["mist"] = new Move ("mist", 0, "ice", { target: false, special: { duration: 5, statusProtect: true } });
+pokemonMoves.move["drill peck"] = new Move ("drill peck", 80, "flying", null);
+pokemonMoves.move["metal claw"] = new Move ("metal claw", 50, "steel", { target: false, stat: "upAttack", factor: 1, chance: 0.1 });
+pokemonMoves.move["swords dance"] = new Move ("swords dance", 0, "normal", { target: false, stat: "upAttack", factor: 2 });
+pokemonMoves.move["swagger"] = new Move ("swagger", 0, "normal", { target: false, stat: "upAttack", factor: 2, affliction: "confused" });
+pokemonMoves.move["aqua jet"] = new Move ("aqua jet", 40, "water", null);
+pokemonMoves.move["wrap"] = new Move ("wrap", 15, "normal", { target: true, special: { damage: 0.125, duration: 4 } });
+pokemonMoves.move["leaf tornado"] = new Move ("leaf tornado", 65, "grass", null);
+pokemonMoves.move["coil"] = new Move ("coil", 0, "poison", { target: false, stat: [ "upAttack", "upDefense" ], factor: 1 });
+pokemonMoves.move["wring out"] = { name: "wring out", notUsed: true };
+pokemonMoves.move["gastro acid"] = { name: "gastro acid", notUsed: true };
+pokemonMoves.move["odor sleuth"] = { name: "odor sleuth", notUsed: true };
+pokemonMoves.move["smog"] = new Move ("smog", 30, "poison", { target: true, affliction: "poison", chance: 0.4 });
+pokemonMoves.move["heat crash"] = { name: "heat crash", notUsed: true };
+pokemonMoves.move["assurance"] = new Move ("assurance", 60, "dark", null, "still needs attack spike on multiple damage in turn");
+pokemonMoves.move["head smash"] = new Move ("head smash", 150, "rock", { damageSelf: 0.5 });
+pokemonMoves.move["roar"] = { name: "roar", notUsed: true };
+pokemonMoves.move["arm thrust"] = new Move ("arm thrust", 15, "fighting", null, "still needs multiple attacks per turn");
+pokemonMoves.move["razor shell"] = new Move ("razor shell", 75, "water", { target: true, stat: "lowerDefense", factor: 1, chance: 0.5 });
+pokemonMoves.move["revenge"] = new Move ("revenge", 60, "fighting", null, "still needs multiplier if user was attacked first");
+pokemonMoves.move["encore"] = { name: "encore", notUsed: true };
+pokemonMoves.move["retaliate"] = new Move ("retaliate", 70, "normal", null, "still needs attack multiplier on teamate faint");
+pokemonMoves.move["megahorn"] = new Move ("megahorn", 120, "bug", null);
+pokemonMoves.move["pin missile"] = new Move ("pin missile", 25, "bug", null, "still needs multiple attack in turn");
+pokemonMoves.move["pain split"] = { name: "pain split", notUsed: true };
+pokemonMoves.move["needle arm"] = new Move ("needle arm", 60, "grass", null, "still needs flinching chance");
+pokemonMoves.move["belly drum"] = { name: "belly drum", notUsed: true };
+pokemonMoves.move["spikey shield"] = { name: "spikey shield", notUsed: true };
+pokemonMoves.move["NAME"] = new Move ("NAME", POWER, "TYPE", null);
+pokemonMoves.move["NAME"] = new Move ("NAME", POWER, "TYPE", null);
