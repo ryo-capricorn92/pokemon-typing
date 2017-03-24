@@ -1,3 +1,4 @@
+/* global pokemonMoves */
   // "power whip": {
   //   power: INT,
   //   level: INT,

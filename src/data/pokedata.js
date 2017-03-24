@@ -1,6 +1,7 @@
+/* global pokemonMoves */
 var pokemonList = {
   bulbasaur: {
-    index: 001,
+    index: '001',
     name: "bulbasaur",
     type: [ "grass", "poison" ],
     hp: 65,
@@ -16,7 +17,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['bulbasaur']
   },
   ivysaur: {
-    index: 002,
+    index: '002',
     name: "ivysaur",
     type: [ "grass", "poison" ],
     hp: 72,
@@ -32,7 +33,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['ivysaur']
   },
   venusaur: {
-    index: 003,
+    index: '003',
     name: "venusaur",
     type: [ "grass", "poison" ],
     stage: 3,
@@ -47,7 +48,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['venusaur']
   },
   charmander: {
-    index: 004,
+    index: '004',
     name: "charmander",
     type: [ "fire" ],
     hp: 62,
@@ -63,7 +64,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['charmander']
   },
   charmeleon: {
-    index: 005,
+    index: '005',
     name: "charmeleon",
     type: [ "fire" ],
     hp: 71,
@@ -79,7 +80,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['charmeleon']
   },
   charizard: {
-    index: 006,
+    index: '006',
     name: "charizard",
     type: [ "fire", "flying" ],
     hp: 81,
@@ -93,7 +94,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['charizard']
   },
   squirtle: {
-    index: 007,
+    index: '007',
     name: "squirtle",
     type: [ "water" ],
     hp: 64,
@@ -109,7 +110,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['squirtle']
   },
   wartortle: {
-    index: 008,
+    index: '008',
     name: "wartortle",
     type: [ "water" ],
     hp: 72,
@@ -125,7 +126,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['wartortle']
   },
   blastoise: {
-    index: 009,
+    index: '009',
     name: "blastoise",
     type: [ "water" ],
     hp: 82,
@@ -139,7 +140,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['blastoise']
   },
   chikorita: {
-    index: 152,
+    index: '152',
     name: "chikorita",
     type: [ "grass" ],
     hp: 65,
@@ -155,7 +156,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['chikorita']
   },
   bayleef: {
-    index: 153,
+    index: '153',
     name: "bayleef",
     type: [ "grass" ],
     hp: 72,
@@ -171,7 +172,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['bayleef']
   },
   meganium: {
-    index: 154,
+    index: '154',
     name: "meganium",
     type: [ "grass" ],
     hp: 82,
@@ -185,7 +186,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['meganium']
   },
   cyndaquil: {
-    index: 155,
+    index: '155',
     name: "cyndaquil",
     type: [ "fire" ],
     hp: 62,
@@ -201,7 +202,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['cyndaquil']
   },
   quilava: {
-    index: 156,
+    index: '156',
     name: "quilava",
     type: [ "fire" ],
     hp: 71,
@@ -217,7 +218,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['quilava']
   },
   typhlosian: {
-    index: 157,
+    index: '157',
     name: "typhlosian",
     type: [ "fire" ],
     hp: 81,
@@ -231,7 +232,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['typhlosian']
   },
   totodile: {
-    index: 158,
+    index: '158',
     name: "totodile",
     type: [ "water" ],
     hp: 67,
@@ -247,7 +248,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['totodile']
   },
   croconaw: {
-    index: 159,
+    index: '159',
     name: "croconaw",
     type: [ "water" ],
     hp: 75,
@@ -263,7 +264,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['croconaw']
   },
   feraligator: {
-    index: 160,
+    index: '160',
     name: "feraligator",
     type: [ "water" ],
     hp: 85,
@@ -277,7 +278,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['feraligator']
   },
   treecko: {
-    index: 252,
+    index: '252',
     name: "treecko",
     type: [ "grass" ],
     hp: 62,
@@ -293,7 +294,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['treecko']
   },
   grovyle: {
-    index: 253,
+    index: '253',
     name: "grovyle",
     type: [ "grass" ],
     hp: 67,
@@ -309,7 +310,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['grovyle']
   },
   sceptile: {
-    index: 254,
+    index: '254',
     name: "sceptile",
     type: [ "grass" ],
     hp: 77,
@@ -323,7 +324,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['sceptile']
   },
   torchic: {
-    index: 255,
+    index: '255',
     name: "torchic",
     type: [ "fire" ],
     hp: 65,
@@ -339,7 +340,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['torchic']
   },
   combusken: {
-    index: 256,
+    index: '256',
     name: "combusken",
     type: [ "fire", "fighting" ],
     hp: 72,
@@ -355,7 +356,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['combusken']
   },
   blaziken: {
-    index: 257,
+    index: '257',
     name: "blaziken",
     type: [ "fire", "fighting" ],
     hp: 82,
@@ -369,7 +370,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['blaziken']
   },
   mudkip: {
-    index: 258,
+    index: '258',
     name: "mudkip",
     type: [ "water" ],
     hp: 67,
@@ -385,7 +386,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['mudkip']
   },
   marshtomp: {
-    index: 259,
+    index: '259',
     name: "marshtomp",
     type: [ "water", "ground" ],
     hp: 77,
@@ -401,7 +402,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['marshtomp']
   },
   swampert: {
-    index: 260,
+    index: '260',
     name: "swampert",
     type: [ "water", "ground" ],
     hp: 92,
@@ -415,7 +416,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['swampert']
   },
   turtwig: {
-    index: 387,
+    index: '387',
     name: "turtwig",
     type: [ "grass" ],
     hp: 70,
@@ -431,7 +432,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['turtwig']
   },
   grotle: {
-    index: 388,
+    index: '388',
     name: "grotle",
     type: [ "grass" ],
     hp: 80,
@@ -447,7 +448,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['grotle']
   },
   torterra: {
-    index: 389,
+    index: '389',
     name: "torterra",
     type: [ "grass", "ground" ],
     hp: 90,
@@ -461,7 +462,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['torterra']
   },
   chimchar: {
-    index: 390,
+    index: '390',
     name: "chimchar",
     type: [ "fire" ],
     hp: 64,
@@ -477,7 +478,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['chimchar']
   },
   monferno: {
-    index: 391,
+    index: '391',
     name: "monferno",
     type: [ "fire", "fighting" ],
     hp: 74,
@@ -493,7 +494,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['monferno']
   },
   infernape: {
-    index: 392,
+    index: '392',
     name: "infernape",
     type: [ "fire", "fighting" ],
     hp: 80,
@@ -507,7 +508,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['infernape']
   },
   piplup: {
-    index: 393,
+    index: '393',
     name: "piplup",
     type: [ "water" ],
     hp: 69,
@@ -523,7 +524,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['piplup']
   },
   prinplup: {
-    index: 394,
+    index: '394',
     name: "prinplup",
     type: [ "water" ],
     hp: 74,
@@ -539,7 +540,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['prinplup']
   },
   empoleon: {
-    index: 395,
+    index: '395',
     name: "empoleon",
     type: [ "water", "steel" ],
     hp: 84,
@@ -553,7 +554,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['empoleon']
   },
   snivy: {
-    index: 495,
+    index: '495',
     name: "snivy",
     type: [ "grass" ],
     hp: 65,
@@ -569,7 +570,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['snivy']
   },
   servine: {
-    index: 496,
+    index: '496',
     name: "servine",
     type: [ "grass" ],
     hp: 72,
@@ -585,7 +586,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['servine']
   },
   serperior: {
-    index: 497,
+    index: '497',
     name: "serperior",
     type: [ "grass" ],
     hp: 80,
@@ -599,7 +600,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['serperior']
   },
   tepig: {
-    index: 498,
+    index: '498',
     name: "tepig",
     type: [ "fire" ],
     hp: 75,
@@ -615,7 +616,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['tepig']
   },
   pignite: {
-    index: 499,
+    index: '499',
     name: "pignite",
     type: [ "fire", "fighting" ],
     hp: 87,
@@ -631,7 +632,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['pignite']
   },
   emboar: {
-    index: 500,
+    index: '500',
     name: "emboar",
     type: [ "fire", "fighting" ],
     hp: 97,
@@ -645,7 +646,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['emboar']
   },
   oshawott: {
-    index: 501,
+    index: '501',
     name: "oshawott",
     type: [ "water" ],
     hp: 70,
@@ -661,7 +662,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['oshawott']
   },
   dewott: {
-    index: 502,
+    index: '502',
     name: "dewott",
     type: [ "water" ],
     hp: 80,
@@ -677,7 +678,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['dewott']
   },
   samurott: {
-    index: 503,
+    index: '503',
     name: "samurott",
     type: [ "water" ],
     hp: 90,
@@ -691,7 +692,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['samurott']
   },
   chespin: {
-    index: 650,
+    index: '650',
     name: "chespin",
     type: [ "grass" ],
     hp: 70,
@@ -707,7 +708,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['chespin']
   },
   quilladin: {
-    index: 651,
+    index: '651',
     name: "quilladin",
     type: [ "grass" ],
     hp: 73,
@@ -723,7 +724,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['quilladin']
   },
   chesnaught: {
-    index: 652,
+    index: '652',
     name: "chesnaught",
     type: [ "grass", "fighting" ],
     hp: 86,
@@ -737,7 +738,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['chesnaught']
   },
   fennekin: {
-    index: 653,
+    index: '653',
     name: "fennekin",
     type: [ "fire" ],
     hp: 62,
@@ -753,7 +754,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['fennekin']
   },
   braixen: {
-    index: 654,
+    index: '654',
     name: "braixen",
     type: [ "fire" ],
     hp: 72,
@@ -769,7 +770,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['braixen']
   },
   delphox: {
-    index: 655,
+    index: '655',
     name: "delphox",
     type: [ "fire", "psychic" ],
     hp: 80,
@@ -783,7 +784,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['delphox']
   },
   froakie: {
-    index: 656,
+    index: '656',
     name: "froakie",
     type: [ "water" ],
     hp: 63,
@@ -799,7 +800,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['froakie']
   },
   frogadier: {
-    index: 657,
+    index: '657',
     name: "frogadier",
     type: [ "water" ],
     hp: 69,
@@ -815,7 +816,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['frogadier']
   },
   greninja: {
-    index: 658,
+    index: '658',
     name: "greninja",
     type: [ "water", "dark" ],
     hp: 78,
@@ -829,7 +830,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['greninja']
   },
   rowlet: {
-    index: 722,
+    index: '722',
     name: "rowlet",
     type: [ "grass", "flying" ],
     hp: 76,
@@ -845,7 +846,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['rowlet']
   },
   dartrix: {
-    index: 723,
+    index: '723',
     name: "dartrix",
     type: [ "grass", "flying" ],
     hp: 81,
@@ -861,7 +862,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['dartrix']
   },
   decidueye: {
-    index: 724,
+    index: '724',
     name: "decidueye",
     type: [ "grass", "ghost" ],
     hp: 81,
@@ -875,7 +876,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['decidueye']
   },
   litten: {
-    index: 725,
+    index: '725',
     name: "litten",
     type: [ "fire" ],
     hp: 65,
@@ -891,7 +892,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['litten']
   },
   torracat: {
-    index: 726,
+    index: '726',
     name: "torracat",
     type: [ "fire" ],
     hp: 75,
@@ -907,7 +908,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['torracat']
   },
   incineroar: {
-    index: 727,
+    index: '727',
     name: "incineroar",
     type: [ "fire", "dark" ],
     hp: 90,
@@ -921,7 +922,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['incineroar']
   },
   popplio: {
-    index: 728,
+    index: '728',
     name: "popplio",
     type: [ "water" ],
     hp: 67,
@@ -937,7 +938,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['popplio']
   },
   brionne: {
-    index: 729,
+    index: '729',
     name: "brionne",
     type: [ "water" ],
     hp: 72,
@@ -953,7 +954,7 @@ var pokemonList = {
     moves: pokemonMoves.poke['brionne']
   },
   primarina: {
-    index: 730,
+    index: '730',
     name: "primarina",
     type: [ "water", "fairy" ],
     hp: 82,

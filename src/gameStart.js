@@ -1,3 +1,4 @@
+/* global main, game, textbox, currentEnter, homescreen, keepGoing, slot, pokemonList, Pokemon */
 function newGame (slot, overwrite) {
   window.slot = slot;
   main = game ? game["gameSlot" + slot] : undefined;

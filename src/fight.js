@@ -1,3 +1,4 @@
+/* global pokemonListOptions, main, Pokemon, pokemonList, textbox, currentEnter, genericEnter, wordBank, pokemonMoves, pokemonTypes, currentContinue, goOn, homescreen */
 function fight () {
   var randomEnemy = pokemonListOptions[Math.floor(Math.random() * pokemonListOptions.length)];
   main.enemy = new Pokemon(pokemonList[randomEnemy]);

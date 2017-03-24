@@ -1,4 +1,4 @@
-/* global pokemonList, pokemonListOptions, pokemonTypes, pokemonMoves */
+/* global pokemonList, pokemonListOptions, pokemonTypes, pokemonMoves, newGame, fight */
 var cont = false;
 var slot = 0;
 var main = {};
@@ -119,7 +119,7 @@ function createMove (pokemon, chosenMoves, pokemonMoveList, level, needAttack) {
       !chosenMoves.includes(currentMoveStr) &&
       !(needAttack && !currentMove.power)) {
         goodMove = true;
-      }
+    }
   }
   chosenMoves.push(currentMoveStr);
   pokemonMoveList.push(currentMove);
