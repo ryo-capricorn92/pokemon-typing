@@ -159,6 +159,7 @@ function testData () {
   var missingMovesList = [];
   var unusedMovesList = [];
   var messageMovesList = [];
+  var errorMovesList = [];
 
   console.log('POKEMON WITHOUT MOVELISTS');
   console.log('----------------------');
@@ -194,17 +195,34 @@ function testData () {
       }
     }
   }
-  for (var move in pokemonMoves.move) {
+  for (var moveName in pokemonMoves.move) {
+    // Find and count all unused moves and moves with messages, and prepare them for logging
+    var move = pokemonMoves.move[moveName];
     completeMoves++;
-    if (pokemonMoves.move[move].notUsed) {
+    if (move.notUsed) {
       totalMoves++;
-      unusedMovesList.push(move);
-    } else if (pokemonMoves.move[move].message) {
-      totalMoves++;
-      messageMovesList.push(move);
+      unusedMovesList.push(moveName);
     } else {
-      totalMoves++;
-      completeCompleteMoves++;
+      if (move.message) {
+        totalMoves++;
+        messageMovesList.push(moveName);
+      } else {
+        totalMoves++;
+        completeCompleteMoves++;
+      }
+      // find all potential errors in the current moves
+      if (move.wait && !move.wait.turns) {
+        errorMovesList.push(moveName + ' has wait, but no wait turn number');
+      }
+      if (move.affliction && move.target === undefined) {
+        errorMovesList.push(moveName + ' has an affliction, but no target');
+      }
+      if (move.stat && move.target === undefined) {
+        errorMovesList.push(moveName + ' has a stat change, but no target');
+      }
+      if (move.stat && !move.factor) {
+        errorMovesList.push(moveName + ' has a stat change, but no factor');
+      }
     }
   };
   console.log('');
@@ -227,6 +245,14 @@ function testData () {
   messageMovesList.forEach(function (move) {
     console.log(move + ': ' + pokemonMoves.move[move].message);
   });
+
+  console.log('');
+  console.log('MOVES WITH ERRORS');
+  console.log('----------------------');
+  errorMovesList.forEach(function (move) {
+    console.error(move);
+  });
+
 
   console.log('');
   console.log('DATA PERCENTAGES');
