@@ -1,5 +1,5 @@
 .background {
-  background: url('images/backgrounds.png') no-repeat -1px -1px;
+  background: url('../images/backgrounds.png') no-repeat -1px -1px;
   width: 256px;
   height: 144px;
 }
