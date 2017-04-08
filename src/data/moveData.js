@@ -1,4 +1,5 @@
 /* global pokemonMoves */
+var POWER;
   // "power whip": {
   //   power: INT,
   //   level: INT,
@@ -72,7 +73,7 @@
   //   }
   // }
 
-function Move (name, power, type, effect, message) {
+function Move (/*string*/name, /*number*/power, /*string*/type, /*object*/effect, /*string*/message) {
   this.name = name;
   this.power = power;
   this.type = type;
@@ -256,4 +257,42 @@ pokemonMoves.move["pain split"] = { name: "pain split", notUsed: true };
 pokemonMoves.move["needle arm"] = new Move ("needle arm", 60, "grass", null, "still needs flinching chance");
 pokemonMoves.move["belly drum"] = { name: "belly drum", notUsed: true };
 pokemonMoves.move["spikey shield"] = { name: "spikey shield", notUsed: true };
-// pokemonMoves.move["NAME"] = new Move ("NAME", POWER, "TYPE", null);
+pokemonMoves.move["giga impact"] = new Move ("giga impact", 150, "normal", { wait: { turns: 2, attackOn: 1 } });
+pokemonMoves.move["howl"] = new Move ("howl", 0, "normal", { target: false, stat: "upAttack", factor: 1 });
+pokemonMoves.move["psybeam"] = new Move ("psybeam", 65, "psychic", { target: true, affliction: "confusion", chance: 0.1 });
+pokemonMoves.move["lucky chant"] = { name: "lucky chant", notUsed: true };
+pokemonMoves.move["psyshock"] = new Move ("psyshock", 80, "psychic", null);
+pokemonMoves.move["will-o-wisp"] = new Move ("will-o-wisp", 0, "fire", { target: true, affliction: "burn" });
+pokemonMoves.move["psychic"] = new Move ("psychic", 90, "psychic", { target: true, stat: "lowerDefense", chance: 0.1 });
+pokemonMoves.move["sunny day"] = { name: "sunny day", notUsed: true };
+pokemonMoves.move["magic room"] = { name: "magic room", notUsed: true };
+pokemonMoves.move["fire blast"] = new Move ("fire blast", 110, "fire", { target: true, affliction: "burn", chance: 0.1 });
+pokemonMoves.move["future sight"] = new Move ("future sight", 120, "psychic", { wait: { turns: 3, attackOn: 3 } }, "still needs to allow regular action during wait");
+pokemonMoves.move["role play"] = { name: "role play", notUsed: true };
+pokemonMoves.move["switcheroo"] = { name: "switcheroo", notUsed: true };
+pokemonMoves.move["shadow ball"] = new Move ("shadow ball", 80, "ghost", { target: true, stat: "lowerDefense", chance: 0.2 });
+pokemonMoves.move["mystical fire"] = new Move ("mystical fire", 75, "fire", { target: true, stat: "lowerAttack", factor: 1 });
+pokemonMoves.move["lick"] = new Move ("lick", 30, "ghost", { target: true, affliction: "paralyze", chance: 0.3 });
+pokemonMoves.move["round"] = new Move ("round", 60, "normal", null);
+pokemonMoves.move["fling"] = { name: "fling", notUsed: true };
+pokemonMoves.move["smack down"] = new Move ("smack down", 50, "rock", null, "still needs to make flying pokemon vulnerable to ground");
+pokemonMoves.move["substitute"] = { name: "substitute", notUsed: true };
+pokemonMoves.move["bounce"] = new Move ("bounce", 85, "flying", { wait: { turns: 2, attackOn: 2 }, target: true, affliction: "paralyze", chance: 0.3 });
+pokemonMoves.move["double team"] = { name: "double team", notUsed: true };
+pokemonMoves.move["mat block"] = { name: "mat block", notUsed: true };
+pokemonMoves.move["shadow sneak"] = new Move ("shadow sneak", 40, "ghost", null);
+pokemonMoves.move["spikes"] = { name: "spikes", notUsed: true };
+pokemonMoves.move["feint attack"] = new Move ("feint attack", 60, "dark", null);
+pokemonMoves.move["water shuriken"] = new Move ("water shuriken", 15, "water", null, "still needs multiple hits on each attack");
+pokemonMoves.move["substitute"] = { name: "substitute", notUsed: true };
+pokemonMoves.move["extrasensory"] = new Move ("extrasensory", 80, "psychic", { target: true, affliction: "flinch", chance: 0.3 });
+pokemonMoves.move["haze"] = { name: "haze", notUsed: true };
+pokemonMoves.move["leafage"] = new Move ("leafage", 40, "grass", null);
+pokemonMoves.move["astonish"] = new Move ("astonish", 30, "ghost", { target: true, affliction: "flinch", chance: 0.3 });
+pokemonMoves.move["pluck"] = new Move ("pluck", 60, "flying", null);
+pokemonMoves.move["sucker punch"] = new Move ("sucker punch", 70, "dark", null, "still needs check if user is preparing an attack to work");
+pokemonMoves.move["feather dance"] = new Move ("feather dance", 0, "flying", { target: true, stat: "lowerAttack", factor: 2 });
+pokemonMoves.move["u-turn"] = { name: "u-turn", notUsed: true };
+pokemonMoves.move["outrage"] = new Move ("outrage", 120, "dragon", { target: false, affliction: "confusion", wait: { turns: 3, attackOn: "all", afflictionOn: 3 } });
+pokemonMoves.move["throat chop"] = new Move ("throat chop", POWER, "TYPE", null);
+pokemonMoves.move["NAME"] = new Move ("NAME", POWER, "TYPE", null);
