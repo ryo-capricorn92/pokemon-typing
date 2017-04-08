@@ -91,7 +91,7 @@ function Pokemon ({ pokemon, level, userPokemon }) {
   this.evolution = pokemon.evolution;
   
   this.moves = [];
-  // for every possible move 
+  // find moves for this pokemon that are within their level for their moveset
   for (var move in pokemon.moves.natural) {
     var moveObj = pokemonMoves.move[pokemon.moves.natural[move]];
     if (+move.slice(4) <= this.level) {
@@ -110,7 +110,7 @@ function Pokemon ({ pokemon, level, userPokemon }) {
         if (this.moves.length >= 3) {
           this.moves[Math.floor(Math.random() * 4)] = moveObj;
         } else {
-          this.moves.push(moveOb);
+          this.moves.push(moveObj);
         }
       }
     }
