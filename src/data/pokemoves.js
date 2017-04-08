@@ -1004,14 +1004,14 @@ var pokemonMoves = {
         move23: "shadow sneak",
         move28: "spikes",
         move33: "feint attack",
-        move36: "water shurikan",
-        move43: "substitue",
+        move36: "water shuriken",
+        move43: "substitute",
         move49: "extrasensory",
         move52: "double team",
         move56: "haze",
         move60: "hydro pump",
         move70: "night slash",
-        move75: "water shurikan"
+        move75: "water shuriken"
       },
       learn: {}
     },
