@@ -51,7 +51,7 @@ function pickStarter (pokemon) {
   }
   if (pokemonList[pokemon] && !pokemonList[pokemon].stage) {
     textbox.innerHTML = 'So you\'d like to start with the ' + pokemonList[pokemon].type + ' type pokemon, ' + pokemonList[pokemon].name.pretty() + '?';
-    main.user.team = [new Pokemon(pokemonList[pokemon], 1, true)];
+    main.user.team = [new Pokemon({ pokemon: pokemonList[pokemon], userPokemon: true })];
     main.user.primary = main.user.team[0];
   } else {
     textbox.innerHTML = 'Sorry, it\'s gotta be one of the basic starters from any game gens 1 through 6. Who would you like?';
