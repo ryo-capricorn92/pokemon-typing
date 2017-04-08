@@ -1,7 +1,7 @@
 /* global pokemonListOptions, main, Pokemon, pokemonList, textbox, currentEnter, genericEnter, wordBank, pokemonMoves, pokemonTypes, currentContinue, goOn, homescreen */
 function fight () {
   var randomEnemy = pokemonListOptions[Math.floor(Math.random() * pokemonListOptions.length)];
-  main.enemy = new Pokemon(pokemonList[randomEnemy]);
+  main.enemy = new Pokemon({ pokemon: pokemonList[randomEnemy] });
   document.getElementById('heroName').innerText = main.user.primary.name.pretty();
   document.getElementById('enemyName').innerText = main.enemy.name.pretty();
   document.getElementById('heroHP').style.width = '0';

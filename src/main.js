@@ -71,59 +71,51 @@ function load () {
 
 }
 
-function Pokemon (pokemon, level, userPokemon) {
-  level = level > 40 ? level : 40;
-  var attackExists = false, goodMove, currentMoveStr, currentMove;
-  var chosenMoves = [];
-
+function Pokemon ({ pokemon, level, userPokemon }) {
+  this.level = level || 5;
   this.name = pokemon.name;
+  this.index = pokemon.index;
   this.type = pokemon.type;
   this.stats = {
     hp: pokemon.hp,
     attack: pokemon.attack,
     defense: pokemon.defense,
     speed: pokemon.speed
-  }
-  this.hp = pokemon.hp;
+  };
+  this.currentStats = {
+    hp: pokemon.hp,
+    attack: pokemon.attack,
+    defense: pokemon.defense,
+    speed: pokemon.speed
+  };
   this.evolution = pokemon.evolution;
+  
   this.moves = [];
-
-  if (!pokemon.moves) { return }
-  for (var i = 0; i < 2; i++) {
-    if (createMove(pokemon, chosenMoves, this.moves, level)) {
-      attackExists = true;
-    }
-
-    // make sure at least one move is an attack.
-    if (attackExists) {
-      createMove(pokemon, chosenMoves, this.moves, level)
-    } else {
-      createMove(pokemon, chosenMoves, this.moves, level, true);
-    }
-  }
-}
-
-function createMove (pokemon, chosenMoves, pokemonMoveList, level, needAttack) {
-  var goodMove = false, currentMoveStr, currentMove;
-  while (!goodMove) {
-    currentMoveStr = pokemon.moves[Math.floor(Math.random() * pokemon.moves.length)];
-    currentMove = pokemonMoves.move[currentMoveStr];
-    if (!currentMove) {
-      console.log(currentMoveStr);
-      continue;
-    }
-    // if the move's power is below the level limit
-    // and the move hasn't already been chosen
-    // and this move is not an attack when we need an attack
-    if (currentMove.power <= level &&
-      !chosenMoves.includes(currentMoveStr) &&
-      !(needAttack && !currentMove.power)) {
-        goodMove = true;
+  // for every possible move 
+  for (var move in pokemon.moves.natural) {
+    var moveObj = pokemonMoves.move[pokemon.moves.natural[move]];
+    if (+move.slice(4) <= this.level) {
+      if (typeof pokemon.moves.natural[move] === 'object') {
+        for (var i = 0; i < pokemon.moves.natural[move].length; i++) {
+          moveObj = pokemonMoves.move[pokemon.moves.natural[move][i]];
+          if (!moveObj.notUsed) {
+            if (this.moves.length >= 3) {
+              this.moves[Math.floor(Math.random() * 4)] = moveObj;
+            } else {
+              this.moves.push(moveObj);
+            }
+          }
+        }
+      } else if (!moveObj.notUsed) {
+        if (this.moves.length >= 3) {
+          this.moves[Math.floor(Math.random() * 4)] = moveObj;
+        } else {
+          this.moves.push(moveOb);
+        }
+      }
     }
   }
-  chosenMoves.push(currentMoveStr);
-  pokemonMoveList.push(currentMove);
-  if (currentMove.power) { return true; }
+  console.log(this);
 }
 
 document.onkeydown = function (e) {
