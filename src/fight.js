@@ -70,10 +70,11 @@ function confirmMove (word) {
 
     // use modified official damage equation to calculate damage on enemy pokemon.
     // Damage = (((((2 * LEVEL) / 5) + 2) * POWER * (USER_ATTACK / ENEMY_DEFENSE) / 50) + 2) * MODIFER
-    var damage = Math.round(((12 * move.power * (main.user.primary.attack / main.enemy.defense) / 50) + 2) * modifier);
-    main.enemy.hp -= damage;
-    if (main.enemy.hp > 0) {
-      document.getElementById('enemyHP').style.width = (100 - ((main.enemy.hp / main.enemy.bhp) * 100)) + '%';
+    var damage = Math.round(((12 * move.power * (main.user.primary.currentStats.attack / main.enemy.currentStats.defense) / 50) + 2) * modifier);
+    main.enemy.currentStats.hp -= damage;
+    if (main.enemy.currentStats.hp > 0) {
+      document.getElementById('enemyHP').style.width = (100 - ((main.enemy.currentStats.hp / main.enemy.stats.hp) * 100)) + '%';
+      whatMove();      
     } else {
       document.getElementById('enemyHP').style.width = '100%';
       currentEnter = genericEnter;
@@ -89,8 +90,8 @@ function confirmMove (word) {
   } else {
     // if the word was typed incorrectly, tell the user
     document.getElementById('moveMessage').innerHTML = main.user.primary.name.pretty() + ' missed!';
+    whatMove();    
   }
-  whatMove();
 }
 
 function catchChance () {
