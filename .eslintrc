@@ -1,0 +1,24 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": true,
+      "optionalDependencies": false
+    }],
+    "jsx-a11y/no-static-element-interactions": "off",
+    "no-underscore-dangle": ["error", { "allow": ["_id", "_type"] }],
+    "no-var": "off",
+    "one-var": "off",
+    "one-var-declaration-per-line": "off",
+    "prefer-arrow-callback": "off",
+    "no-global-assign": "off",
+    "no-use-before-define": "off",
+    "no-param-reassign": "off",
+    "no-extend-native": "off",
+    "no-redeclare": "off",
+    "block-scoped-var": "off",
+    "no-shadow": "off",
+    "no-restricted-syntax": "off",
+    "no-plusplus": "off"
+  }
+}
