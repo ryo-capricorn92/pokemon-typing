@@ -20,7 +20,51 @@ function fight () {
 }
 
 function attack (attacker, defender, move) {
-  var modifier;
+  // the following code is somewhat verbose to allow for easier understanding of the logic
+
+  // declare all variables needed for base damage 
+  var damage, level, power, attack, defense;
+  // declare all variables needed for the modifier
+  var modifier, random, STAB, type, burn, other;
+  // declare variables for factor calculation
+  var dividend = divisor = 3;
+
+  // EFFECTS - if the move causes effects, cause them
+  if (move.effects) {
+    var affectedPokemon = move.effects.target ? defender : attacker;
+
+    // handle stat changes
+    if (move.effects.stat) {
+      move.effects.stat.forEach(function (stat) {
+        if (!move.effects.chance || move.effects.chance > Math.random()) {
+          // calculate the new stat factor (between -6 and 6)
+          if (stat.raise) {
+            affectedPokemon.currentStats.modifier[stat.which] += move.effects.factor;
+            if (affectedPokemon.currentStats.modifier[stat.which] > 6) {
+              affectedPokemon.currentStats.modifier[stat.which] = 6;
+            }
+          } else {
+            affectedPokemon.currentStats.modifier[stat.which] -= move.effects.factor;
+            if (affectedPokemon.currentStats.modifier[stat.which] < -6) {
+              affectedPokemon.currentStats.modifier[stat.which] = -6;
+            }
+          }
+
+          // update currentStats based on new factor 
+          if (affectedPokemon.currentStats.modifier[stat.which] > 0) {
+            dividend += affectedPokemon.currentStats.modifier[stat.which];
+          } else if (affectedPokemon.currentStats.modifier[stat.which] < 0) {
+            divisor += -affectedPokemon.currentStats.modifier[stat.which];
+          }
+          affectedPokemon.currentStats[stat.which] *= dividend / divisor;
+        }
+      });
+    }
+  }
+
+  // DAMAGE - if the move causes damage, cause it 
+  if (move.power) {
+    // TYPE - calculate the type modifier bass off of weakness, buffers, and nulls 
     // take the move type vs the enemy's type into consideration
     var oneNullto = pokemonTypes[defender.type[0]].nulls.includes(move.type);
     var oneWeakto = pokemonTypes[defender.type[0]].weaknesses.includes(move.type);
@@ -33,43 +77,63 @@ function attack (attacker, defender, move) {
     } else {
       var twoNullto = null, twoWeakto = null, twoBuffto = null;
     }
-
-    // if the move causes effects, cause them
-    if (move.effects) {
-
-    }
-
-    // calculate what modifier to use - consider weaknesses and strengths
+    //apply the appropriate type modifier per the weaknesses found above
     if ((oneNullto && !twoWeakto) || (twoNullto && !oneWeakto)) {
-      modifier = 0;
+      type = 0;
     } else if ((oneBuffto && !twoWeakto) || (twoBuffto && !oneWeakto)) {
-      modifier = 0.5;
+      type = 0.5;
     } else if (oneWeakto || twoWeakto) {
-      modifier = 2;
+      type = 2;
     } else {
-      modifier = 1;
+      type = 1;
     }
 
-    // use modified official damage equation to calculate damage on enemy pokemon.
-    if (move.power) {
-      // Damage = (((((2 * LEVEL) / 5) + 2) * POWER * (USER_ATTACK / ENEMY_DEFENSE) / 50) + 2) * MODIFER
-      var damage = Math.round(((12 * move.power * (attacker.currentStats.attack / attacker.currentStats.defense) / 50) + 2) * modifier);
-      defender.currentStats.hp -= damage;
-    }
-    var hpElement = defender === main.enemy ? 'enemyHP' : 'heroHP';
-    if (defender.currentStats.hp > 0) {
-      document.getElementById(hpElement).style.width = (100 - ((defender.currentStats.hp / defender.stats.hp) * 100)) + '%';
-      if (defender === main.enemy) { whatMove(); }
+    // RANDOM - a random number between 0.85 and 1 (randNum 217<->255 / 255) per the algorithm 
+    random = Math.round((randomInt(217, 255) / 255) * 100) / 100;
+
+    // STAB - check if the type of the move is the same as the current pokemon - if so, apply bonus
+    STAB = attacker.type.includes(move.type) ? 1.5 : 1;
+
+    // BURN - TODO
+    burn = 1;
+
+    // OTHER - currently always set to 1
+    other = 1;
+
+    // MODIFIER - calculate modifier - based off of the official Pokemon algorithm
+    modifier = random * STAB * type * burn * other;
+
+    // LEVEL - attacking Pokemon's level
+    level = attacker.level;
+
+    // POWER - attacking Pokemon's move's power 
+    power = move.power;
+
+    // ATTACK - attacking Pokemon's attack
+    attack = attacker.currentStats.attack;
+
+    // DEFENSE - defending Pokemon's defense 
+    defense = defender.currentStats.defense;
+
+    // calculate damage with modifier - based off of the official Pokemon algorithm
+    damage = Math.round(((((((2 * level) / 5) + 2) * power * (attack / defense)) / 50) + 2) * modifier);
+    defender.currentStats.hp -= damage;
+  }
+
+  var hpElement = defender === main.enemy ? 'enemyHP' : 'heroHP';
+  if (defender.currentStats.hp > 0) {
+    document.getElementById(hpElement).style.width = (100 - ((defender.currentStats.hp / defender.stats.hp) * 100)) + '%';
+    if (defender === main.enemy) { whatMove(); }
+  } else {
+    document.getElementById(hpElement).style.width = '100%';
+    main.done = true;
+    currentEnter = genericEnter;
+    if (defender === main.enemy) {
+      heroWin(attacker);
     } else {
-      document.getElementById(hpElement).style.width = '100%';
-      main.done = true;
-      currentEnter = genericEnter;
-      if (defender === main.enemy) {
-        heroWin(attacker);
-      } else {
-        enemyWin(defender);
-      }
+      enemyWin(defender);
     }
+  }
 }
 
 function enemyAttack () {

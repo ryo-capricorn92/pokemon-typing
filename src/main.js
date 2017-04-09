@@ -7,6 +7,7 @@ var currentContinue;
 var currentEnter = genericEnter;
 var textbox = document.getElementById('textbox');
 
+// declare helper functions 
 String.prototype.pretty = function () {
   var strArr = this.split(' ');
   for (var i = 0; i < strArr.length; i++) {
@@ -15,6 +16,10 @@ String.prototype.pretty = function () {
     strArr[i] = arr.join('');
   }
   return strArr.join(' ');
+}
+
+function randomInt (min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 if (!game) {
@@ -86,7 +91,12 @@ function Pokemon ({ pokemon, level, userPokemon }) {
     hp: pokemon.hp,
     attack: pokemon.attack,
     defense: pokemon.defense,
-    speed: pokemon.speed
+    speed: pokemon.speed,
+    modifier: {
+      attack: 0,
+      defense: 0,
+      speed: 0
+    }
   };
   this.evolution = pokemon.evolution;
   
