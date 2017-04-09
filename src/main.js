@@ -7,6 +7,7 @@ var currentContinue;
 var currentEnter = genericEnter;
 var textbox = document.getElementById('textbox');
 
+// declare helper functions 
 String.prototype.pretty = function () {
   var strArr = this.split(' ');
   for (var i = 0; i < strArr.length; i++) {
@@ -15,6 +16,10 @@ String.prototype.pretty = function () {
     strArr[i] = arr.join('');
   }
   return strArr.join(' ');
+}
+
+function randomInt (min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 if (!game) {
