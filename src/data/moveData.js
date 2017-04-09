@@ -1,5 +1,5 @@
 /* global pokemonMoves */
-var POWER;
+var POWER = 0;
   // "power whip": {
   //   power: INT,
   //   level: INT,
