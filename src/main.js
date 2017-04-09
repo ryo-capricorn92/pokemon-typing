@@ -29,7 +29,7 @@ function save () {
 }
 
 function goOn () {
-  currentEnter();
+  currentContinue();
 }
 
 function keepGoing (func, args) {
