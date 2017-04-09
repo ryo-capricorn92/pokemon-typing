@@ -26,19 +26,41 @@ function attack (attacker, defender, move) {
   var damage, level, power, attack, defense;
   // declare all variables needed for the modifier
   var modifier, random, STAB, type, burn, other;
+  // declare variables for factor calculation
+  var dividend = divisor = 3;
 
   // EFFECTS - if the move causes effects, cause them
-  // if (move.effects) {
-  //   var affectedPokemon = move.effects.target ? defender : attacker;
+  if (move.effects) {
+    var affectedPokemon = move.effects.target ? defender : attacker;
 
-  //   if (move.effects.stat) {
-  //     move.effects.stat.forEach(function (stat) {
-  //       if (!move.effects.chance || move.effects.chance > Math.random()) {
-          
-  //       }
-  //     })
-  //   }
-  // }
+    // handle stat changes
+    if (move.effects.stat) {
+      move.effects.stat.forEach(function (stat) {
+        if (!move.effects.chance || move.effects.chance > Math.random()) {
+          // calculate the new stat factor (between -6 and 6)
+          if (stat.raise) {
+            affectedPokemon.currentStats.modifier[stat.which] += move.effects.factor;
+            if (affectedPokemon.currentStats.modifier[stat.which] > 6) {
+              affectedPokemon.currentStats.modifier[stat.which] = 6;
+            }
+          } else {
+            affectedPokemon.currentStats.modifier[stat.which] -= move.effects.factor;
+            if (affectedPokemon.currentStats.modifier[stat.which] < -6) {
+              affectedPokemon.currentStats.modifier[stat.which] = -6;
+            }
+          }
+
+          // update currentStats based on new factor 
+          if (affectedPokemon.currentStats.modifier[stat.which] > 0) {
+            dividend += affectedPokemon.currentStats.modifier[stat.which];
+          } else if (affectedPokemon.currentStats.modifier[stat.which] < 0) {
+            divisor += -affectedPokemon.currentStats.modifier[stat.which];
+          }
+          affectedPokemon.currentStats[stat.which] *= dividend / divisor;
+        }
+      });
+    }
+  }
 
   // DAMAGE - if the move causes damage, cause it 
   if (move.power) {

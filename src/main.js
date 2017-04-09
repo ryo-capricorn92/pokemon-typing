@@ -91,7 +91,12 @@ function Pokemon ({ pokemon, level, userPokemon }) {
     hp: pokemon.hp,
     attack: pokemon.attack,
     defense: pokemon.defense,
-    speed: pokemon.speed
+    speed: pokemon.speed,
+    modifier: {
+      attack: 0,
+      defense: 0,
+      speed: 0
+    }
   };
   this.evolution = pokemon.evolution;
   
