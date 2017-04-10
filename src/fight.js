@@ -38,11 +38,29 @@ function moveAttack(attacker, defender, move) {
   var dividend = 3;
   var divisor = 3;
   // declare variables for afflictions/effects;
-  var blockAttack, affectedPokemon; // confusionFail
+  var affliction, blockAttack, affectedPokemon;
   // declare other needed variables
   var hpElement;
 
   // AFFLICTION - if the attacker has afflictions, calculate their effects first
+  affliction = attacker.currentStats.affliction;
+  if (affliction === 'burn') {
+    attacker.currentStats.hp -= attacker.stats.hp * (1 / 16);
+  } else if (affliction === 'poison') {
+    attacker.currentStats.hp -= attacker.stats.hp * (1 / 8);
+  } else if (affliction === 'freeze') {
+    blockAttack = !(Math.random() < 0.2);
+  } else if (affliction === 'flinch') {
+    blockAttack = true;
+    attacker.currentStats.affliction = null;
+  } else if (affliction === 'paralyze') {
+    blockAttack = Math.random() < 0.25;
+  } else if (affliction === 'confusion') {
+    if (Math.random() < 0.33) {
+      blockAttack = true;
+      attacker.currentStats.hp -= ((((2 * level) + 2) * 40 * (attack / defense)) / 50) + 2;
+    }
+  }
 
   if (!blockAttack) {
     // EFFECTS - if the move causes effects, cause them
@@ -135,13 +153,13 @@ function moveAttack(attacker, defender, move) {
       defense = defender.currentStats.defense;
 
       // calculate damage with modifier - based off of the official Pokemon algorithm:
-      // ((((((2 * level) / 5) + 2) * power * (attack / defense)) / 50) + 2) * modifier
+      // ((((((((2 * level) / 5) + 2) * power * (attack / defense)) / 50) + 2) * modifier
       damageStepOne = 2 * level;
       damageStepTwo = damageStepOne / 5;
       damageStepThree = damageStepTwo + 2;
       damageStepFour = damageStepThree * power;
       damageStepFive = attack / defense;
-      damageStepSix = damageStepFour * power * damageStepFive;
+      damageStepSix = damageStepFour * damageStepFive;
       damageStepSeven = damageStepSix / 50;
       damageStepEight = damageStepSeven + 2;
       damage = Math.round(damageStepEight * modifier);
@@ -164,6 +182,8 @@ function moveAttack(attacker, defender, move) {
       enemyWin();
     }
   }
+
+  blockAttack = false;
 }
 
 function enemyAttack() {
