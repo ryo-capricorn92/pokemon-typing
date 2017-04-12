@@ -170,7 +170,7 @@ function testData() { // eslint-disable-line
   var naturalMoves, movesArray, move, moveList;
   console.log(document.styleSheets);
   var classes = document.styleSheets.reduce(function (array, stylesheet) {
-    return [...array, ...stylesheet];
+    return [...array, ...stylesheet.rules];
   }, []);
 
   console.log(window.location.hostname);
