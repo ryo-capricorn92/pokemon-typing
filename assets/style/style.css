@@ -23,7 +23,7 @@ body {
 #enemy {
   position: absolute;
   right: 17px;
-  top: 29px;
+  bottom: 40px;
 }
 
 #hero {

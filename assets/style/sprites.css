@@ -3,3 +3,381 @@
   width: 256px;
   height: 144px;
 }
+
+.bulbasaur {
+	background: url('../images/starters.png') no-repeat -2px -2px;
+	width: 96px;
+	height: 96px;
+}
+
+.ivysaur {
+	background: url('../images/starters.png') no-repeat -102px -2px;
+	width: 96px;
+	height: 96px;
+}
+
+.venusaur {
+	background: url('../images/starters.png') no-repeat -202px -2px;
+	width: 96px;
+	height: 96px;
+}
+
+.charmander {
+	background: url('../images/starters.png') no-repeat -302px -2px;
+	width: 96px;
+	height: 96px;
+}
+
+.charmeleon {
+	background: url('../images/starters.png') no-repeat -402px -2px;
+	width: 96px;
+	height: 96px;
+}
+
+.charizard {
+	background: url('../images/starters.png') no-repeat -502px -2px;
+	width: 96px;
+	height: 96px;
+}
+
+.squirtle {
+	background: url('../images/starters.png') no-repeat -602px -2px;
+	width: 96px;
+	height: 96px;
+}
+
+.wartortle {
+	background: url('../images/starters.png') no-repeat -702px -2px;
+	width: 96px;
+	height: 96px;
+}
+
+.blastoise {
+	background: url('../images/starters.png') no-repeat -802px -2px;
+	width: 96px;
+	height: 96px;
+}
+
+.chikorita {
+	background: url('../images/starters.png') no-repeat -902px -2px;
+	width: 96px;
+	height: 96px;
+}
+
+.bayleaf {
+	background: url('../images/starters.png') no-repeat -1002px -2px;
+	width: 96px;
+	height: 96px;
+}
+
+.meganium {
+	background: url('../images/starters.png') no-repeat -1102px -2px;
+	width: 96px;
+	height: 96px;
+}
+
+.cyndaquil {
+	background: url('../images/starters.png') no-repeat -1202px -2px;
+	width: 96px;
+	height: 96px;
+}
+
+.quilava {
+	background: url('../images/starters.png') no-repeat -1302px -2px;
+	width: 96px;
+	height: 96px;
+}
+
+.typhlosion {
+	background: url('../images/starters.png') no-repeat -1402px -2px;
+	width: 96px;
+	height: 96px;
+}
+
+.totodile {
+	background: url('../images/starters.png') no-repeat -2px -102px;
+	width: 96px;
+	height: 96px;
+}
+
+.croconaw {
+	background: url('../images/starters.png') no-repeat -102px -102px;
+	width: 96px;
+	height: 96px;
+}
+
+.feraligatr {
+	background: url('../images/starters.png') no-repeat -202px -102px;
+	width: 96px;
+	height: 96px;
+}
+
+.treecko {
+	background: url('../images/starters.png') no-repeat -302px -102px;
+	width: 96px;
+	height: 96px;
+}
+
+.grovyle {
+	background: url('../images/starters.png') no-repeat -402px -102px;
+	width: 96px;
+	height: 96px;
+}
+
+.sceptile {
+	background: url('../images/starters.png') no-repeat -502px -102px;
+	width: 96px;
+	height: 96px;
+}
+
+.torchic {
+	background: url('../images/starters.png') no-repeat -602px -102px;
+	width: 96px;
+	height: 96px;
+}
+
+.combusken {
+	background: url('../images/starters.png') no-repeat -702px -102px;
+	width: 96px;
+	height: 96px;
+}
+
+.blaziken {
+	background: url('../images/starters.png') no-repeat -802px -102px;
+	width: 96px;
+	height: 96px;
+}
+
+.mudkip {
+	background: url('../images/starters.png') no-repeat -902px -102px;
+	width: 96px;
+	height: 96px;
+}
+
+.marshtomp {
+	background: url('../images/starters.png') no-repeat -1002px -102px;
+	width: 96px;
+	height: 96px;
+}
+
+.swampert {
+	background: url('../images/starters.png') no-repeat -1102px -102px;
+	width: 96px;
+	height: 96px;
+}
+
+.turtwig {
+	background: url('../images/starters.png') no-repeat -1202px -102px;
+	width: 96px;
+	height: 96px;
+}
+
+.grotle {
+	background: url('../images/starters.png') no-repeat -1302px -102px;
+	width: 96px;
+	height: 96px;
+}
+
+.torterra {
+	background: url('../images/starters.png') no-repeat -1402px -102px;
+	width: 96px;
+	height: 96px;
+}
+
+.chimchar {
+	background: url('../images/starters.png') no-repeat -2px -202px;
+	width: 96px;
+	height: 96px;
+}
+
+.monferno {
+	background: url('../images/starters.png') no-repeat -102px -202px;
+	width: 96px;
+	height: 96px;
+}
+
+.infernape {
+	background: url('../images/starters.png') no-repeat -202px -202px;
+	width: 96px;
+	height: 96px;
+}
+
+.piplup {
+	background: url('../images/starters.png') no-repeat -302px -202px;
+	width: 96px;
+	height: 96px;
+}
+
+.prinplup {
+	background: url('../images/starters.png') no-repeat -402px -202px;
+	width: 96px;
+	height: 96px;
+}
+
+.empoleon {
+	background: url('../images/starters.png') no-repeat -502px -202px;
+	width: 96px;
+	height: 96px;
+}
+
+.snivy {
+	background: url('../images/starters.png') no-repeat -602px -202px;
+	width: 96px;
+	height: 96px;
+}
+
+.servine {
+	background: url('../images/starters.png') no-repeat -702px -202px;
+	width: 96px;
+	height: 96px;
+}
+
+.serperior {
+	background: url('../images/starters.png') no-repeat -802px -202px;
+	width: 96px;
+	height: 96px;
+}
+
+.tepig {
+	background: url('../images/starters.png') no-repeat -902px -202px;
+	width: 96px;
+	height: 96px;
+}
+
+.pignite {
+	background: url('../images/starters.png') no-repeat -1002px -202px;
+	width: 96px;
+	height: 96px;
+}
+
+.emboar {
+	background: url('../images/starters.png') no-repeat -1102px -202px;
+	width: 96px;
+	height: 96px;
+}
+
+.oshawott {
+	background: url('../images/starters.png') no-repeat -1202px -202px;
+	width: 96px;
+	height: 96px;
+}
+
+.dewott {
+	background: url('../images/starters.png') no-repeat -1302px -202px;
+	width: 96px;
+	height: 96px;
+}
+
+.samurott {
+	background: url('../images/starters.png') no-repeat -1402px -202px;
+	width: 96px;
+	height: 96px;
+}
+
+.chespin {
+	background: url('../images/starters.png') no-repeat -2px -302px;
+	width: 96px;
+	height: 96px;
+}
+
+.quilladin {
+	background: url('../images/starters.png') no-repeat -102px -302px;
+	width: 96px;
+	height: 96px;
+}
+
+.chesnaught {
+	background: url('../images/starters.png') no-repeat -202px -302px;
+	width: 96px;
+	height: 96px;
+}
+
+.fennekin {
+	background: url('../images/starters.png') no-repeat -302px -302px;
+	width: 96px;
+	height: 96px;
+}
+
+.braixen {
+	background: url('../images/starters.png') no-repeat -402px -302px;
+	width: 96px;
+	height: 96px;
+}
+
+.delphox {
+	background: url('../images/starters.png') no-repeat -502px -302px;
+	width: 96px;
+	height: 96px;
+}
+
+.froakie {
+	background: url('../images/starters.png') no-repeat -602px -302px;
+	width: 96px;
+	height: 96px;
+}
+
+.froggadier {
+	background: url('../images/starters.png') no-repeat -702px -302px;
+	width: 96px;
+	height: 96px;
+}
+
+.greninja {
+	background: url('../images/starters.png') no-repeat -802px -302px;
+	width: 96px;
+	height: 96px;
+}
+
+.rowlett {
+	background: url('../images/starters.png') no-repeat -902px -302px;
+	width: 96px;
+	height: 96px;
+}
+
+.dartrix {
+	background: url('../images/starters.png') no-repeat -1002px -302px;
+	width: 96px;
+	height: 96px;
+}
+
+.decidueye {
+	background: url('../images/starters.png') no-repeat -1102px -302px;
+	width: 96px;
+	height: 96px;
+}
+
+.litten {
+	background: url('../images/starters.png') no-repeat -1202px -302px;
+	width: 96px;
+	height: 96px;
+}
+
+.torracat {
+	background: url('../images/starters.png') no-repeat -1302px -302px;
+	width: 96px;
+	height: 96px;
+}
+
+.incineroar {
+	background: url('../images/starters.png') no-repeat -1402px -302px;
+	width: 96px;
+	height: 96px;
+}
+
+.popplio {
+	background: url('../images/starters.png') no-repeat -2px -402px;
+	width: 96px;
+	height: 96px;
+}
+
+.brionne {
+	background: url('../images/starters.png') no-repeat -102px -402px;
+	width: 96px;
+	height: 96px;
+}
+
+.primarina {
+	background: url('../images/starters.png') no-repeat -202px -402px;
+	width: 96px;
+	height: 96px;
+}
