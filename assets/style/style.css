@@ -23,13 +23,13 @@ body {
 #enemy {
   position: absolute;
   right: 17px;
-  top: 29px;
+  bottom: 40px;
 }
 
 #hero {
   position: absolute;
-  top: 72px;
-  left: 18px;
+  bottom: -6px;
+  left: 22px;
 }
 
 /* Health Bars */
