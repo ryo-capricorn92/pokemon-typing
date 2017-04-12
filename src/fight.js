@@ -7,6 +7,8 @@ function fight() { // eslint-disable-line no-unused-vars
   main.enemy = new Pokemon({ pokemon: pokemonList[randomEnemy] });
   document.getElementById('heroName').innerText = main.user.primary.name.pretty();
   document.getElementById('enemyName').innerText = main.enemy.name.pretty();
+  document.getElementById('hero').className = `${main.user.primary.name}-back`;
+  document.getElementById('enemy').className = main.enemy.name;
   document.getElementById('heroHP').style.width = '0';
   document.getElementById('enemyHP').style.width = '0';
   document.getElementById('healthbars').classList.remove('invisible');
