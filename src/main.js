@@ -19,6 +19,8 @@ String.prototype.pretty = function () {
   return strArr.join(' ');
 };
 
+Object.prototype.reduce = Array.prototype.reduce;
+
 function randomInt(min, max) { // eslint-disable-line
   return Math.floor((Math.random() * ((max - min) + 1)) + min);
 }
