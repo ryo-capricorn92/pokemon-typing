@@ -168,6 +168,12 @@ function testData() { // eslint-disable-line
   var messageMovesList = [];
   var errorMovesList = [];
   var naturalMoves, movesArray, move, moveList;
+  var classes = document.styleSheets.reduce(function (array, stylesheet) {
+    return [...array, ...stylesheet];
+  }, []);
+
+  console.log(window.location.hostname);
+  console.log(classes);
 
   console.log('POKEMON WITHOUT MOVELISTS');
   console.log('----------------------');
