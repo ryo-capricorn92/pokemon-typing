@@ -19,7 +19,7 @@ String.prototype.pretty = function () {
   return strArr.join(' ');
 };
 
-Object.prototype.reduce = Array.prototype.reduce;
+// Object.prototype.reduce = Array.prototype.reduce;
 
 function randomInt(min, max) { // eslint-disable-line
   return Math.floor((Math.random() * ((max - min) + 1)) + min);
@@ -171,6 +171,7 @@ function testData() { // eslint-disable-line
   var errorMovesList = [];
   var naturalMoves, movesArray, move, moveList;
   console.log(document.styleSheets);
+  document.styleSheets.reduce = Array.prototype.reduce;
   var classes = document.styleSheets.reduce(function (array, stylesheet) {
     return [...array, ...stylesheet.rules];
   }, []);
@@ -193,8 +194,8 @@ function testData() { // eslint-disable-line
     naturalMoves = pokemon.natural;
     movesArray = Object.keys(naturalMoves);
     // check to see if all moves given to pokemon have been defined
-    for (var i = 0; i < movesArray.length; i++) { // eslint-disable-line
-      move = naturalMoves[movesArray[i]];
+    for (var key in naturalMoves) { // eslint-disable-line
+      move = naturalMoves[key];
       if (typeof move === 'string') {
         if (!pokemonMoves.move[move] && !missingMovesList.includes(move)) {
           totalMoves++;
