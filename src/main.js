@@ -189,7 +189,10 @@ function testData() { // eslint-disable-line
     }
     if (document.styleSheets) {
       if (!classes.includes(`.${pokemon}`)) {
-        missingSpritesList.push(pokemon);
+        missingSpritesList.push(`${pokemon} - front`);
+      }
+      if (!classes.includes(`.${pokemon}-back`)) {
+        missingSpritesList.push(`${pokemon} - back`);
       }
     }
   }
