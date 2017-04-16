@@ -166,18 +166,19 @@ function testData() { // eslint-disable-line
   var completeMoves = 0;
   var totalMoves = 0;
   var missingMovesList = [];
+  var missingSpritesList = [];
   var unusedMovesList = [];
   var messageMovesList = [];
   var errorMovesList = [];
   var naturalMoves, movesArray, move, moveList;
-  console.log(document.styleSheets);
-  document.styleSheets.reduce = Array.prototype.reduce;
-  var classes = document.styleSheets.reduce(function (array, stylesheet) {
-    return [...array, ...stylesheet.rules];
-  }, []);
+  var classes;
 
-  console.log(window.location.hostname);
-  console.log(classes);
+  if (document.styleSheets) {
+    document.styleSheets.reduce = Array.prototype.reduce;
+    classes = document.styleSheets.reduce(function (array, stylesheet) {
+      return [...array, ...stylesheet.rules.selectorText];
+    }, []);
+  }
 
   console.log('POKEMON WITHOUT MOVELISTS');
   console.log('----------------------');
@@ -186,8 +187,12 @@ function testData() { // eslint-disable-line
     if (!pokemonList[pokemon].moves) {
       console.log(pokemon.pretty());
     }
+    if (document.styleSheets) {
+      if (!classes.includes(`.${pokemon}`)) {
+        missingSpritesList.push(pokemon);
+      }
+    }
   }
-  // TODO: check to see if each pokemon has a sprite added
   for (var pokemon in pokemonMoves.poke) { // eslint-disable-line
     totalPokemon++;
     pokemon = pokemonMoves.poke[pokemon];
@@ -243,6 +248,14 @@ function testData() { // eslint-disable-line
       }
     }
   }
+
+  console.log('');
+  console.log('POKEMON WITHOUT SPRITES');
+  console.log('----------------------');
+  missingSpritesList.forEach(function (pokemon) {
+    console.log(pokemon);
+  });
+
   console.log('');
   console.log('MOVES WITHOUT DEFINITION');
   console.log('----------------------');
