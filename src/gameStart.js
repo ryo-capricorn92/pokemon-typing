@@ -32,7 +32,7 @@ function setGender(gender) {
 function setUsername(username) {
   if (username.toLowerCase() === 'yes') {
     return keepGoing(newGame, [slot]);
-  } else if (username.toLowerCase() === 'no') {
+  } else if (!username || username.toLowerCase() === 'no') {
     main.user.username = undefined;
     return keepGoing(newGame, [slot]);
   }
