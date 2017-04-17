@@ -1,9 +1,9 @@
 /* global pokemonList, pokemonListOptions, pokemonTypes, pokemonMoves, newGame, fight,
    localStorage, document */
 var cont = false;
-var slot = 0;
+var slot = 1;
 var main = {}; // eslint-disable-line
-var game = localStorage.getItem('pokemon-typing');
+var game = JSON.parse(localStorage.getItem('pokemon-typing'));
 var currentContinue;
 var currentEnter = genericEnter;
 var textbox = document.getElementById('textbox');
@@ -19,34 +19,47 @@ String.prototype.pretty = function () {
   return strArr.join(' ');
 };
 
-// Object.prototype.reduce = Array.prototype.reduce;
-
 function randomInt(min, max) { // eslint-disable-line
   return Math.floor((Math.random() * ((max - min) + 1)) + min);
 }
 
-if (!game) {
+if (!game || !game.slots.length) {
   newGame(1);
 } else {
-  main = game[`gameSlot ${slot}`];
+  main = game.slots[slot - 1];
   homescreen();
 }
 
-function save() {
-  localStorage.setItem('pokemon-typing', JSON.stringify(game));
+function save(choice) {
+  if (choice && choice.length > 2) {
+    choice = choice.slice(5);
+  }
+  if (!game || !game.slots || choice) {
+    game = { slots: [] };
+    game.slots[choice ? choice - 1 : 0] = main;
+    localStorage.setItem('pokemon-typing', JSON.stringify(game));
+    textbox.innerText = `Your progress has been saved in slot ${choice || 1}!`;
+    currentEnter = homescreen;
+  } else {
+    textbox.innerHTML = `Which slot would you like to save in? (You are in slot ${slot} right now)`;
+    for (var i = 0; i <= game.slots.length; i++) { // eslint-disable-line vars-on-top
+      textbox.innerHTML += `<br />Slot ${i + 1 === game.slots.length ? i + 1 : `${i + 1} (new)`}`;
+    }
+    currentEnter = save;
+  }
 }
 
 function goOn() {
   currentContinue();
 }
 
-function keepGoing(func, args) { // eslint-disable-line no-unused-vars
+function keepGoing(func, args) {
   currentEnter = genericEnter;
   func(...args);
 }
 
 function genericEnter() {
-
+  return null;
 }
 
 function homescreen() {
@@ -142,6 +155,7 @@ document.onkeydown = function onkeydown(e) {
 
   if ((e.keyCode >= 65 && e.keyCode <= 90) ||
     (e.keyCode >= 97 && e.keyCode <= 122) ||
+    (e.keyCode >= 48 && e.keyCode <= 57) ||
     e.keyCode === 32) {
     userInput.innerText += e.key;
   }
