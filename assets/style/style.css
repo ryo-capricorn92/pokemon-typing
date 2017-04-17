@@ -81,6 +81,26 @@ body {
   border-bottom-right-radius: 7px;
 }
 
+#messageBox {
+  display: flex;
+  width: 750px;
+  margin: auto;
+  justify-content: space-between;
+}
+
+#heroMessage, #enemyMessage {
+  width: 40%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: #ace884;
+  border: 2px solid #69a342;
+  font-size: 12px;
+  font-family: monospace;
+}
+
+#enemyMessage {
+  text-align: right;
+}
 
 
 /* Text area */

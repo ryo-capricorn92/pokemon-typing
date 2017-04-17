@@ -176,8 +176,10 @@ function testData() { // eslint-disable-line
   if (document.styleSheets) {
     document.styleSheets.reduce = Array.prototype.reduce;
     classes = document.styleSheets.reduce(function (array, stylesheet) {
-      return [...array, ...stylesheet.rules.selectorText];
-    }, []);
+      return [...array, ...stylesheet.rules];
+    }, []).map(function (classObj) {
+      return classObj.selectorText;
+    });
   }
 
   console.log('POKEMON WITHOUT MOVELISTS');
