@@ -3,6 +3,7 @@
    randomInt */
 function fight() { // eslint-disable-line no-unused-vars
   var randomEnemy = pokemonListOptions[Math.floor(Math.random() * pokemonListOptions.length)];
+  var randomBackground = `background-${Math.round(Math.random() * 11)}`;
   main.done = false;
   main.enemy = new Pokemon({ pokemon: pokemonList[randomEnemy] });
   document.getElementById('heroName').innerText = main.primary.name.pretty();
@@ -13,6 +14,10 @@ function fight() { // eslint-disable-line no-unused-vars
   document.getElementById('enemyHP').style.width = '0';
   document.getElementById('healthbars').classList.remove('invisible');
   document.getElementById('messageBox').classList.remove('invisible');
+
+  document.getElementById('window').classList.remove('empty');
+  document.getElementById('window').classList.add(randomBackground);
+
   textbox.innerText = `A random ${main.enemy.name.pretty()} appears!`;
 
   setTimeout(function createFightTemplate() {
