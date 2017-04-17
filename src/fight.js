@@ -5,9 +5,9 @@ function fight() { // eslint-disable-line no-unused-vars
   var randomEnemy = pokemonListOptions[Math.floor(Math.random() * pokemonListOptions.length)];
   main.done = false;
   main.enemy = new Pokemon({ pokemon: pokemonList[randomEnemy] });
-  document.getElementById('heroName').innerText = main.user.primary.name.pretty();
+  document.getElementById('heroName').innerText = main.primary.name.pretty();
   document.getElementById('enemyName').innerText = main.enemy.name.pretty();
-  document.getElementById('hero').className = `${main.user.primary.name}-back`;
+  document.getElementById('hero').className = `${main.primary.name}-back`;
   document.getElementById('enemy').className = main.enemy.name;
   document.getElementById('heroHP').style.width = '0';
   document.getElementById('enemyHP').style.width = '0';
@@ -43,7 +43,7 @@ function moveAttack(attacker, defender, move) {
   var affliction, blockAttack, affectedPokemon;
   // declare other needed variables
   var hpElement, neededWait;
-  var attackerMessage = attacker === main.user.primary ? 'heroMessage' : 'enemyMessage';
+  var attackerMessage = attacker === main.primary ? 'heroMessage' : 'enemyMessage';
   var defenderMessage = defender === main.enemy ? 'enemyMessage' : 'heroMessage';
 
   // AFFLICTION - if the attacker has afflictions, calculate their effects first
@@ -215,7 +215,7 @@ function moveAttack(attacker, defender, move) {
     document.getElementById(hpElement).style.width = '100%';
     main.done = true;
     currentEnter = genericEnter;
-    resetStats(main.user.primary);
+    resetStats(main.primary);
     document.getElementById('messageBox').classList.add('invisible');
     if (defender === main.enemy) {
       heroWin();
@@ -229,11 +229,11 @@ function moveAttack(attacker, defender, move) {
 
 function enemyAttack() {
   var attackSpeed = 7000 - (main.enemy.currentStats.speed * 30);
-  attackSpeed += main.user.primary.currentStats.speed * 10;
+  attackSpeed += main.primary.currentStats.speed * 10;
   setTimeout(function triggerEnemyAttack() {
     var move = main.enemy.moves[Math.floor(Math.random() * main.enemy.moves.length)];
     if (main.done) { return null; }
-    moveAttack(main.enemy, main.user.primary, move);
+    moveAttack(main.enemy, main.primary, move);
     enemyAttack();
   }, attackSpeed);
 }
@@ -266,7 +266,7 @@ function resetStats(pokemon) {
 }
 
 function whatMove() {
-  var moves = main.user.primary.moves;
+  var moves = main.primary.moves;
   document.getElementById('moveMessage').innerHTML = 'Use a move!';
   document.getElementById('moves').innerHTML = '';
   for (var i = 0; i < moves.length; i++) { // eslint-disable-line
@@ -278,7 +278,7 @@ function whatMove() {
 function useMove(move) {
   var moveExists = false;
   move = move.toLowerCase();
-  main.user.primary.moves.forEach(function checkMoves(actualMove) {
+  main.primary.moves.forEach(function checkMoves(actualMove) {
     if (actualMove.name === move) { moveExists = true; }
   });
   if (moveExists) {
@@ -292,10 +292,10 @@ function useMove(move) {
 function confirmMove(word) {
   // if the word was typed correctly
   if (main.randomWord === word) {
-    moveAttack(main.user.primary, main.enemy, main.move);
+    moveAttack(main.primary, main.enemy, main.move);
   } else {
     // if the word was typed incorrectly, tell the user
-    document.getElementById('moveMessage').innerHTML = `${main.user.primary.name.pretty()} missed!`;
+    document.getElementById('moveMessage').innerHTML = `${main.primary.name.pretty()} missed!`;
     whatMove();
   }
 }
