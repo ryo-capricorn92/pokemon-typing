@@ -41,6 +41,7 @@ function setUsername(username) {
 }
 
 function pickStarter(pokemon) {
+  var types;
   if (pokemon.toLowerCase() === 'yes') {
     return keepGoing(newGame, [slot]);
   } else if (pokemon.toLowerCase() === 'no') {
@@ -48,7 +49,10 @@ function pickStarter(pokemon) {
     return keepGoing(newGame, [slot]);
   }
   if (pokemonList[pokemon] && !pokemonList[pokemon].stage) {
-    textbox.innerHTML = `So you'd like to start with the ${pokemonList[pokemon].type} type pokemon, ${pokemonList[pokemon].name.pretty()}?`;
+    types = pokemonList[pokemon].type[1] ?
+      `${pokemonList[pokemon].type[0]}/${pokemonList[pokemon].type[1]}` :
+      pokemonList[pokemon].type[0];
+    textbox.innerHTML = `So you'd like to start with the ${types} type pokemon, ${pokemonList[pokemon].name.pretty()}?`;
     main.team = [new Pokemon({ pokemon: pokemonList[pokemon], userPokemon: true })];
     main.primary = main.team[0];
   } else {
