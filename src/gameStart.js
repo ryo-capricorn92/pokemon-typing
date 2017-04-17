@@ -1,4 +1,5 @@
-/* global main, textbox, currentEnter, homescreen, keepGoing, slot, pokemonList, Pokemon */
+/* global window, main, textbox, currentEnter, homescreen, keepGoing, slot, pokemonList,
+   pokemonStarters, Pokemon */
 function newGame(slot, overwrite) {
   window.slot = slot;
   if (overwrite || !Object.keys(main).length || !main.user.gender) {
@@ -38,6 +39,7 @@ function setUsername(username) {
   }
   textbox.innerHTML = `Oh, you're name is ${username}?<br /><br />"Yes" or "No".`;
   main.user.username = username;
+  return undefined;
 }
 
 function pickStarter(pokemon) {
@@ -48,7 +50,7 @@ function pickStarter(pokemon) {
     main.team = [];
     return keepGoing(newGame, [slot]);
   }
-  if (pokemonList[pokemon] && !pokemonList[pokemon].stage) {
+  if (pokemonStarters.includes(pokemon)) {
     types = pokemonList[pokemon].type[1] ?
       `${pokemonList[pokemon].type[0]}/${pokemonList[pokemon].type[1]}` :
       pokemonList[pokemon].type[0];
@@ -58,4 +60,5 @@ function pickStarter(pokemon) {
   } else {
     textbox.innerHTML = 'Sorry, it\'s gotta be one of the basic starters from any game gens 1 through 6. Who would you like?';
   }
+  return undefined;
 }
