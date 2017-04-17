@@ -31,21 +31,44 @@ if (!game || !game.slots.length) {
 }
 
 function save(choice) {
+  var savedState = JSON.parse(localStorage.getItem('pokemon-typing'));
+  var saveTime;
   if (choice && choice.length > 2) {
     choice = choice.slice(5);
   }
   if (!game || !game.slots || choice) {
-    game = { slots: [] };
-    game.slots[choice ? choice - 1 : 0] = main;
+    slot = choice || 1;
+    game = game || {};
+    game.slots = game.slots || [];
+    game.slots[choice ? choice - 1 : 0] = Object.assign({}, main);
+    game.slots[choice ? choice - 1 : 0].time = new Date();
     localStorage.setItem('pokemon-typing', JSON.stringify(game));
     textbox.innerText = `Your progress has been saved in slot ${choice || 1}!`;
     currentEnter = homescreen;
   } else {
     textbox.innerHTML = `Which slot would you like to save in? (You are in slot ${slot} right now)`;
-    for (var i = 0; i <= game.slots.length; i++) { // eslint-disable-line vars-on-top
-      textbox.innerHTML += `<br />Slot ${i + 1 === game.slots.length ? i + 1 : `${i + 1} (new)`}`;
+    for (var i = 0; i <= savedState.slots.length; i++) { // eslint-disable-line vars-on-top
+      saveTime = savedState.slots[i] ? new Date(savedState.slots[i].time).toLocaleString() : undefined;
+      textbox.innerHTML += `<br />Slot ${i === savedState.slots.length ? `${i + 1} (new)` : `${i + 1} - ${saveTime}`}`;
     }
     currentEnter = save;
+  }
+}
+
+function load(choice) {
+  var savedState = JSON.parse(localStorage.getItem('pokemon-typing'));
+  var saveTime;
+  if (choice) {
+    main = savedState.slots[choice];
+    textbox.innerHTML = 'Game loaded!';
+    currentEnter = homescreen;
+  } else if (savedState) {
+    textbox.innerHTML = 'Which slot would you like to load? (You will lose any unsaved progress)';
+    for (var i = 0; i < savedState.slots.length; i++) { // eslint-disable-line vars-on-top
+      saveTime = new Date(savedState.slots[i].time).toLocaleString();
+      textbox.innerHTML += `<br />Slot ${i} - ${saveTime}`;
+    }
+    currentEnter = load;
   }
 }
 
@@ -87,10 +110,6 @@ function homeChoice(choice) {
 }
 
 function pokemon() {
-
-}
-
-function load() {
 
 }
 
