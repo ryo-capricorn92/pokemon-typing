@@ -12,11 +12,11 @@ function fight() { // eslint-disable-line no-unused-vars
   document.getElementById('heroHP').style.width = '0';
   document.getElementById('enemyHP').style.width = '0';
   document.getElementById('healthbars').classList.remove('invisible');
+  document.getElementById('messageBox').classList.remove('invisible');
   textbox.innerText = `A random ${main.enemy.name.pretty()} appears!`;
 
   setTimeout(function createFightTemplate() {
-    textbox.innerHTML = `<center><span id="enemyMessage"></span> <span id="spacer"></span> 
-      <span id="moveMessage"></span></center>`;
+    textbox.innerHTML = '<center><span id="moveMessage"></span></center>';
     textbox.innerHTML += '<div id="moves"></div>';
   }, 2000);
   setTimeout(whatMove, 2001);
@@ -42,29 +42,45 @@ function moveAttack(attacker, defender, move) {
   // declare variables for afflictions/effects;
   var affliction, blockAttack, affectedPokemon;
   // declare other needed variables
-  var hpElement;
+  var hpElement, neededWait;
+  var attackerMessage = attacker === main.user.primary ? 'heroMessage' : 'enemyMessage';
+  var defenderMessage = defender === main.enemy ? 'enemyMessage' : 'heroMessage';
 
   // AFFLICTION - if the attacker has afflictions, calculate their effects first
   affliction = attacker.currentStats.affliction;
+  neededWait = affliction ? 1000 : 0;
   if (affliction === 'burn') {
     attacker.currentStats.hp -= attacker.stats.hp * (1 / 16);
+    document.getElementById(attackerMessage).innerHTML = `${attacker.name.pretty()} was hurt by burn!`;
   } else if (affliction === 'poison') {
     attacker.currentStats.hp -= attacker.stats.hp * (1 / 8);
+    document.getElementById(attackerMessage).innerHTML = `${attacker.name.pretty()} was hurt by poison!`;
   } else if (affliction === 'freeze') {
     blockAttack = !(Math.random() < 0.2);
+    document.getElementById(attackerMessage).innerHTML = `${attacker.name.pretty()} is frozen!`;
   } else if (affliction === 'flinch') {
     blockAttack = true;
     attacker.currentStats.affliction = null;
+    document.getElementById(attackerMessage).innerHTML = `${attacker.name.pretty()} flinched!`;
   } else if (affliction === 'paralyze') {
     blockAttack = Math.random() < 0.25;
   } else if (affliction === 'confusion') {
+    document.getElementById(attackerMessage).innerHTML = `${attacker.name.pretty()} is confused!`;
     if (Math.random() < 0.33) {
       blockAttack = true;
-      attacker.currentStats.hp -= ((((2 * level) + 2) * 40 * (attack / defense)) / 50) + 2;
+      setTimeout(function () {
+        attacker.currentStats.hp -= ((((2 * level) + 2) * 40 * (attack / defense)) / 50) + 2;
+        document.getElementById(attackerMessage).innerHTML = `${attacker.name.pretty()} hurt itself in it's confusion!`;
+      }, neededWait);
     }
   }
 
   if (!blockAttack) {
+    // MOVE MESSAGE - alert what move the attacker used
+    setTimeout(function () {
+      document.getElementById(attackerMessage).innerHTML = `${attacker.name.pretty()} used ${move.name.pretty()}!`;
+    }, neededWait);
+
     // EFFECTS - if the move causes effects, cause them
     if (move.effects) {
       affectedPokemon = move.effects.target ? defender : attacker;
@@ -72,6 +88,12 @@ function moveAttack(attacker, defender, move) {
       // handle stat changes
       if (move.effects.stat) {
         move.effects.stat.forEach(function loopStats(stat) {
+          neededWait += 1000;
+          setTimeout(function () {
+            var which = move.effects.target ? defender.name.pretty() : attacker.name.pretty();
+            var message = `${which}'s ${stat.which} ${stat.raise ? 'rose' : 'fell'}!`;
+            document.getElementById(attackerMessage).innerHTML = message;
+          }, neededWait);
           if (!move.effects.chance || move.effects.chance > Math.random()) {
             // calculate the new stat factor (between -6 and 6)
             if (stat.raise) {
@@ -100,7 +122,21 @@ function moveAttack(attacker, defender, move) {
 
     // AFFLICTION - if the move causes afflictions, cause them
     if (move.affliction) {
+      neededWait += 1000;
       defender.currentStats.affliction = move.affliction;
+      if (move.affliction === 'freeze') {
+        setTimeout(function () {
+          document.getElementById(defenderMessage).innerHTML = `${defender.name.pretty()} was frozen!`;
+        }, neededWait);
+      } else if (move.affliction === 'confusion') {
+        setTimeout(function () {
+          document.getElementById(defenderMessage).innerHTML = `${defender.name.pretty()} was confused!`;
+        }, neededWait);
+      } else if (!(move.affliction === 'flinch')) {
+        setTimeout(function () {
+          document.getElementById(defenderMessage).innerHTML = `${defender.name.pretty()} was ${move.affliction}ed!`;
+        }, neededWait);
+      }
     }
 
     // DAMAGE - if the move causes damage, cause it
@@ -166,6 +202,8 @@ function moveAttack(attacker, defender, move) {
       damageStepEight = damageStepSeven + 2;
       damage = Math.round(damageStepEight * modifier);
       defender.currentStats.hp -= damage;
+
+      document.getElementById(attackerMessage).innerHTML = `${attacker.name.pretty()} used ${move.name.pretty()}!`;
     }
   }
 
@@ -178,6 +216,7 @@ function moveAttack(attacker, defender, move) {
     main.done = true;
     currentEnter = genericEnter;
     resetStats(main.user.primary);
+    document.getElementById('messageBox').classList.add('invisible');
     if (defender === main.enemy) {
       heroWin();
     } else {
@@ -193,13 +232,7 @@ function enemyAttack() {
   attackSpeed += main.user.primary.currentStats.speed * 10;
   setTimeout(function triggerEnemyAttack() {
     var move = main.enemy.moves[Math.floor(Math.random() * main.enemy.moves.length)];
-    if (main.done) { return; }
-    clearTimeout(main.enemyTimeout);
-    document.getElementById('enemyMessage').innerHTML = `${main.enemy.name.pretty()} used ${move.name.pretty()}!`;
-    main.enemyTimeout = setTimeout(function clearEnemyAttack() {
-      if (main.done) { return; }
-      document.getElementById('enemyMessage').innerHTML = '';
-    }, 2000);
+    if (main.done) { return null; }
     moveAttack(main.enemy, main.user.primary, move);
     enemyAttack();
   }, attackSpeed);
@@ -252,7 +285,6 @@ function useMove(move) {
     main.randomWord = wordBank.level1[Math.floor(Math.random() * wordBank.level1.length)];
     main.move = pokemonMoves.move[move];
     document.getElementById('moveMessage').innerHTML = `"${main.randomWord}"`;
-    document.getElementById('spacer').innerHTML = document.getElementById('enemyMessage').innerHTML ? '|' : '';
     currentEnter = confirmMove;
   }
 }
