@@ -1078,3 +1078,27 @@ var pokemonTypes = { // eslint-disable-line
     buffers: ['fighting', 'bug', 'dark'],
   },
 };
+
+var pokemonStarters = [ // eslint-disable-line
+  'bulbasaur',
+  'charmander',
+  'squirtle',
+  'chikorita',
+  'cyndaquil',
+  'totodile',
+  'treecko',
+  'torchic',
+  'mudkip',
+  'turtwig',
+  'chimchar',
+  'piplup',
+  'snivy',
+  'tepig',
+  'oshawott',
+  'chespin',
+  'fennekin',
+  'froakie',
+  'rowlet',
+  'litten',
+  'popplio',
+];
