@@ -32,7 +32,7 @@ if (!game || !game.slots.length) {
 
 function save(choice) {
   var savedState = JSON.parse(localStorage.getItem('pokemon-typing'));
-  var saveTime;
+  var saveTime, username;
   if (choice && choice.length > 2) {
     choice = choice.slice(5);
   }
@@ -49,7 +49,8 @@ function save(choice) {
     textbox.innerHTML = `Which slot would you like to save in? (You are in slot ${slot} right now)`;
     for (var i = 0; i <= savedState.slots.length; i++) { // eslint-disable-line vars-on-top
       saveTime = savedState.slots[i] ? new Date(savedState.slots[i].time).toLocaleString() : undefined;
-      textbox.innerHTML += `<br />Slot ${i === savedState.slots.length ? `${i + 1} (new)` : `${i + 1} - ${saveTime}`}`;
+      username = savedState.slots[i] ? savedState.slots[i].user.username : undefined;
+      textbox.innerHTML += `<br />Slot ${i === savedState.slots.length ? `${i + 1} (new)` : `${i + 1} - ${username} - ${saveTime}`}`;
     }
     currentEnter = save;
   }
@@ -57,7 +58,7 @@ function save(choice) {
 
 function load(choice) {
   var savedState = JSON.parse(localStorage.getItem('pokemon-typing'));
-  var saveTime;
+  var saveTime, username;
   if (choice) {
     main = savedState.slots[choice];
     textbox.innerHTML = 'Game loaded!';
@@ -66,7 +67,8 @@ function load(choice) {
     textbox.innerHTML = 'Which slot would you like to load? (You will lose any unsaved progress)';
     for (var i = 0; i < savedState.slots.length; i++) { // eslint-disable-line vars-on-top
       saveTime = new Date(savedState.slots[i].time).toLocaleString();
-      textbox.innerHTML += `<br />Slot ${i} - ${saveTime}`;
+      username = savedState.slots[i].user.username;
+      textbox.innerHTML += `<br />Slot ${i} - ${username} - ${saveTime}`;
     }
     currentEnter = load;
   }
