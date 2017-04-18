@@ -87,7 +87,7 @@ function genericEnter() {
 
 function homescreen() {
   document.getElementById('healthbars').classList.toggle('invisible', true);
-  textbox.innerHTML = 'What would you like to do?<br /><br />Fight!<br />Check Pokemon<br />Save<br />Load';
+  textbox.innerHTML = 'What would you like to do?<br /><br />Fight!<br />Save<br />Load<br />New Game';
   currentEnter = homeChoice;
 }
 
@@ -97,20 +97,16 @@ function homeChoice(choice) {
     case 'fight':
     case 'fight!':
       return fight();
-    case 'check pokemon':
-    case 'pokemon':
-      return pokemon();
     case 'save':
       return save();
     case 'load':
       return load();
+    case 'new game':
+    case 'new':
+      return confirm('Are you sure you want to start a new game? Any unsaved data will be lost.') ? newGame(0, true) : homescreen();
     default:
       return null;
   }
-}
-
-function pokemon() {
-
 }
 
 function Pokemon({ pokemon, level, userPokemon }) { // eslint-disable-line
