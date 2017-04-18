@@ -92,6 +92,8 @@ function homescreen() {
 }
 
 function homeChoice(choice) {
+  var savedState = JSON.parse(localStorage.getItem('pokemon-typing'));
+  var slots = savedState ? savedState.slots.length : 0;
   choice = choice.toLowerCase();
   switch (choice) {
     case 'fight':
@@ -103,7 +105,7 @@ function homeChoice(choice) {
       return load();
     case 'new game':
     case 'new':
-      return confirm('Are you sure you want to start a new game? Any unsaved data will be lost.') ? newGame(0, true) : homescreen();
+      return confirm('Are you sure you want to start a new game? Any unsaved data will be lost.') ? newGame(slots, true) : homescreen();
     default:
       return null;
   }
