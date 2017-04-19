@@ -6,30 +6,33 @@
     <link rel="stylesheet" href="assets/style/style.css">
     <link rel="stylesheet" href="assets/style/sprites/starters.css">
     <link rel="stylesheet" href="assets/style/sprites/backgrounds.css">
+    <link rel="stylesheet" href="assets/style/sprites/avatars.css">
   </head>
   <body>
 
     <div id="container">
-      <header>
-        <h1>Pokemon Typing!</h1>
-      </header>
-
       <div id="wrapper">
-        <div id="window" class="empty">
-          <img id="enemy" src="assets/images/empty.png" alt="enemy" />
-          <img id="hero" src="assets/images/empty.png" alt="hero">
+        <div id="window">
+          <div id="fightWindow" class="empty">
+            <img id="enemy" src="assets/images/empty.png" alt="enemy" />
+            <img id="hero" src="assets/images/empty.png" alt="hero">
+          </div>
+          <div id="standardWindow">
+            <img id="avatar" src="assets/images/empty.png" />
+            <img id="primary" src="assets/images/empty.png" />
+          </div>
         </div>
 
         <div id="healthbars" class="invisible">
           <div class="hero">
-            <div id="heroName">Charmander</div>
+            <div id="heroName"></div>
             <div class="hp">
               <div id="heroHP"></div>
               <div class="hpBorder"></div>
             </div>
           </div>
           <div class="enemy">
-            <div id="enemyName">Bulbasaur</div>
+            <div id="enemyName"></div>
             <div class="hp">
               <div id="enemyHP"></div>
               <div class="hpBorder"></div>

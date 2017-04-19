@@ -14,10 +14,33 @@ body {
   visibility: hidden;
 }
 
-/* Fight Window */
+/* Main Window */
 #window {
   position: relative;
-  margin: auto;
+  width: 400px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+/* Standard Window */
+#standardWindow {
+  position: absolute;
+  background: url('http://orig06.deviantart.net/cbce/f/2014/293/3/6/pokemon_x_and_y_battle_background_1_by_phoenixoflight92-d83htw0.png');
+  width: 400px;
+  line-height: 130px;
+  padding: 20px 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#standardWindow * {
+  vertical-align: bottom;
+}
+
+/* Fight Window */
+#fightWindow {
+  position: relative;
+  margin: 50px auto 0 auto;
 }
 
 #enemy {
@@ -35,7 +58,7 @@ body {
 /* Health Bars */
 #healthbars {
   width: 600px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .hero, .enemy {

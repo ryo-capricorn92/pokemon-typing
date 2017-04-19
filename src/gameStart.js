@@ -1,10 +1,12 @@
-/* global window, main, textbox, currentEnter, homescreen, keepGoing, slot, pokemonList,
+/* global window, document, main, textbox, currentEnter, homescreen, keepGoing, slot, pokemonList,
    pokemonStarters, Pokemon */
 function newGame(slot, overwrite) {
   window.slot = slot;
   if (overwrite || !Object.keys(main).length || !main.user.gender) {
     main = {};
     main.user = {};
+    document.getElementById('avatar').className = '';
+    document.getElementById('primary').className = '';
 
     textbox.innerHTML = 'Hey there! Welcome to the pokemon typing game! Can you tell me a little about yourself?<br /><br /> Are you a "boy" or a "girl"?';
     currentEnter = setGender;
@@ -27,6 +29,8 @@ function setGender(gender) {
     return;
   }
   main.user.gender = gender;
+  main.user.avatar = `${gender}-${Math.round(Math.random() * 100)}`;
+  document.getElementById('avatar').classList.add(main.user.avatar);
   keepGoing(newGame, [slot]);
 }
 
@@ -51,11 +55,13 @@ function pickStarter(pokemon) {
     return keepGoing(newGame, [slot]);
   }
   if (pokemonStarters.includes(pokemon)) {
-    types = pokemonList[pokemon].type[1] ?
-      `${pokemonList[pokemon].type[0]}/${pokemonList[pokemon].type[1]}` :
-      pokemonList[pokemon].type[0];
-    textbox.innerHTML = `So you'd like to start with the ${types} type pokemon, ${pokemonList[pokemon].name.pretty()}?`;
-    main.team = [new Pokemon({ pokemon: pokemonList[pokemon], userPokemon: true })];
+    pokemon = pokemonList[pokemon];
+    types = pokemon.type[1] ?
+      `${pokemon.type[0]}/${pokemon.type[1]}` :
+      pokemon.type[0];
+    textbox.innerHTML = `So you'd like to start with the ${types} type pokemon, ${pokemon.name.pretty()}?`;
+    document.getElementById('primary').className = pokemon.name;
+    main.team = [new Pokemon({ pokemon, userPokemon: true })];
     main.primary = main.team[0];
   } else {
     textbox.innerHTML = 'Sorry, it\'s gotta be one of the basic starters from any game gens 1 through 6. Who would you like?';

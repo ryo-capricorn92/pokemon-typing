@@ -15,8 +15,8 @@ function fight() { // eslint-disable-line no-unused-vars
   document.getElementById('healthbars').classList.remove('invisible');
   document.getElementById('messageBox').classList.remove('invisible');
 
-  document.getElementById('window').classList.remove('empty');
-  document.getElementById('window').classList.add(randomBackground);
+  document.getElementById('fightWindow').classList.remove('hide');
+  document.getElementById('fightWindow').classList.add(randomBackground);
 
   textbox.innerText = `A random ${main.enemy.name.pretty()} appears!`;
 

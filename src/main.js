@@ -27,7 +27,7 @@ if (!game || !game.slots.length) {
   newGame(1);
 } else {
   main = game.slots[slot - 1];
-  homescreen();
+  load();
 }
 
 function save(choice) {
@@ -89,6 +89,10 @@ function genericEnter() {
 
 function homescreen() {
   document.getElementById('healthbars').classList.toggle('invisible', true);
+  document.getElementById('fightWindow').classList.add('hide');
+  document.getElementById('standardWindow').classList.remove('hide');
+  document.getElementById('avatar').classList.add(main.user.avatar);
+  document.getElementById('primary').classList.add(main.primary.name);
   textbox.innerHTML = 'What would you like to do?<br /><br />Fight!<br />Save<br />Load<br />New Game';
   currentEnter = homeChoice;
 }
@@ -100,6 +104,7 @@ function homeChoice(choice) {
   switch (choice) {
     case 'fight':
     case 'fight!':
+      document.getElementById('standardWindow').classList.add('hide');
       return fight();
     case 'save':
       return save();
@@ -206,7 +211,7 @@ function testData() { // eslint-disable-line
   var naturalMoves, movesArray, move, moveList;
   var classes;
 
-  if (document.styleSheets) {
+  if (document.styleSheets && document.styleSheets[0].rules) {
     document.styleSheets.reduce = Array.prototype.reduce;
     classes = document.styleSheets.reduce(function (array, stylesheet) {
       return [...array, ...stylesheet.rules];
@@ -222,7 +227,7 @@ function testData() { // eslint-disable-line
     if (!pokemonList[pokemon].moves) {
       console.log(pokemon.pretty());
     }
-    if (document.styleSheets) {
+    if (document.styleSheets && document.styleSheets[0].rules) {
       if (!classes.includes(`.${pokemon}`)) {
         missingSpritesList.push(`${pokemon} - front`);
       }
