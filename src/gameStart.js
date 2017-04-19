@@ -5,6 +5,8 @@ function newGame(slot, overwrite) {
   if (overwrite || !Object.keys(main).length || !main.user.gender) {
     main = {};
     main.user = {};
+    document.getElementById('avatar').className = '';
+    document.getElementById('primary').className = '';
 
     textbox.innerHTML = 'Hey there! Welcome to the pokemon typing game! Can you tell me a little about yourself?<br /><br /> Are you a "boy" or a "girl"?';
     currentEnter = setGender;
@@ -27,7 +29,8 @@ function setGender(gender) {
     return;
   }
   main.user.gender = gender;
-  document.getElementById('avatar').classList.add(`${gender}-01`);
+  main.user.avatar = `${gender}-01`;
+  document.getElementById('avatar').classList.add(main.user.avatar);
   keepGoing(newGame, [slot]);
 }
 
