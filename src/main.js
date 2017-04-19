@@ -27,7 +27,7 @@ if (!game || !game.slots.length) {
   newGame(1);
 } else {
   main = game.slots[slot - 1];
-  homescreen();
+  load();
 }
 
 function save(choice) {

@@ -29,7 +29,7 @@ function setGender(gender) {
     return;
   }
   main.user.gender = gender;
-  main.user.avatar = `${gender}-01`;
+  main.user.avatar = `${gender}-${Math.round(Math.random() * 100)}`;
   document.getElementById('avatar').classList.add(main.user.avatar);
   keepGoing(newGame, [slot]);
 }
