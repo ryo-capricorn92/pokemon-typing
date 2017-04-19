@@ -1,11 +1,599 @@
 .girl-01 {
+	background: url('../../images/trainers.png') no-repeat -267px -4px;
+	width: 42px;
+	height: 77px;
+}
+
+.girl-02 {
+	background: url('../../images/trainers.png') no-repeat -874px -16px;
+	width: 64px;
+	height: 80px;
+}
+
+.girl-03 {
+	background: url('../../images/trainers.png') no-repeat -968px -18px;
+	width: 51px;
+	height: 78px;
+}
+
+.girl-04 {
+	background: url('../../images/trainers.png') no-repeat -1588px -40px;
+	width: 40px;
+	height: 69px;
+}
+
+.girl-05 {
+	background: url('../../images/trainers.png') no-repeat -2116px -42px;
+	width: 44px;
+	height: 72px;
+}
+
+.girl-06 {
+	background: url('../../images/trainers.png') no-repeat -2369px -38px;
+	width: 59px;
+	height: 76px;
+}
+
+.girl-07 {
+	background: url('../../images/trainers.png') no-repeat -2710px -41px;
+	width: 62px;
+	height: 80px;
+}
+
+.girl-08 {
+	background: url('../../images/trainers.png') no-repeat -2979px -47px;
+	width: 39px;
+	height: 73px;
+}
+
+.girl-09 {
+	background: url('../../images/trainers.png') no-repeat -2972px -164px;
+	width: 50px;
+	height: 52px;
+}
+
+.girl-10 {
+	background: url('../../images/trainers.png') no-repeat -2465px -132px;
+	width: 33px;
+	height: 78px;
+}
+
+.girl-11 {
+	background: url('../../images/trainers.png') no-repeat -2204px -135px;
+	width: 44px;
+	height: 75px;
+}
+
+.girl-12 {
+	background: url('../../images/trainers.png') no-repeat -2111px -148px;
+	width: 44px;
+	height: 65px;
+}
+
+.girl-13 {
+	background: url('../../images/trainers.png') no-repeat -1671px -138px;
+	width: 35px;
+	height: 67px;
+}
+
+.girl-14 {
+	background: url('../../images/trainers.png') no-repeat -1578px -136px;
+	width: 52px;
+	height: 69px;
+}
+
+.girl-15 {
+	background: url('../../images/trainers.png') no-repeat -1329px -132px;
+	width: 34px;
+	height: 73px;
+}
+
+.girl-16 {
+	background: url('../../images/trainers.png') no-repeat -1216px -112px;
+	width: 54px;
+	height: 80px;
+}
+
+.girl-17 {
+	background: url('../../images/trainers.png') no-repeat -1132px -121px;
+	width: 53px;
+	height: 71px;
+}
+
+.girl-18 {
+	background: url('../../images/trainers.png') no-repeat -960px -117px;
+	width: 57px;
+	height: 75px;
+}
+
+.girl-19 {
+	background: url('../../images/trainers.png') no-repeat -879px -129px;
+	width: 50px;
+	height: 63px;
+}
+
+.girl-20 {
+	background: url('../../images/trainers.png') no-repeat -700px -97px;
+	width: 38px;
+	height: 80px;
+}
+
+.girl-21 {
 	background: url('../../images/trainers.png') no-repeat -601px -109px;
 	width: 57px;
 	height: 68px;
 }
 
-.boy-01 {
-	background: url('../../images/trainers.png') no-repeat -1332px -321px;
-	width: 30px;
+.girl-22 {
+	background: url('../../images/trainers.png') no-repeat -351px -97px;
+	width: 45px;
+	height: 80px;
+}
+
+.girl-23 {
+	background: url('../../images/trainers.png') no-repeat -271px -110px;
+	width: 46px;
+	height: 67px;
+}
+
+.girl-24 {
+	background: url('../../images/trainers.png') no-repeat -272px -208px;
+	width: 38px;
+	height: 65px;
+}
+
+.girl-25 {
+	background: url('../../images/trainers.png') no-repeat -361px -202px;
+	width: 37px;
+	height: 71px;
+}
+
+.girl-26 {
+	background: url('../../images/trainers.png') no-repeat -978px -226px;
+	width: 32px;
+	height: 62px;
+}
+
+.girl-27 {
+	background: url('../../images/trainers.png') no-repeat -1131px -214px;
+	width: 55px;
+	height: 74px;
+}
+
+.girl-28 {
+	background: url('../../images/trainers.png') no-repeat -1226px -223px;
+	width: 43px;
+	height: 65px;
+}
+
+.girl-29 {
+	background: url('../../images/trainers.png') no-repeat -1660px -227px;
+	width: 54px;
+	height: 74px;
+}
+
+.girl-30 {
+	background: url('../../images/trainers.png') no-repeat -1853px -259px;
+	width: 42px;
+	height: 60px;
+}
+
+.girl-31 {
+	background: url('../../images/trainers.png') no-repeat -2121px -243px;
+	width: 33px;
+	height: 67px;
+}
+
+.girl-32 {
+	background: url('../../images/trainers.png') no-repeat -2383px -227px;
+	width: 46px;
+	height: 79px;
+}
+
+.girl-33 {
+	background: url('../../images/trainers.png') no-repeat -2530px -238px;
+	width: 66px;
+	height: 68px;
+}
+
+.girl-34 {
+	background: url('../../images/trainers.png') no-repeat -2718px -240px;
+	width: 41px;
+	height: 72px;
+}
+
+.girl-35 {
+	background: url('../../images/trainers.png') no-repeat -2206px -327px;
+	width: 40px;
+	height: 74px;
+}
+
+.girl-36 {
+	background: url('../../images/trainers.png') no-repeat -1843px -344px;
+	width: 73px;
+	height: 74px;
+}
+
+.girl-37 {
+	background: url('../../images/trainers.png') no-repeat -1673px -327px;
+	width: 38px;
+	height: 70px;
+}
+
+.girl-38 {
+	background: url('../../images/trainers.png') no-repeat -1490px -323px;
+	width: 44px;
+	height: 74px;
+}
+
+.girl-39 {
+	background: url('../../images/trainers.png') no-repeat -876px -313px;
+	width: 56px;
+	height: 71px;
+}
+
+.girl-40 {
+	background: url('../../images/trainers.png') no-repeat -432px -291px;
+	width: 50px;
+	height: 72px;
+}
+
+.girl-41 {
+	background: url('../../images/trainers.png') no-repeat -93px -299px;
+	width: 47px;
+	height: 70px;
+}
+
+.girl-42 {
+	background: url('../../images/trainers.png') no-repeat -365px -399px;
+	width: 34px;
+	height: 66px;
+}
+
+.girl-43 {
+	background: url('../../images/trainers.png') no-repeat -436px -389px;
+	width: 46px;
+	height: 79px;
+}
+
+.girl-44 {
+	background: url('../../images/trainers.png') no-repeat -783px -393px;
+	width: 58px;
+	height: 75px;
+}
+
+.girl-45 {
+	background: url('../../images/trainers.png') no-repeat -1051px -412px;
+	width: 49px;
+	height: 68px;
+}
+
+.girl-46 {
+	background: url('../../images/trainers.png') no-repeat -1221px -411px;
+	width: 53px;
+	height: 69px;
+}
+
+.girl-47 {
+	background: url('../../images/trainers.png') no-repeat -1657px -417px;
+	width: 69px;
 	height: 76px;
+}
+
+.girl-48 {
+	background: url('../../images/trainers.png') no-repeat -2718px -426px;
+	width: 41px;
+	height: 78px;
+}
+
+.girl-49 {
+	background: url('../../images/trainers.png') no-repeat -2892px -434px;
+	width: 39px;
+	height: 70px;
+}
+
+.girl-50 {
+	background: url('../../images/trainers.png') no-repeat -2548px -517px;
+	width: 42px;
+	height: 76px;
+}
+
+.girl-51 {
+	background: url('../../images/trainers.png') no-repeat -2364px -523px;
+	width: 73px;
+	height: 71px;
+}
+
+.girl-52 {
+	background: url('../../images/trainers.png') no-repeat -1854px -534px;
+	width: 51px;
+	height: 78px;
+}
+
+.girl-53 {
+	background: url('../../images/trainers.png') no-repeat -1499px -514px;
+	width: 37px;
+	height: 75px;
+}
+
+.girl-54 {
+	background: url('../../images/trainers.png') no-repeat -1402px -515px;
+	width: 53px;
+	height: 74px;
+}
+
+.girl-55 {
+	background: url('../../images/trainers.png') no-repeat -1320px -509px;
+	width: 53px;
+	height: 80px;
+}
+
+.girl-56 {
+	background: url('../../images/trainers.png') no-repeat -1145px -506px;
+	width: 38px;
+	height: 70px;
+}
+
+.girl-57 {
+	background: url('../../images/trainers.png') no-repeat -438px -484px;
+	width: 46px;
+	height: 80px;
+}
+
+.girl-58 {
+	background: url('../../images/trainers.png') no-repeat -16px -488px;
+	width: 36px;
+	height: 73px;
+}
+
+.girl-59 {
+	background: url('../../images/trainers.png') no-repeat -16px -579px;
+	width: 37px;
+	height: 78px;
+}
+
+.girl-60 {
+	background: url('../../images/trainers.png') no-repeat -181px -586px;
+	width: 43px;
+	height: 71px;
+}
+
+.girl-61 {
+	background: url('../../images/trainers.png') no-repeat -359px -586px;
+	width: 39px;
+	height: 71px;
+}
+
+.girl-62 {
+	background: url('../../images/trainers.png') no-repeat -442px -589px;
+	width: 40px;
+	height: 71px;
+}
+
+.girl-63 {
+	background: url('../../images/trainers.png') no-repeat -772px -582px;
+	width: 73px;
+	height: 78px;
+}
+
+.girl-64 {
+	background: url('../../images/trainers.png') no-repeat -1227px -602px;
+	width: 37px;
+	height: 70px;
+}
+
+.girl-65 {
+	background: url('../../images/trainers.png') no-repeat -1393px -609px;
+	width: 78px;
+	height: 76px;
+}
+
+.girl-66 {
+	background: url('../../images/trainers.png') no-repeat -1578px -616px;
+	width: 45px;
+	height: 69px;
+}
+
+.girl-67 {
+	background: url('../../images/trainers.png') no-repeat -1666px -617px;
+	width: 46px;
+	height: 68px;
+}
+
+.girl-68 {
+	background: url('../../images/trainers.png') no-repeat -1924px -643px;
+	width: 79px;
+	height: 75px;
+}
+
+.girl-69 {
+	background: url('../../images/trainers.png') no-repeat -2022px -649px;
+	width: 54px;
+	height: 62px;
+}
+
+.girl-70 {
+	background: url('../../images/trainers.png') no-repeat -2118px -645px;
+	width: 35px;
+	height: 71px;
+}
+
+.girl-71 {
+	background: url('../../images/trainers.png') no-repeat -2632px -618px;
+	width: 40px;
+	height: 79px;
+}
+
+.girl-72 {
+	background: url('../../images/trainers.png') no-repeat -2112px -741px;
+	width: 46px;
+	height: 71px;
+}
+
+.girl-73 {
+	background: url('../../images/trainers.png') no-repeat -1943px -742px;
+	width: 40px;
+	height: 68px;
+}
+
+.girl-74 {
+	background: url('../../images/trainers.png') no-repeat -1659px -713px;
+	width: 55px;
+	height: 72px;
+}
+
+.girl-75 {
+	background: url('../../images/trainers.png') no-repeat -1568px -708px;
+	width: 53px;
+	height: 77px;
+}
+
+.girl-76 {
+	background: url('../../images/trainers.png') no-repeat -1127px -697px;
+	width: 53px;
+	height: 71px;
+}
+
+.girl-77 {
+	background: url('../../images/trainers.png') no-repeat -1047px -696px;
+	width: 57px;
+	height: 72px;
+}
+
+.girl-78 {
+	background: url('../../images/trainers.png') no-repeat -788px -687px;
+	width: 48px;
+	height: 69px;
+}
+
+.girl-79 {
+	background: url('../../images/trainers.png') no-repeat -690px -685px;
+	width: 60px;
+	height: 71px;
+}
+
+.girl-80 {
+	background: url('../../images/trainers.png') no-repeat -442px -677px;
+	width: 62px;
+	height: 79px;
+}
+
+.girl-81 {
+	background: url('../../images/trainers.png') no-repeat -186px -783px;
+	width: 43px;
+	height: 66px;
+}
+
+.girl-82 {
+	background: url('../../images/trainers.png') no-repeat -436px -772px;
+	width: 51px;
+	height: 80px;
+}
+
+.girl-83 {
+	background: url('../../images/trainers.png') no-repeat -622px -776px;
+	width: 28px;
+	height: 76px;
+}
+
+.girl-84 {
+	background: url('../../images/trainers.png') no-repeat -794px -793px;
+	width: 29px;
+	height: 59px;
+}
+
+.girl-85 {
+	background: url('../../images/trainers.png') no-repeat -1049px -801px;
+	width: 53px;
+	height: 63px;
+}
+
+.girl-86 {
+	background: url('../../images/trainers.png') no-repeat -1402px -818px;
+	width: 61px;
+	height: 74px;
+}
+
+.girl-87 {
+	background: url('../../images/trainers.png') no-repeat -1769px -845px;
+	width: 44px;
+	height: 54px;
+}
+
+.girl-88 {
+	background: url('../../images/trainers.png') no-repeat -1858px -835px;
+	width: 39px;
+	height: 74px;
+}
+
+.girl-89 {
+	background: url('../../images/trainers.png') no-repeat -2202px -835px;
+	width: 39px;
+	height: 65px;
+}
+
+.girl-90 {
+	background: url('../../images/trainers.png') no-repeat -2367px -822px;
+	width: 35px;
+	height: 77px;
+}
+
+.girl-91 {
+	background: url('../../images/trainers.png') no-repeat -2451px -833px;
+	width: 50px;
+	height: 67px;
+}
+
+.girl-92 {
+	background: url('../../images/trainers.png') no-repeat -2981px -904px;
+	width: 28px;
+	height: 78px;
+}
+
+.girl-93 {
+	background: url('../../images/trainers.png') no-repeat -2638px -912px;
+	width: 25px;
+	height: 70px;
+}
+
+.girl-94 {
+	background: url('../../images/trainers.png') no-repeat -2456px -925px;
+	width: 51px;
+	height: 72px;
+}
+
+.girl-95 {
+	background: url('../../images/trainers.png') no-repeat -1839px -944px;
+	width: 77px;
+	height: 49px;
+}
+
+.girl-96 {
+	background: url('../../images/trainers.png') no-repeat -1219px -883px;
+	width: 43px;
+	height: 79px;
+}
+
+.girl-97 {
+	background: url('../../images/trainers.png') no-repeat -969px -889px;
+	width: 27px;
+	height: 73px;
+}
+
+.girl-98 {
+	background: url('../../images/trainers.png') no-repeat -879px -890px;
+	width: 40px;
+	height: 72px;
+}
+
+.girl-99 {
+	background: url('../../images/trainers.png') no-repeat -782px -870px;
+	width: 60px;
+	height: 78px;
+}
+
+.girl-100 {
+	background: url('../../images/trainers.png') no-repeat -180px -874px;
+	width: 51px;
+	height: 80px;
 }
