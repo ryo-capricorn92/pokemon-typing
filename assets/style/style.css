@@ -3,7 +3,7 @@ body {
 }
 
 #container {
-  margin: 30px auto;
+  margin: 20px auto;
 }
 
 .hide {
@@ -14,10 +14,31 @@ body {
   visibility: hidden;
 }
 
-/* Fight Window */
+/* Main Window */
 #window {
   position: relative;
-  margin: auto;
+  width: 400px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+/* Standard Window */
+#standardWindow {
+  position: absolute;
+  width: 400px;
+  line-height: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#standardWindow * {
+  vertical-align: bottom;
+}
+
+/* Fight Window */
+#fightWindow {
+  position: relative;
+  margin: 0 auto;
 }
 
 #enemy {
@@ -35,7 +56,7 @@ body {
 /* Health Bars */
 #healthbars {
   width: 600px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .hero, .enemy {

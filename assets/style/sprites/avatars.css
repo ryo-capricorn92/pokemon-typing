@@ -1,0 +1,11 @@
+.girl-01 {
+	background: url('../../images/trainers.png') no-repeat -601px -109px;
+	width: 57px;
+	height: 68px;
+}
+
+.boy-01 {
+	background: url('../../images/trainers.png') no-repeat -1332px -321px;
+	width: 30px;
+	height: 76px;
+}

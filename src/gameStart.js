@@ -1,4 +1,4 @@
-/* global window, main, textbox, currentEnter, homescreen, keepGoing, slot, pokemonList,
+/* global window, document, main, textbox, currentEnter, homescreen, keepGoing, slot, pokemonList,
    pokemonStarters, Pokemon */
 function newGame(slot, overwrite) {
   window.slot = slot;
@@ -27,6 +27,7 @@ function setGender(gender) {
     return;
   }
   main.user.gender = gender;
+  document.getElementById('avatar').classList.add(`${gender}-01`);
   keepGoing(newGame, [slot]);
 }
 
@@ -51,11 +52,13 @@ function pickStarter(pokemon) {
     return keepGoing(newGame, [slot]);
   }
   if (pokemonStarters.includes(pokemon)) {
-    types = pokemonList[pokemon].type[1] ?
-      `${pokemonList[pokemon].type[0]}/${pokemonList[pokemon].type[1]}` :
-      pokemonList[pokemon].type[0];
-    textbox.innerHTML = `So you'd like to start with the ${types} type pokemon, ${pokemonList[pokemon].name.pretty()}?`;
-    main.team = [new Pokemon({ pokemon: pokemonList[pokemon], userPokemon: true })];
+    pokemon = pokemonList[pokemon];
+    types = pokemon.type[1] ?
+      `${pokemon.type[0]}/${pokemon.type[1]}` :
+      pokemon.type[0];
+    textbox.innerHTML = `So you'd like to start with the ${types} type pokemon, ${pokemon.name.pretty()}?`;
+    document.getElementById('primary').className = pokemon.name;
+    main.team = [new Pokemon({ pokemon, userPokemon: true })];
     main.primary = main.team[0];
   } else {
     textbox.innerHTML = 'Sorry, it\'s gotta be one of the basic starters from any game gens 1 through 6. Who would you like?';
