@@ -8,7 +8,7 @@ var pokemonList = {
     attack: 45,
     defense: 45,
     speed: 38,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'bulbasaur',
@@ -25,7 +25,7 @@ var pokemonList = {
     attack: 52,
     defense: 52,
     speed: 46,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'venusaur',
@@ -43,7 +43,7 @@ var pokemonList = {
     attack: 74,
     defense: 80,
     speed: 57,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
@@ -58,7 +58,7 @@ var pokemonList = {
     attack: 44,
     defense: 38,
     speed: 49,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'charmeleon',
@@ -75,7 +75,7 @@ var pokemonList = {
     attack: 53,
     defense: 47,
     speed: 57,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'charizard',
@@ -92,7 +92,7 @@ var pokemonList = {
     attack: 65,
     defense: 58,
     speed: 68,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
@@ -107,7 +107,7 @@ var pokemonList = {
     attack: 40,
     defense: 48,
     speed: 37,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'wartortle',
@@ -124,7 +124,7 @@ var pokemonList = {
     attack: 48,
     defense: 57,
     speed: 45,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'blastoise',
@@ -141,7 +141,7 @@ var pokemonList = {
     attack: 59,
     defense: 69,
     speed: 56,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
@@ -156,7 +156,7 @@ var pokemonList = {
     attack: 40,
     defense: 49,
     speed: 38,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'bayleef',
@@ -173,7 +173,7 @@ var pokemonList = {
     attack: 47,
     defense: 57,
     speed: 46,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'meganium',
@@ -190,7 +190,7 @@ var pokemonList = {
     attack: 58,
     defense: 68,
     speed: 57,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
@@ -205,7 +205,7 @@ var pokemonList = {
     attack: 43,
     defense: 38,
     speed: 49,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'quilava',
@@ -222,7 +222,7 @@ var pokemonList = {
     attack: 52,
     defense: 47,
     speed: 57,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'typhlosian',
@@ -239,7 +239,7 @@ var pokemonList = {
     attack: 66,
     defense: 58,
     speed: 68,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
@@ -254,7 +254,7 @@ var pokemonList = {
     attack: 43,
     defense: 43,
     speed: 37,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'croconaw',
@@ -271,7 +271,7 @@ var pokemonList = {
     attack: 51,
     defense: 52,
     speed: 45,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'feraligator',
@@ -288,7 +288,7 @@ var pokemonList = {
     attack: 64,
     defense: 63,
     speed: 56,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
@@ -303,7 +303,7 @@ var pokemonList = {
     attack: 43,
     defense: 38,
     speed: 51,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'grovyle',
@@ -320,7 +320,7 @@ var pokemonList = {
     attack: 54,
     defense: 43,
     speed: 66,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'sceptile',
@@ -337,7 +337,7 @@ var pokemonList = {
     attack: 65,
     defense: 54,
     speed: 79,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
@@ -352,7 +352,7 @@ var pokemonList = {
     attack: 48,
     defense: 37,
     speed: 38,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'combusken',
@@ -369,7 +369,7 @@ var pokemonList = {
     attack: 60,
     defense: 46,
     speed: 44,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'blaziken',
@@ -386,7 +386,7 @@ var pokemonList = {
     attack: 76,
     defense: 51,
     speed: 57,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
@@ -401,7 +401,7 @@ var pokemonList = {
     attack: 45,
     defense: 40,
     speed: 35,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'marshtomp',
@@ -418,7 +418,7 @@ var pokemonList = {
     attack: 53,
     defense: 51,
     speed: 40,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'swampert',
@@ -435,7 +435,7 @@ var pokemonList = {
     attack: 66,
     defense: 62,
     speed: 46,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
@@ -450,7 +450,7 @@ var pokemonList = {
     attack: 44,
     defense: 46,
     speed: 30,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'grotle',
@@ -467,7 +467,7 @@ var pokemonList = {
     attack: 53,
     defense: 54,
     speed: 33,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'torterra',
@@ -484,7 +484,7 @@ var pokemonList = {
     attack: 64,
     defense: 65,
     speed: 44,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
@@ -499,7 +499,7 @@ var pokemonList = {
     attack: 45,
     defense: 37,
     speed: 47,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'monferno',
@@ -516,7 +516,7 @@ var pokemonList = {
     attack: 56,
     defense: 41,
     speed: 58,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'infernape',
@@ -533,7 +533,7 @@ var pokemonList = {
     attack: 70,
     defense: 52,
     speed: 72,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
@@ -548,7 +548,7 @@ var pokemonList = {
     attack: 44,
     defense: 43,
     speed: 35,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'prinplup',
@@ -565,7 +565,7 @@ var pokemonList = {
     attack: 53,
     defense: 52,
     speed: 40,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'empoleon',
@@ -582,7 +582,7 @@ var pokemonList = {
     attack: 67,
     defense: 65,
     speed: 46,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
@@ -597,7 +597,7 @@ var pokemonList = {
     attack: 38,
     defense: 44,
     speed: 48,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'servine',
@@ -614,7 +614,7 @@ var pokemonList = {
     attack: 46,
     defense: 55,
     speed: 59,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'serperior',
@@ -631,7 +631,7 @@ var pokemonList = {
     attack: 55,
     defense: 66,
     speed: 75,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
@@ -646,7 +646,7 @@ var pokemonList = {
     attack: 43,
     defense: 38,
     speed: 38,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'pignite',
@@ -663,7 +663,7 @@ var pokemonList = {
     attack: 67,
     defense: 44,
     speed: 44,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'emboar',
@@ -680,7 +680,7 @@ var pokemonList = {
     attack: 74,
     defense: 49,
     speed: 49,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
@@ -695,7 +695,7 @@ var pokemonList = {
     attack: 46,
     defense: 38,
     speed: 38,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'dewott',
@@ -712,7 +712,7 @@ var pokemonList = {
     attack: 57,
     defense: 46,
     speed: 46,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'samurott',
@@ -729,7 +729,7 @@ var pokemonList = {
     attack: 75,
     defense: 55,
     speed: 51,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
@@ -744,7 +744,7 @@ var pokemonList = {
     attack: 43,
     defense: 43,
     speed: 34,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'quilladin',
@@ -761,7 +761,7 @@ var pokemonList = {
     attack: 50,
     defense: 55,
     speed: 45,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'chesnaught',
@@ -778,7 +778,7 @@ var pokemonList = {
     attack: 62,
     defense: 67,
     speed: 48,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
@@ -793,7 +793,7 @@ var pokemonList = {
     attack: 42,
     defense: 40,
     speed: 46,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'braixen',
@@ -810,7 +810,7 @@ var pokemonList = {
     attack: 54,
     defense: 48,
     speed: 53,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'delphox',
@@ -827,7 +827,7 @@ var pokemonList = {
     attack: 63,
     defense: 60,
     speed: 70,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: null,
@@ -842,7 +842,7 @@ var pokemonList = {
     attack: 45,
     defense: 36,
     speed: 52,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'frogadier',
@@ -859,7 +859,7 @@ var pokemonList = {
     attack: 53,
     defense: 42,
     speed: 67,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'greninja',
@@ -876,7 +876,7 @@ var pokemonList = {
     attack: 68,
     defense: 51,
     speed: 80,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
@@ -891,7 +891,7 @@ var pokemonList = {
     attack: 42,
     defense: 42,
     speed: 36,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'dartrix',
@@ -908,7 +908,7 @@ var pokemonList = {
     attack: 53,
     defense: 53,
     speed: 41,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'decidueye',
@@ -925,7 +925,7 @@ var pokemonList = {
     attack: 70,
     defense: 61,
     speed: 51,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
@@ -940,7 +940,7 @@ var pokemonList = {
     attack: 47,
     defense: 35,
     speed: 51,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'torracat',
@@ -957,7 +957,7 @@ var pokemonList = {
     attack: 58,
     defense: 40,
     speed: 62,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'incineroar',
@@ -974,7 +974,7 @@ var pokemonList = {
     attack: 67,
     defense: 62,
     speed: 46,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
@@ -989,7 +989,7 @@ var pokemonList = {
     attack: 45,
     defense: 43,
     speed: 35,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 0,
       next: 'brionne',
@@ -1006,7 +1006,7 @@ var pokemonList = {
     attack: 57,
     defense: 54,
     speed: 40,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 1,
       next: 'primarina',
@@ -1023,7 +1023,7 @@ var pokemonList = {
     attack: 62,
     defense: 65,
     speed: 46,
-    experienceGroup: 'medium-slow',
+    experienceGroup: 'mediumSlow',
     evolution: {
       stage: 2,
       next: null,
