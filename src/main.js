@@ -1,5 +1,5 @@
 /* global pokemonList, pokemonListOptions, pokemonTypes, pokemonMoves, newGame, fight,
-   localStorage, document */
+   localStorage, document, confirm */
 var cont = false;
 var slot = 1;
 var main = {}; // eslint-disable-line
@@ -121,6 +121,7 @@ function homeChoice(choice) {
 function Pokemon({ pokemon, level, userPokemon }) { // eslint-disable-line
   var moveObj;
   this.level = level || 5;
+  this.experience = 0;
   this.name = pokemon.name;
   this.index = pokemon.index;
   this.type = pokemon.type;
