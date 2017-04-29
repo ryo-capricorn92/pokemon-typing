@@ -251,6 +251,7 @@ function enemyWin() {
 
 function heroWin() {
   textbox.innerHTML = 'You win!';
+  main.primary.earnExperience(main.enemy);
   if (!main.enemy.stage) {
     currentContinue = catchChance;
     currentEnter = goOn;

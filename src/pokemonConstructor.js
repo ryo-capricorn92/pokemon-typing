@@ -1,7 +1,7 @@
 function Pokemon({ pokemon, level, userPokemon }) { // eslint-disable-line
   this.level = level || 5;
-  this.experience = 0;
   this.experienceCheck = this.experienceMethods[pokemon.experienceGroup];
+  this.experience = this.experienceCheck(this.level);
   this.name = pokemon.name;
   this.index = pokemon.index;
   this.type = pokemon.type;
@@ -66,8 +66,8 @@ Pokemon.prototype.pickMoves = function (pokemon) {
 };
 
 Pokemon.prototype.experienceMethods = {
-  erratic() {
-    var n = this.level + 1;
+  erratic(n) {
+    n = n || this.level + 1;
     if (n <= 50) {
       return ((n * n * n) * (100 - n)) / 50;
     } else if (n <= 68) {
@@ -80,8 +80,8 @@ Pokemon.prototype.experienceMethods = {
 
     return null;
   },
-  fast() {
-    var n = this.level + 1;
+  fast(n) {
+    n = n || this.level + 1;
 
     if (n >= 100) {
       return null;
@@ -89,8 +89,8 @@ Pokemon.prototype.experienceMethods = {
 
     return (4 * n * n * n) / 5;
   },
-  mediumFast() {
-    var n = this.level + 1;
+  mediumFast(n) {
+    n = n || this.level + 1;
 
     if (n >= 100) {
       return null;
@@ -98,8 +98,8 @@ Pokemon.prototype.experienceMethods = {
 
     return n * n * n;
   },
-  mediumSlow() {
-    var n = this.level + 1;
+  mediumSlow(n) {
+    n = n || this.level + 1;
 
     if (n >= 100) {
       return null;
@@ -107,8 +107,8 @@ Pokemon.prototype.experienceMethods = {
 
     return (((6 / 5) * n * n * n) - (15 * n * n)) + ((100 * n) - 140);
   },
-  slow() {
-    var n = this.level + 1;
+  slow(n) {
+    n = n || this.level + 1;
 
     if (n >= 100) {
       return null;
@@ -116,8 +116,8 @@ Pokemon.prototype.experienceMethods = {
 
     return (5 * n * n * n) / 4;
   },
-  fluctuating() {
-    var n = this.level + 1;
+  fluctuating(n) {
+    n = n || this.level + 1;
 
     if (n <= 15) {
       return (n * n * n) * ((((n + 1) / 3) + 24) / 50);
@@ -129,4 +129,20 @@ Pokemon.prototype.experienceMethods = {
 
     return null;
   },
+};
+
+Pokemon.prototype.earnExperience = function (enemy) {
+  var B = enemy.ev.exp; // base experience
+  var L = this.level; // winner's level
+  var Lp = enemy.level; // enemy's level
+
+  this.experience += (((B * L) / 5) * ((((2 * L) + 10) ** 2.5) / ((L + Lp + 10) ** 2.5))) + 1;
+  this.checkLevel();
+};
+
+Pokemon.prototype.checkLevel = function () {
+  var neededExperience = this.experienceCheck();
+  if (neededExperience && this.experience >= neededExperience) {
+    this.level++;
+  }
 };
