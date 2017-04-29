@@ -48,9 +48,10 @@ function setUsername(username) {
 
 function pickStarter(pokemon) {
   var types;
-  if (pokemon.toLowerCase() === 'yes') {
+  pokemon = pokemon.toLowerCase();
+  if (pokemon === 'yes') {
     return keepGoing(newGame, [slot]);
-  } else if (pokemon.toLowerCase() === 'no') {
+  } else if (pokemon === 'no') {
     main.team = [];
     return keepGoing(newGame, [slot]);
   }

@@ -1,11 +1,12 @@
 function Pokemon({ pokemon, level, userPokemon }) { // eslint-disable-line
-  var moveObj;
   this.level = level || 5;
   this.experience = 0;
   this.experienceCheck = this.experienceMethods[pokemon.experienceGroup];
   this.name = pokemon.name;
   this.index = pokemon.index;
   this.type = pokemon.type;
+  this.stats = this.generateStats(pokemon);
+
   this.currentStats = {
     hp: this.stats.hp,
     attack: this.stats.attack,
@@ -18,35 +19,51 @@ function Pokemon({ pokemon, level, userPokemon }) { // eslint-disable-line
     },
     affliction: null,
   };
+
   this.ev = pokemon.ev;
   this.evolution = pokemon.evolution;
+  this.moves = this.pickMoves(pokemon);
+}
 
-  this.moves = [];
-  // find moves for this pokemon that are within their level for their moveset
-  for (var move in pokemon.moves.natural) { // eslint-disable-line
-    moveObj = pokemonMoves.move[pokemon.moves.natural[move]];
-    if (+move.slice(4) <= this.level) {
-      if (typeof pokemon.moves.natural[move] === 'object') {
-        for (var i = 0; i < pokemon.moves.natural[move].length; i++) { // eslint-disable-line
-          moveObj = pokemonMoves.move[pokemon.moves.natural[move][i]];
-          if (!moveObj.notUsed) {
-            if (this.moves.length >= 3) {
-              this.moves[Math.floor(Math.random() * 4)] = moveObj;
-            } else {
-              this.moves.push(moveObj);
-            }
-          }
-        }
-      } else if (!moveObj.notUsed) {
-        if (this.moves.length >= 3) {
-          this.moves[Math.floor(Math.random() * 4)] = moveObj;
-        } else {
-          this.moves.push(moveObj);
-        }
+Pokemon.prototype.generateStats = function (pokemon) {
+  var base = pokemon.stats;
+  var stats = {};
+
+  stats.hp = base.hp;
+  stats.speed = base.speed;
+
+  stats.attack = Math.round((base.attack + base.spAttack) / 2);
+  stats.defense = Math.round((base.defense + base.spDefense) / 2);
+
+  return stats;
+};
+
+Pokemon.prototype.pickMoves = function (pokemon) {
+  var moveObj;
+  var moves = [];
+
+  for (var i = 0; i <= this.level; i++) {
+    moveObj = pokemon.moves.natural[`move${i}`];
+    if (moveObj) {
+      moveObj = typeof moveObj === 'object' ? moveObj : [moveObj];
+
+      moveObj.forEach(learnValidMoves);
+    }
+  }
+
+  function learnValidMoves(possMove) {
+    possMove = pokemonMoves.move[possMove];
+    if (!possMove.notUsed) {
+      if (moves.length >= 3) {
+        moves[Math.floor(Math.random() * 4)] = possMove;
+      } else {
+        moves.push(possMove);
       }
     }
   }
-}
+
+  return moves;
+};
 
 Pokemon.prototype.experienceMethods = {
   erratic() {
