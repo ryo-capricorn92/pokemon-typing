@@ -144,6 +144,7 @@ function Pokemon({ pokemon, level, userPokemon }) { // eslint-disable-line
     },
     affliction: null,
   };
+  this.ev = pokemon.ev;
   this.evolution = pokemon.evolution;
 
   this.moves = [];
